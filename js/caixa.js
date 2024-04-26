@@ -16,16 +16,23 @@ export function setupCaixa() {
     };
     preloadImages();
 
+    // HTML templates
+    const closedTemplate = `
+        <img src="${caixaData.closed}" />
+        <p class="text" style="text-align:center;">clique para abrir</p>
+    `;
+    const openTemplate = `
+        <img src="${caixaData.open}" />
+        <p class="text" style="text-align:center;">clique para fechar</p>
+    `;
+
     function switchCaixa() {
-        switch (open) {
-            case true:
-                open = false;
-                caixaImages.innerHTML = `<img src="${caixaData.closed}" /><p class="text" style="text-align:center;">Clique para abrir</p>`;
-                break;
-            case false:
-                open = true;
-                caixaImages.innerHTML = `<img src="${caixaData.open}" /><p class="text" style="text-align:center;">&nbsp</p>`;
-                break;
+        if (open) {
+            open = false;
+            caixaImages.innerHTML = closedTemplate;
+        } else {
+            open = true;
+            caixaImages.innerHTML = openTemplate;
         }
     }
 
