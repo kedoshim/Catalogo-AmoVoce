@@ -44,7 +44,7 @@ img {
     font-family: "Courier Prime", monospace;
     font-weight: 600;
     font-style: italic;
-    font-size: 2.5vw;
+    font-size: 10px;
 }
 
 .items {
@@ -52,7 +52,7 @@ img {
     font-family: "Courier Prime", monospace;
     font-weight: 400;
     font-style: normal;
-    font-size: 2.6vw;
+    font-size: 10px;
 }
 
 .title {
@@ -200,20 +200,20 @@ img {
     font-family: "Courier Prime", monospace;
     font-weight: 400;
     font-style: normal;
-    font-size: 3vw;
+    font-size: 11px;
 }
 
 #end h3 {
     font-family: "Courier Prime", monospace;
     font-weight: 600;
     font-style: italic;
-    font-size: 4vw;
+    font-size: 15px;
     padding-bottom: 2px;
 }
 
 #footer {
     font-family: "Niconne", cursive;
     font-weight: 400;
-    font-size: 5vw;
-    padding-bottom: 2px;
+    font-size: 17px;
+    padding-bottom: 20px;
 }
