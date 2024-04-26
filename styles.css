@@ -101,7 +101,7 @@ img {
             rgba(158, 5, 46, 0.6)
         ),
         radial-gradient(at left center, rgb(207, 3, 3), rgba(157, 4, 45, 1));
-
+    background-size: 200px,100%,100%;
     height: auto;
     padding: 10px 0 10 px;
     color: #fff1dd;
@@ -130,7 +130,7 @@ img {
     grid-area: 5/2/6/3;
     font-family: "Niconne", cursive;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 10vw;
     padding-bottom: 2px;
     text-align: center;
 }
