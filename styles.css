@@ -198,6 +198,7 @@ img {
 }
 
 #end {
+    margin:0 auto;
     display: grid;
     width: 85%;
     height: 100vh;
