@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+img{
+  width: 100%;
+}
+
+.description {
+    width: 85%;
+    margin: 0 auto;
+    padding: 0 0 50px;
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(23, 1fr);
+}
+
+#cover {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section{
+  height: 100vh;
+}
+
+.description-header {
+    grid-area: 1 / 1/ 4 /-1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.description-header-text {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.text {
+    grid-area: 5/ 1/ 13/13;
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 3vw;
+}
+
+.items {
+    grid-area: 5/ 14/ 13/-1;
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5vw;
+}
+
+.title {
+    flex: 20;
+    font-family: "Niconne", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.price {
+    flex: 3;
+    font-size: 23px;
+    text-align: end;
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main-title {
+    font-family: "Niconne", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+}
+
+.red-line {
+    width: 100%;
+    border-bottom: 1px solid #9d042d;
+}
+
+.cream-line {
+    width: 100%;
+    border-bottom: 1px solid #fff1dd;
+}
+
+.red {
+    color: #fff1dd;
+    /* background: url(img/noise.png); */
+    background: linear-gradient(
+            45deg,
+            rgba(255, 0, 150, 0.2),
+            rgba(231, 7, 89, 0.5)
+        ),
+        url(img/noise.png);
+
+    background-color: #9d042d;
+    height: auto;
+    padding: 0 0 10 px;
+}
+
+.cream {
+    color: #9d042d;
+    background: linear-gradient(
+        -45deg,
+        rgba(255, 0, 150, 0.1),
+        rgb(233, 170, 24, 0.3)
+        ),
+        url(img/noise.png);
+    background-color: #fff1dd;
+    height: auto;
+    padding: 0 0 10 px;
+}
+
+
+#caixote .images{
+  width: 92%;
+  margin: 0 auto;
+}
