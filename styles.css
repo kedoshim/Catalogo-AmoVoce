@@ -179,6 +179,7 @@ img {
 }
 
 #other img {
+  border-radius: 5px;
 }
 
 #carta #main {
