@@ -11,14 +11,14 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="styles.css" />
-        <script src="script.js" defer></script>
+        <script src="js/main.js" type="module" defer></script>
     </head>
     <body>
         <div class="red-background">
             <div id="cover">
                 <h1 id="main-title">Dia das Mães</h1>
                 <div id="down-arrow">
-                    <img src="img/icons/down-arrow.svg">
+                    <img src="img/icons/down-arrow.svg" />
                 </div>
             </div>
             <div id="caixote" class="section">
@@ -49,13 +49,14 @@
                     </div>
                     <div class="items">
                         <p>
-                            Caixote de MDF • Jarro de vidro com arranjo de flores secas • Bolo de
-                            fubá com goiabada • Suco de uva integral 300ml • 2
-                            Drip coffees • 2 Pães Francêses com queijo •
-                            Croissant amanteigado • Pão de queijo recheado 180g • Chocolate
-                            • Salada de fruta no coco • Biscoito recheado com
-                            creme de avelã • Polenguinho • Frios: salaminho,
-                            mussarela, queijo prato, mel e nozes
+                            Caixote de MDF • Jarro de vidro com arranjo de
+                            flores secas • Bolo de fubá com goiabada • Suco de
+                            uva integral 300ml • 2 Drip coffees • 2 Pães
+                            Francêses com queijo • Croissant amanteigado • Pão
+                            de queijo recheado 180g • Chocolate • Salada de
+                            fruta no coco • Biscoito recheado com creme de avelã
+                            • Polenguinho • Frios: salaminho, mussarela, queijo
+                            prato, mel e nozes
                         </p>
                     </div>
                 </div>
@@ -95,7 +96,10 @@
                             <li>Suco de uva integral 300ml</li>
                             <li>Pão de queijo recheado 180g</li>
                             <li>Croissant recheado</li>
-                            <li>Bolo de cenoura com gotas e cobertura de chocolate</li>
+                            <li>
+                                Bolo de cenoura com gotas e cobertura de
+                                chocolate
+                            </li>
                             <li>Chocolate</li>
                         </ul>
                     </div>
@@ -105,14 +109,14 @@
         <div class="cream-background">
             <div id="carta" class="section">
                 <div class="images">
-                    <img id="main" src="img/carta/main.png" />
-                    <div id="other">
-                        <img src="img/caixote/main.png" />
-                        <img src="img/caixote/main.png" />
-                        <img src="img/caixote/main.png" />
-                        <img src="img/caixote/main.png" />
-                        <img src="img/caixote/main.png" />
-                        <img src="img/caixote/main.png" />
+                    <img src="img/carta/1.png" />
+                    <div id="thumbnails">
+                        <img src="img/carta/1.png" class="selected"/>
+                        <img src="img/carta/2.png" />
+                        <img src="img/carta/3.png" />
+                        <img src="img/carta/4.png" />
+                        <img src="img/carta/5.png" />
+                        <img src="img/carta/6.png" />
                     </div>
                 </div>
                 <div class="description">
@@ -149,7 +153,9 @@
             <div id="caixa" class="section">
                 <div class="images">
                     <img src="img/caixa/closed.png" />
-                    <p class="text" style="text-align:center;">Clique para abrir</p>
+                    <p class="text" style="text-align: center">
+                        Clique para abrir
+                    </p>
                 </div>
                 <div class="description">
                     <div class="description-header">
@@ -292,10 +298,15 @@
                     <h3>Confirmação de recebimento:</h3>
                     <p>
                         Certifique-se de que haverá alguém para receber a cesta
-                        na hora da entrega. </p>
-                        <p>Se não houver,  sua cesta irá para o fim da fila de entregas e <strong>será necessário pagar
-                        o frete novamente.</strong></p>
-                    
+                        na hora da entrega.
+                    </p>
+                    <p>
+                        Se não houver, sua cesta irá para o fim da fila de
+                        entregas e
+                        <strong
+                            >será necessário pagar o frete novamente.</strong
+                        >
+                    </p>
                 </div>
             </div>
             <p id="footer">@amovocecestas</p>

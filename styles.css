@@ -101,7 +101,7 @@ img {
             rgba(158, 5, 46, 0.6)
         ),
         radial-gradient(at left center, rgb(207, 3, 3), rgba(157, 4, 45, 1));
-    background-size: 200px,100%,100%;
+    background-size: 300px, 100%, 100%;
     height: auto;
     padding: 10px 0 10 px;
     color: #fff1dd;
@@ -158,6 +158,11 @@ img {
     border-bottom: 4px solid #fff1dd;
 }
 
+.selected{
+    box-sizing: border-box;
+    border: 3px solid #9d042d;
+}
+
 #carta .images {
     width: 85%;
     margin: 0 auto;
@@ -167,7 +172,7 @@ img {
     grid-auto-flow: column;
 }
 
-#carta #other {
+#carta #thumbnails {
     grid-area: 1/-5/-1/-1;
 
     display: flex;
@@ -178,11 +183,12 @@ img {
     gap: 3%;
 }
 
-#other img {
-  border-radius: 5px;
+#thumbnails img {
+    border-radius: 5px;
+    height: 13%;
 }
 
-#carta #main {
+#carta .images>img {
     grid-area: 1/1/-1/-6;
 }
 
