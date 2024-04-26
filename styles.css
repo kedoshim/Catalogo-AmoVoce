@@ -219,6 +219,7 @@ img {
 }
 
 #footer {
+    text-align: center;
     font-family: "Niconne", cursive;
     font-weight: 400;
     font-size: 17px;
