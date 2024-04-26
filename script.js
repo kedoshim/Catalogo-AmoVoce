@@ -11,10 +11,10 @@ function switchCaixa() {
 
     switch (open) {
         case true: open = false;
-            caixaImages.innerHTML = `<img src=${caixaData.closed} /><p class="text" style="text-align:center;">&nbsp</p>`;
+            caixaImages.innerHTML = `<img src=${caixaData.closed} /><p class="text" style="text-align:center;">Clique para abrir</p>`;
             break;
         case false: open = true;
-            caixaImages.innerHTML = `<img src=${caixaData.open} /><p class="text" style="text-align:center;">Clique para abrir</p>`
+            caixaImages.innerHTML = `<img src=${caixaData.open} /><p class="text" style="text-align:center;">&nbsp</p>`;
             break;
     }
 
