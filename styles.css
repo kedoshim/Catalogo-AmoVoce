@@ -225,3 +225,37 @@ img {
     font-size: 17px;
     padding-bottom: 20px;
 }
+
+#extras{
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.extra {
+    padding: 3vw 0 7vw;
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-name{
+    padding-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.item-name h2{
+    font-family: "Courier Prime", monospace;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 15px;
+}
+.item-name p{
+    font-size: 15px;
+}
