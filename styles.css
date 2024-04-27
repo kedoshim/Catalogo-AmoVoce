@@ -374,6 +374,7 @@ img {
     filter: invert(100%) sepia(100%) saturate(300%) hue-rotate(180deg);
     height: 17px;
     width: 17px;
+    overflow: visible;
 }
 
 
