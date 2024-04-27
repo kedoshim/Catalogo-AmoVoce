@@ -16,25 +16,40 @@ export function setupCaixa() {
     };
     preloadImages();
 
-    // HTML templates
-    const closedTemplate = `
-        <img src="${caixaData.closed}" />
-        <p class="text" style="text-align:center;">clique para abrir</p>
-    `;
-    const openTemplate = `
-        <img src="${caixaData.open}" />
-        <p class="text" style="text-align:center;">clique para fechar</p>
-    `;
+    // Create image elements
+    const closedImage = new Image();
+    closedImage.src = caixaData.closed;
+    const openImage = new Image();
+    openImage.src = caixaData.open;
+
+    // Create text elements
+    const closedText = document.createElement("p");
+    closedText.className = "text";
+    closedText.style.textAlign = "center";
+    closedText.textContent = "clique para abrir";
+
+    const openText = document.createElement("p");
+    openText.className = "text";
+    openText.style.textAlign = "center";
+    openText.textContent = "clique para fechar";
 
     function switchCaixa() {
+        // Clear existing content
+        while (caixaImages.firstChild) {
+            caixaImages.removeChild(caixaImages.firstChild);
+        }
+
         if (open) {
             open = false;
-            caixaImages.innerHTML = closedTemplate;
+            caixaImages.appendChild(closedImage);
+            caixaImages.appendChild(closedText);
         } else {
             open = true;
-            caixaImages.innerHTML = openTemplate;
+            caixaImages.appendChild(openImage);
+            caixaImages.appendChild(openText);
         }
     }
 
     caixaImages.addEventListener("click", switchCaixa);
 }
+ 
