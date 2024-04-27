@@ -12,7 +12,13 @@
 
 export function setupCarta() {
     const cartaMainImage = document.querySelector("#carta .images>img");
-    const cartaThumbnails = document.querySelectorAll("#thumbnails img");
+    const cartaThumbnails = document.querySelectorAll("#carta #thumbnails img");
+
+    
+    if (!cartaMainImage) {
+        console.log("Carta not found");
+        return;
+    }
 
     var imagePaths = {
         1: "img/carta/1.png",

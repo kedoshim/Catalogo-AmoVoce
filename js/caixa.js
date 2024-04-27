@@ -1,6 +1,12 @@
 export function setupCaixa() {
     const caixaImages = document.querySelector("#caixa .images");
 
+    
+    if (!caixaImages) {
+        console.log("Caixa not found");
+        return;
+    }
+
     let open = false;
     let caixaData = {
         open: "img/caixa/open.png",

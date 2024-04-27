@@ -15,14 +15,17 @@
 // </div>;
 
 export function setupBolsa() {
+    let selectorLines = document.querySelectorAll("#selector-lines div");
+    let mainImage = document.querySelector("#bolsa #main");
+
     const leftButton = document.querySelector(".arrow#left");
     const rightButton = document.querySelector(".arrow#right");
+
+    if (!mainImage) { console.log("Bolsa not found"); return; }
 
     leftButton.addEventListener("click", moveImageLeft);
     rightButton.addEventListener("click", moveImageRight);
 
-    let selectorLines = document.querySelectorAll("#selector-lines div");
-    let mainImage = document.querySelector("#bolsa #main");
 
     const imagePaths = {
         1: "img/bolsa/1.png",
