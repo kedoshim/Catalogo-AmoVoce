@@ -89,6 +89,8 @@ img {
     padding: 10px 0 10px; /* Adjusted padding */
     color: #9d042d;
     background-size: 50px; /* Set the size of the background image */
+
+    overflow: hidden;
 }
 
 .red-background {
@@ -105,6 +107,8 @@ img {
     height: auto;
     padding: 10px 0 10 px;
     color: #fff1dd;
+
+    overflow: hidden;
 }
 
 #cover {
@@ -419,8 +423,6 @@ img {
         display: grid;
         grid-template-columns: 1fr 3fr 1fr;
         grid-template-rows: repeat(9, 1fr);
-        
-
     }
 
     #flower1 {
@@ -473,11 +475,11 @@ img {
         margin: 0 auto;
     }
 
-    #extras{
+    #extras {
         padding: 5vw 0 0 0;
     }
 
-    .extra{
+    .extra {
         width: 20%;
         margin: 0 auto;
     }
