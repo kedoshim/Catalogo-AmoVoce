@@ -13,7 +13,7 @@ export function setupProductSection(parentDiv, productData) {
     // Extract product data
     const { title, price, description, items, images } = productData;
 
-    const hasDescription = description != '';
+    const hasDescription = description != "";
 
     const imagesContainer = document.createElement("div");
     imagesContainer.classList.add("image-gallery");
@@ -26,6 +26,34 @@ export function setupProductSection(parentDiv, productData) {
     const mainImage = document.createElement("img");
     mainImage.src = images[1]; // Default to first image
     mainImage.classList.add("main-image");
+
+    // Create modal for full-size image and overlay
+    const modal = document.createElement("div");
+    modal.classList.add("image-modal");
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+
+    // Full-size image inside modal
+    const fullImage = document.createElement("img");
+    fullImage.classList.add("full-image");
+    modal.appendChild(fullImage);
+
+    // Append modal and overlay to the body, so it can cover the entire screen
+    document.body.appendChild(modal);
+    document.body.appendChild(overlay);
+
+    // Add event listener to main image to open modal
+    mainImage.addEventListener("click", () => {
+        fullImage.src = mainImage.src; // Set full image source to the main image
+        modal.style.display = "block"; // Show modal
+        overlay.style.display = "block"; // Show overlay
+    });
+
+    // Add event listener to overlay to close modal when clicked
+    overlay.addEventListener("click", () => {
+        modal.style.display = "none"; // Hide modal
+        overlay.style.display = "none"; // Hide overlay
+    });
 
     // Create thumbnail container
     const thumbnailContainer = document.createElement("div");
@@ -75,8 +103,8 @@ export function setupProductSection(parentDiv, productData) {
     descriptionHeader.appendChild(pPrice);
 
     if (hasDescription) {
-    const textDiv = document.createElement("div");
-    textDiv.classList.add("text");
+        const textDiv = document.createElement("div");
+        textDiv.classList.add("text");
 
         const descriptionText = document.createElement("p");
         descriptionText.textContent = description;

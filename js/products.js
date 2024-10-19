@@ -20,12 +20,6 @@ export const products = [
             1: "img/amoFrutas/1.jpg",
             2: "img/amoFrutas/2.jpg",
             3: "img/amoFrutas/3.jpg",
-            4: "img/amoFrutas/4.jpg",
-            5: "img/amoFrutas/5.jpg",
-            6: "img/amoFrutas/6.jpg",
-            7: "img/amoFrutas/7.jpg",
-            8: "img/amoFrutas/8.jpg",
-            9: "img/amoFrutas/9.jpg",
         },
     },
     {

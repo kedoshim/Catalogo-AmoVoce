@@ -40,8 +40,16 @@ img {
     align-self: center;
 }
 
+#cestas{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .product-section{
-    width: 100%;
+    width: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,9 +58,8 @@ img {
 
 /* Product Description Styles */
 .description {
-    width: 85%;
-    margin: 0 auto;
-    padding: 3% 0 50px;
+    width: 100%;
+    padding: 3% 0;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -62,6 +69,8 @@ img {
     padding: 16px;
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
 
 .description-header {
@@ -147,11 +156,105 @@ img {
     border: 2px solid transparent; /* Invisible rounded border */
 }
 
+#end {
+    margin: 0 auto;
+    display: grid;
+    width: 85%;
+    height: 100vh;
+    padding: 10px 0;
+
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11px;
+}
+
+#end h3 {
+    font-family: "Courier Prime", monospace;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 15px;
+    padding-bottom: 2px;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: -30px 0 40px;
+    padding: 7px 15px;
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#end .button {
+    margin: 10px 0 0;
+}
+
+.button span {
+    font-size: 13px;
+}
+
+.button img {
+    display: inline;
+    filter: invert(100%) sepia(100%) saturate(300%) hue-rotate(180deg);
+    height: 17px;
+    width: 17px;
+    overflow: visible;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+#footer {
+    text-align: center;
+    font-family: "Niconne", cursive;
+    font-weight: 400;
+    font-size: 17px;
+    padding-bottom: 20px;
+}
+
+/* Modal styles */
+.image-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* On top of overlay */
+}
+
+.full-image {
+    width: auto; 
+    height: auto; 
+    max-width: 85vw;
+    max-height: 90vh;
+}
+
+/* Overlay styles */
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 1000; /* Below modal but above everything else */
+}
+
 
 /* Media Queries */
 @media only screen and (min-width: 1009px) {
     .title {
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .text {
@@ -176,7 +279,7 @@ img {
     }
 
     .product-section{
-    width: 60%;
+    width: 60vw;
     flex-direction: row;
     align-items: start;
     justify-content: space-between;
