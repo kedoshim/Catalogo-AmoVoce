@@ -102,11 +102,13 @@ export function setupProductSection(parentDiv, productData) {
     descriptionHeader.appendChild(h2);
     descriptionHeader.appendChild(pPrice);
 
+    var textDiv
+    var descriptionText
     if (hasDescription) {
-        const textDiv = document.createElement("div");
+        textDiv = document.createElement("div");
         textDiv.classList.add("text");
 
-        const descriptionText = document.createElement("p");
+        descriptionText = document.createElement("p");
         descriptionText.textContent = description;
         textDiv.appendChild(descriptionText);
     }
@@ -117,7 +119,7 @@ export function setupProductSection(parentDiv, productData) {
     // Create a dropdown for items using <details> and <summary>
     const details = document.createElement("details");
     const summary = document.createElement("summary");
-    summary.textContent = "Items";
+    summary.textContent = "Itens";
     details.appendChild(summary);
 
     const itemsList = document.createElement("p");
