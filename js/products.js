@@ -76,8 +76,8 @@ export const products = [
         items: "Bolo afetivo • Pão de mel • Suco de Fruta • Café-Drip Coffee  • Diversas frutas da estação • Crossaints recheados • Pães de batata recheados • Peito de peru • Queijo em formato de coração • Mel • Creme de ricota • Damasco • Mix de nuts • Iogurte grego • Granola • Pães de queijo • CHocolate • Casadinha recheada",
         images: {
             1: "img/amoCelebrar/111.jpg",
-            2: "img/amoCelebrar/222.jpg",
-            3: "img/amoCelebrar/333.jpg",
+            2: "img/amoCelebrar/333.jpg",
+            3: "img/amoCelebrar/222.jpg",
             4: "img/amoCelebrar/444.jpg",
         },
     },
@@ -100,8 +100,8 @@ export const products = [
         items: "Cesta MDF reutilizável • Cerveja Heineken • Batata Pringles • Salamitos Snack Sadia  • Azeitonas recheadas • Salgadinho de trigo crocante • Mini Torradinhas Temperadas • Bombons • Amendoins crocantes saborizados • Mix de nuts • Espetinho de presunto e queijo",
         images: {
             1: "img/amoPetiscos/111.jpg",
-            2: "img/amoPetiscos/222.jpg",
-            3: "img/amoPetiscos/333.jpg",
+            2: "img/amoPetiscos/333.jpg",
+            3: "img/amoPetiscos/222.jpg",
             4: "img/amoPetiscos/444.jpg",
         },
     },
