@@ -49,7 +49,7 @@ export const products = [
         title: "Amo Afeto",
         price: "149,90",
         description: "",
-        items: "Cesta em mdf reutilizável 30x20 • Suco de frutas • Café Café-Drip Coffee  • Frios - queijo e peito de Peru • Queijo processado Polenguinho • Pão mini baguete com parmesão • Torradas • Brownie recheado • Cookies com gota de chocolate com gotas de chocolate • Bolo de cenoura com ganache • Frutas da estação no coco",
+        items: "Cesta em mdf reutilizável 30x20 • Suco de frutas • Café-Drip Coffee  • Frios - queijo e peito de Peru • Queijo processado Polenguinho • Pão mini baguete com parmesão • Torradas • Brownie recheado • Cookies com gota de chocolate com gotas de chocolate • Bolo de cenoura com ganache • Frutas da estação no coco",
         images: {
             1: "img/amoAfeto/1.jpg",
             2: "img/amoAfeto/2.jpg",
@@ -73,7 +73,7 @@ export const products = [
         title: "Amo Celebrar",
         price: "150,90",
         description: "Serve 3 pessoas",
-        items: "Bolo afetivo • Pão de mel • Suco de Fruta • Café-Drip Coffee  • Diversas frutas da estação • Crossaints recheados • Pães de batata recheados • Peito de peru • Queijo em formato de coração • Mel • Creme de ricota • Damasco • Mix de nuts • Iogurte grego • Granola • Pães de queijo • CHocolate • Casadinha recheada",
+        items: "Caixa MDF reutilizável 30x30 • Bolo afetivo • Pão de mel • Suco de Fruta • Café-Drip Coffee  • Diversas frutas da estação • Crossaints recheados • Pães de batata recheados • Peito de peru • Queijo em formato de coração • Mel • Creme de ricota • Damasco • Mix de nuts • Iogurte grego • Granola • Pães de queijo • CHocolate • Casadinha recheada",
         images: {
             1: "img/amoCelebrar/111.jpg",
             2: "img/amoCelebrar/333.jpg",
@@ -109,7 +109,7 @@ export const products = [
         title: "Simples Amor",
         price: "179,90",
         description: "",
-        items: "Cesta MDF reutilizável 30x20 • Café-Drip Coffee  • Chocolate • Cappuccino em pó • Queijo processado Polenguinho  • Brownie recheado • Nutella • Suco integral de uva ou laranja • Uvas e Morangos • Pão mini baguete com parmesão • Biscoito folhado Palmier • Biscoitos amanteigados caseiros • Mini folhados recheados",
+        items: "Caixa MDF reutilizável 30x20 • Café-Drip Coffee  • Chocolate • Cappuccino em pó • Queijo processado Polenguinho  • Brownie recheado • Nutella • Suco integral de uva ou laranja • Uvas e Morangos • Pão mini baguete com parmesão • Biscoito folhado Palmier • Biscoitos amanteigados caseiros • Mini folhados recheados",
         images: {
             1: "img/simplesAmor/111.jpg",
             2: "img/simplesAmor/222.jpg",
@@ -134,7 +134,7 @@ export const products = [
         title: "Bela Infância",
         price: "150,90",
         description: "",
-        items: "Cesta MDF reutilizável 30x20 • Pão de batata com presunto e queijo • Toddynho • Mini croissants recheados • Bolo de cenoura com ganache ou bolo de chocolate com cobertura de chocolate • Danoninho Ice • Copo com diversas balas Fini • Kinder Ovo • Cata-vento com balinha • Chiclete • Copo com balas Fini • Pirulito colorido",
+        items: "Cesta MDF reutilizável 25x15 • Pão de batata com presunto e queijo • Toddynho • Mini croissants recheados • Bolo de cenoura com ganache ou bolo de chocolate com cobertura de chocolate • Danoninho Ice • Copo com diversas balas Fini • Kinder Ovo • Cata-vento com balinha • Chiclete • Pirulito colorido",
         images: {
             1: "img/belaInfancia/1.jpg",
             2: "img/belaInfancia/2.jpg",
@@ -144,7 +144,7 @@ export const products = [
         title: "Amo Momentos",
         price: "150,90",
         description: "Serve 2 pessoas",
-        items: "Caixote reutilizável 30x20 • Suco de frutas • 2 Cafés-Drip Coffee  • Amanteigados • Croissants recheados • Torradas temperadas • Broinhas de fubá • Diversas frutas da estação • Bolo de cenoura com ganache • Bolo de chocolate com cobertura de chocolate Mini Flor",
+        items: "Caixote reutilizável 30x20 • Suco de frutas • 2 Cafés-Drip Coffee  • Amanteigados • Croissants recheados • Torradinhas temperadas • Broinhas de fubá • Frutas da estação no coco • Bolo de cenoura com ganache • Bolo de chocolate com cobertura de chocolate Mini Flor",
         images: {
             1: "img/val/1.jpg",
             2: "img/val/2.jpg",
