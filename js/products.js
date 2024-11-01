@@ -3,7 +3,7 @@ export const products = [
         title: "Amo Cafezinho",
         price: "149,90",
         description: "",
-        items: "Cesta MDF reutilizável 30x20 • Suco de Uva • Pão de mel • Cookies com gota de chocolate • Mini folhados recheados • Bolo de cenoura com ganache • Iogurte Grego • Granola • Frutas da estação no coco. • Café-Drip Coffee  • Sachês de chá • Cappuccino em pó • Café com leite em pó • Biscoitos amanteigados caseiros • Vaso de flor",
+        items: "Cesta MDF reutilizável 30x20 • Suco de Uva • Pão de mel • Cookies com gotas de chocolate • Mini folhados recheados • Bolo de cenoura com ganache • Iogurte Grego • Granola • Frutas da estação no coco • Café-Drip Coffee  • Sachês de chá • Cappuccino em pó • Café com leite em pó • Biscoitos amanteigados caseiros • Vaso de flor",
         images: {
             1: "img/amoCafezinho/1.jpg",
             2: "img/amoCafezinho/2.jpg",
@@ -15,7 +15,7 @@ export const products = [
         title: "Amo Frutas",
         price: "159,90",
         description: "",
-        items: "Cesta MDF reutilizável 30x20 • Suco integral de uva ou laranja • Bolo de cenoura com ganache • Diversas frutas da estação • Mini folhados recheados • Mini torradinhas temperadas • Biscoitos amanteigados caseiros • Geleia • Torrada Tradicional • Vaso de Flor • Queijo processado Polenguinho ",
+        items: "Cesta MDF reutilizável 30x20 • Suco integral de uva ou laranja • Bolo de cenoura com ganache • Diversas frutas da estação • Mini folhados recheados • Mini torradinhas temperadas • Biscoitos amanteigados caseiros • Geleia • Torrada Tradicional • Queijo processado Polenguinho • Vaso de Flor ",
         images: {
             1: "img/amoFrutas/1.jpg",
             2: "img/amoFrutas/2.jpg",
@@ -26,7 +26,7 @@ export const products = [
         title: "Amo Bombons",
         price: "129,90",
         description: "",
-        items: "Cesta MDF reutilizável 30x20 • Vaso de flor • Bolo de cenoura com ganache • Suco integral de uva e de laranja • Biscoitos amanteigados caseiros • Bombons • Mini torradinhas temperadas • Mini folhados recheados",
+        items: "Cesta MDF reutilizável 30x20 • Bolo de cenoura com ganache • Suco integral de uva e de laranja • Biscoitos amanteigados caseiros • Bombons • Mini torradinhas temperadas • Mini folhados recheados • Vaso de Flor",
         images: {
             1: "img/amoBombons/111.jpg",
             2: "img/amoBombons/222.jpg",
@@ -38,7 +38,7 @@ export const products = [
         title: "Amo Estar Com Você",
         price: "179,90",
         description: "",
-        items: "Cesta MDF reutilizável 30x20 • Cappuccino Pronto • Biscoitos amanteigados caseiros • Bolo de cenoura com ganache • Mel • Queijo processado Polenguinho  • Bombons • Frutas da estação no coco • Granola • Torrada tradicional • Iogurte de frutas • Croissants recheados • Vaso de Flor",
+        items: "Cesta MDF reutilizável 30x20 • Cappuccino Pronto • Biscoitos amanteigados caseiros • Bolo de cenoura com ganache • Mel • Queijo processado Polenguinho  • Bombons • Frutas da estação no coco • Granola • Torrada tradicional • 2 Iogurte de frutas • Croissants recheados • Vaso de Flor",
         images: {
             1: "img/amoEstar/1.jpg",
             2: "img/amoEstar/2.jpg",
@@ -47,9 +47,9 @@ export const products = [
     },
     {
         title: "Amo Afeto",
-        price: "149,90",
+        price: "159,90",
         description: "",
-        items: "Cesta em mdf reutilizável 30x20 • Suco de frutas • Café-Drip Coffee  • Frios - queijo e peito de Peru • Queijo processado Polenguinho • Pão mini baguete com parmesão • Torradas • Brownie recheado • Cookies com gota de chocolate com gotas de chocolate • Bolo de cenoura com ganache • Frutas da estação no coco",
+        items: "Cesta em mdf reutilizável 30x20 • Suco de frutas • Café-Drip Coffee  • Frios - queijo e peito de Peru • Queijo processado Polenguinho • Pão mini baguete com parmesão • Torradas • Brownie recheado • Cookies com gotas de chocolate • Bolo de cenoura com ganache • Frutas da estação no coco",
         images: {
             1: "img/amoAfeto/1.jpg",
             2: "img/amoAfeto/2.jpg",
@@ -61,7 +61,7 @@ export const products = [
         title: "Amo Leveza",
         price: "189,90",
         description: "",
-        items: "Cesta MDF reutilizável 30x20 • Vaso de flor • Suco de laranja natural • Bolo de banana sem adição de açúcar • Diversas frutas da estação • Pão de queijo • Mini folhados recheados • Queijo processado Polenguinho Light • Chocolate sem adição de açúcar • Torrada integral • Mini torradinhas temperadas • Geleia sem açúcar",
+        items: "Cesta MDF reutilizável 30x20 • Suco de laranja natural • Bolo de banana sem adição de açúcar • Diversas frutas da estação • Pão de queijo • Mini folhados recheados • Queijo processado Polenguinho Light • Chocolate sem adição de açúcar • Torrada integral • Mini torradinhas temperadas • Geleia sem açúcar • Vaso de Flor",
         images: {
             1: "img/amoLeveza/111.jpg",
             2: "img/amoLeveza/222.jpg",
@@ -71,9 +71,9 @@ export const products = [
     },
     {
         title: "Amo Celebrar",
-        price: "150,90",
+        price: "249,90",
         description: "Serve 3 pessoas",
-        items: "Caixa MDF reutilizável 30x30 • Bolo afetivo • Pão de mel • Suco de Fruta • Café-Drip Coffee  • Diversas frutas da estação • Crossaints recheados • Pães de batata recheados • Peito de peru • Queijo em formato de coração • Mel • Creme de ricota • Damasco • Mix de nuts • Iogurte grego • Granola • Pães de queijo • CHocolate • Casadinha recheada",
+        items: "Caixa MDF reutilizável 30x30 • Bolo afetivo • Pão de mel • Suco de Fruta • 2 Cafés-Drip Coffee  • Diversas frutas da estação • Crossaints recheados • Pães de batata recheados • Peito de peru • Queijo em formato de coração • Mel • Creme de ricota • Damasco • Mix de nuts • Iogurte grego • Granola • Pães de queijo • Chocolate • Casadinho de doce de leite",
         images: {
             1: "img/amoCelebrar/111.jpg",
             2: "img/amoCelebrar/333.jpg",
@@ -83,9 +83,9 @@ export const products = [
     },
     {
         title: "Amo Queijos",
-        price: "150,90",
+        price: "169,90 - Cerveja\n229,90 - Vinho",
         description: "",
-        items: "Caixa de MDF • Uvas e Morangos • Waffle • Mini folhados recheados • Mussarela com damasco • Mix de nuts • Amendoins • Salaminho • Queijo Gouda • Creme de Ricota • Provolone Desidratado • Bombom Raffaello • Heineken ou vinho",
+        items: "Caixa de MDF reutilizável 30x20 • Uvas e Morangos • Waffle • Mini folhados recheados • Mussarela com damasco • Mix de nuts • Amendoins • Salaminho • Queijo Gouda • Creme de Ricota • Provolone Desidratado • Bombom Raffaello • Heineken ou vinho",
         images: {
             1: "img/amoQueijos/1.jpg",
             2: "img/amoQueijos/222.jpg",
@@ -95,7 +95,7 @@ export const products = [
     },
     {
         title: "Amo Petiscos",
-        price: "150,90",
+        price: "159,90",
         description: "",
         items: "Cesta MDF reutilizável 30x20 • Cerveja Heineken ou Budweiser• Batata Pringles • Salamitos Snack Sadia  • Azeitonas recheadas • Salgadinho de trigo crocante • Mini Torradinhas Temperadas • Bombons • Amendoins crocantes saborizados • Mix de nuts • Espetinho de presunto e queijo",
         images: {
@@ -120,9 +120,9 @@ export const products = [
     },
     {
         title: "Amor a 2",
-        price: "150,90",
+        price: "169,90",
         description: "",
-        items: "Caixote reutilizável 30x20 • Vaso de flor • 2 Suco de laranja natural • Broinhas de fubá • Bolo de cenoura com ganache • Brownie • Croissants recheados • Biscuit sensação com cobertura de chocolate ao leite • Diversas frutas da estação",
+        items: "Caixote reutilizável 30x20 • 2 Suco de laranja natural • Broinhas de fubá • Bolo de cenoura com ganache • Brownie • Croissants recheados • Biscuit sensação com cobertura de chocolate ao leite • Diversas frutas da estação • Vaso de Flor",
         images: {
             1: "img/amorA2/111.jpg",
             2: "img/amorA2/222.jpg",
@@ -131,24 +131,26 @@ export const products = [
         },
     },
     {
-        title: "Bela Infância",
-        price: "150,90",
-        description: "",
-        items: "Cesta MDF reutilizável 25x15 • Pão de batata com presunto e queijo • Toddynho • Mini croissants recheados • Bolo de cenoura com ganache ou bolo de chocolate com cobertura de chocolate • Danoninho Ice • Copo com diversas balas Fini • Kinder Ovo • Cata-vento com balinha • Chiclete • Pirulito colorido",
-        images: {
-            1: "img/belaInfancia/1.jpg",
-            2: "img/belaInfancia/2.jpg",
-        },
-    },
-    {
         title: "Amo Momentos",
-        price: "150,90",
+        price: "169,90",
         description: "Serve 2 pessoas",
-        items: "Caixote reutilizável 30x20 • Suco de frutas • 2 Cafés-Drip Coffee  • Amanteigados • Croissants recheados • Torradinhas temperadas • Broinhas de fubá • Frutas da estação no coco • Bolo de cenoura com ganache • Bolo de chocolate com cobertura de chocolate Mini Flor",
+        items: "Caixote reutilizável 30x20 • Suco de frutas • 2 Cafés-Drip Coffee  • Amanteigados • Croissants recheados • Torradinhas temperadas • Broinhas de fubá • Frutas da estação no coco • Bolo de cenoura com ganache • Bolo de chocolate com cobertura de chocolate • Vaso de Flor",
         images: {
             1: "img/val/1.jpg",
             2: "img/val/2.jpg",
             3: "img/val/3.jpg",
+        },
+    },
+    {
+        title: "Bela Infância",
+        price: "139,90",
+        description: "",
+        items: "Cesta MDF reutilizável 25x15 • Pão de batata com presunto e queijo • Toddynho • Mini croissants recheados • Bolo de cenoura com ganache ou bolo de chocolate com cobertura de chocolate • Danoninho Ice • Copo com diversas balas Fini • Kinder Ovo • Cata-vento com balinha • Chiclete • Pirulito colorido",
+        images: {
+            1: "img/belaInfancia/3.jpg",
+            2: "img/belaInfancia/4.jpg",
+            3: "img/belaInfancia/1.jpg",
+            4: "img/belaInfancia/2.jpg",
         },
     },
 ];

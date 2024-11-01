@@ -35,7 +35,7 @@ img {
     font-family: "Croissant One", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 36px;
+    font-size: 32px;
     text-align: center;
     margin: 40px;
 }
@@ -106,8 +106,8 @@ img {
 .price {
     color: #ff9696;
     font-size: 20px;
-    text-align: end;
-    font-family: "Playfair", monospace;
+    text-align: start;
+    font-family: "Gelasio", serif;
 }
 
 .cream-line {
