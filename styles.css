@@ -293,7 +293,10 @@ img {
 }
 
 .item-name {
+    padding-top: 10px;
+    height: 160px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     gap: 6px;
 }
@@ -308,6 +311,23 @@ details p {
     overflow: hidden;
     transition: height 0.3s ease; /* Adjust duration as needed */
     height: 0; /* Start closed */
+}
+
+.extras-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between items */
+    justify-content: center; /* Center align items horizontally */
+}
+
+.extras-container {
+    flex: 1 1 ; /* Adjust width as necessary, with 200px as a base */
+    max-width: 150px; /* Optional max-width for uniformity */
+    text-align: center; /* Center text and images within each container */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f9f9f9; /* Example background */
 }
 
 hr {
@@ -354,7 +374,15 @@ hr {
         margin-bottom: 70px;
     }
 
+    .extras-line{
+        width: 50%;
+    }
+
     .extras-container .title {
         font-size: 30px;
     }
+
+    .extras-container {
+    max-width: 250px; /* Optional max-width for uniformity */
+}
 }
