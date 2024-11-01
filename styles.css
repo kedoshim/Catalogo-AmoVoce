@@ -298,6 +298,18 @@ img {
     gap: 6px;
 }
 
+.details-content {
+    overflow: hidden;
+    transition: height 0.3s ease; /* Duration for animation */
+    height: 0; /* Start with height 0 */
+}
+
+details p {
+    overflow: hidden;
+    transition: height 0.3s ease; /* Adjust duration as needed */
+    height: 0; /* Start closed */
+}
+
 hr {
     border-color: #aaa;
     box-sizing: border-box;

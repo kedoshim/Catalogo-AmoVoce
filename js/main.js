@@ -11,5 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     products.forEach((product) => {
         setupProductSection(body, product);
     });
+
+    
 });
 

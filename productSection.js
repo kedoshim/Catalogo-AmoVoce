@@ -102,8 +102,8 @@ export function setupProductSection(parentDiv, productData) {
     descriptionHeader.appendChild(h2);
     descriptionHeader.appendChild(pPrice);
 
-    var textDiv
-    var descriptionText
+    var textDiv;
+    var descriptionText;
     if (hasDescription) {
         textDiv = document.createElement("div");
         textDiv.classList.add("text");
@@ -122,8 +122,17 @@ export function setupProductSection(parentDiv, productData) {
     summary.textContent = "Itens";
     details.appendChild(summary);
 
+    // Apply event listeners to the details element
+    details.addEventListener("toggle", () => animateDropdown(details));
+
     const itemsList = document.createElement("p");
     itemsList.textContent = items; // Assuming 'items' is a text, modify if needed.
+
+    // Initial style setup for animated dropdown
+    itemsList.style.overflow = "hidden";
+    itemsList.style.transition = "height 0.3s ease"; // Adjust as needed for smoothness
+    itemsList.style.height = "0"; // Start with height 0
+
     details.appendChild(itemsList);
 
     itemsDiv.appendChild(details);
@@ -140,4 +149,32 @@ export function setupProductSection(parentDiv, productData) {
 
     // Append the complete product section container into the provided parent div
     parentDiv.appendChild(container);
+}
+
+function animateDropdown(details) {
+    const itemsList = details.querySelector("p");
+
+    if (details.open) {
+        // Smooth opening: transition to full scrollHeight
+        itemsList.style.height = `${itemsList.scrollHeight}px`;
+
+        // After the transition ends, set height to auto to allow content resizing
+        itemsList.addEventListener(
+            "transitionend",
+            function handleTransitionEnd() {
+                itemsList.style.height = "auto";
+                itemsList.removeEventListener(
+                    "transitionend",
+                    handleTransitionEnd
+                );
+            }
+        );
+    } else {
+        // Smooth closing: get current height, then set to 0 to transition out
+        itemsList.style.height = `${itemsList.scrollHeight}px`; // Set the full height first
+        requestAnimationFrame(() => {
+            // Next frame, set height to 0 to trigger transition
+            itemsList.style.height = "0";
+        });
+    }
 }
