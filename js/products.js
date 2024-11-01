@@ -83,7 +83,7 @@ export const products = [
     },
     {
         title: "Amo Queijos",
-        price: "169,90 - Cerveja\n229,90 - Vinho",
+        price: "169,90 c/Cerveja | 229,90 c/Vinho",
         description: "",
         items: "Caixa de MDF reutilizável 30x20 • Uvas e Morangos • Waffle • Mini folhados recheados • Mussarela com damasco • Mix de nuts • Amendoins • Salaminho • Queijo Gouda • Creme de Ricota • Provolone Desidratado • Bombom Raffaello • Heineken ou vinho",
         images: {
