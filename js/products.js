@@ -24,7 +24,7 @@ export const products = [
     },
     {
         title: "Amo Bombons",
-        price: "129,90",
+        price: "119,90",
         description: "",
         items: "Cesta MDF reutilizável 30x20 • Bolo de cenoura com ganache • Suco integral de uva e de laranja • Biscoitos amanteigados caseiros • Bombons • Mini torradinhas temperadas • Mini folhados recheados • Vaso de Flor",
         images: {
