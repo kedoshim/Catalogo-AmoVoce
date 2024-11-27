@@ -50,7 +50,7 @@ export const products = [
         title: "Amo Afeto",
         price: "159,90",
         description: "",
-        items: "Cesta em mdf reutilizável 30x20 • Suco de frutas • Café-Drip Coffee  • Frios - queijo e peito de Peru • Queijo processado Polenguinho • Pão mini baguete com parmesão • Torradas • Brownie recheado • Cookies com gotas de chocolate • Bolo de cenoura com ganache • Frutas da estação no coco",
+        items: "Cesta em mdf reutilizável 30x20 • Suco de uva sem adição de açúcar • Café-Drip Coffee  • Frios - queijo e peito de Peru • Queijo processado Polenguinho • Pão mini baguete com parmesão • Torradas • Brownie recheado • Cookies com gotas de chocolate • Bolo de cenoura com ganache • Croissant recheado • Frutas da estação no coco",
         images: {
             1: "img/amoAfeto/1.jpg",
             2: "img/amoAfeto/2.jpg",
