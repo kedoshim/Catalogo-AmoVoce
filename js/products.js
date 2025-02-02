@@ -21,6 +21,7 @@ export const products = [
             2: "img/amoFrutas/2.jpg",
             3: "img/amoFrutas/3.jpg",
             4: "img/amoFrutas/4.jpg",
+            5: "img/amoFrutas/5.jpg",
         },
     },
     {
@@ -56,6 +57,7 @@ export const products = [
             2: "img/amoAfeto/2.jpg",
             3: "img/amoAfeto/3.jpg",
             4: "img/amoAfeto/4.jpg",
+            5: "img/amoAfeto/5.jpg",
         },
     },
     {
