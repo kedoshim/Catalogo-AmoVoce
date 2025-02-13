@@ -153,7 +153,7 @@ export const products = [
             1: "img/amoCoca/1.jpg",
             2: "img/amoCoca/2.jpg",
             3: "img/amoCoca/3.jpg",
-            // 4: "img/amoCoca/4.jpg",
+            4: "img/amoCoca/4.jpg",
         },
     },
     {
