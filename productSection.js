@@ -42,47 +42,82 @@ export function setupProductSection(parentDiv, productData) {
     document.body.appendChild(modal);
     document.body.appendChild(overlay);
 
-    // Add event listener to main image to open modal
-    mainImage.addEventListener("click", () => {
-        fullImage.src = mainImage.src; // Set full image source to the main image
-        modal.style.display = "block"; // Show modal
-        overlay.style.display = "block"; // Show overlay
+    const imageCount = Object.keys(images).length;
+    const shouldLoop = imageCount > 2;
+
+    // Swiper wrapper
+    const swiperContainer = document.createElement("div");
+    swiperContainer.classList.add("swiper");
+
+    // Swiper wrapper interno
+    const swiperWrapper = document.createElement("div");
+    swiperWrapper.classList.add("swiper-wrapper");
+
+    // Cria cada imagem como slide
+    Object.keys(images).forEach((key) => {
+        const slide = document.createElement("div");
+        slide.classList.add("swiper-slide");
+
+        const img = document.createElement("img");
+        img.src = images[key];
+        img.classList.add("slide-image");
+
+        // img.addEventListener("click", () => {
+        //     fullImage.src = img.src;
+        //     modal.style.display = "block";
+        //     overlay.style.display = "block";
+
+        //     scrollY = window.scrollY;
+        //     document.body.style.top = `-${scrollY}px`;
+        //     const scrollbarWidth =
+        //         window.innerWidth - document.documentElement.clientWidth;
+        //     document.body.style.paddingRight = `${scrollbarWidth}px`;
+        //     document.body.classList.add("noscroll");
+        // });
+
+        slide.appendChild(img);
+        swiperWrapper.appendChild(slide);
     });
 
-    // Add event listener to overlay to close modal when clicked
-    overlay.addEventListener("click", () => {
-        modal.style.display = "none"; // Hide modal
-        overlay.style.display = "none"; // Hide overlay
-    });
+    swiperContainer.appendChild(swiperWrapper);
 
-    // Create thumbnail container
-    const thumbnailContainer = document.createElement("div");
-    thumbnailContainer.id = "thumbnails";
-    thumbnailContainer.classList.add("thumbnail-container");
+    // Paginação e botões
+    const pagination = document.createElement("div");
+    pagination.classList.add("swiper-pagination");
+    swiperContainer.appendChild(pagination);
 
-    let previousIndex = 1;
+    const nextBtn = document.createElement("div");
+    nextBtn.classList.add("swiper-button-next");
+    swiperContainer.appendChild(nextBtn);
 
-    function changeMainImage(index) {
-        mainImage.src = images[index];
-        const selectedThumbnail = thumbnailContainer.querySelector(".selected");
-        if (selectedThumbnail) selectedThumbnail.classList.remove("selected");
-        thumbnailContainer.children[index - 1].classList.add("selected");
-        previousIndex = index;
-    }
+    const prevBtn = document.createElement("div");
+    prevBtn.classList.add("swiper-button-prev");
+    swiperContainer.appendChild(prevBtn);
 
-    // Populate thumbnails
-    Object.keys(images).forEach((key, index) => {
-        const frame = document.createElement("div");
-        frame.classList.add("thumb-frame");
-        const thumb = document.createElement("img");
-        thumb.src = images[key];
-        if (index === 0) frame.classList.add("selected"); // Mark first as selected
-        frame.addEventListener("click", () => {
-            changeMainImage(index + 1);
+    // Adiciona o carrossel à galeria
+    imagesContainer.appendChild(swiperContainer);
+
+    // Inicializa o Swiper (depois de adicionar ao DOM)
+    setTimeout(() => {
+        new Swiper(swiperContainer, {
+            loop: shouldLoop,
+            pagination: {
+                el: pagination,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: nextBtn,
+                prevEl: prevBtn,
+            },
+            slidesPerView: 1,
+            spaceBetween: 10,
+            breakpoints: {
+                768: {
+                    slidesPerView: 1,
+                },
+            },
         });
-        frame.appendChild(thumb);
-        thumbnailContainer.appendChild(frame);
-    });
+    }, 0);
 
     // Create description structure
     const descriptionDiv = document.createElement("div");
@@ -118,7 +153,10 @@ export function setupProductSection(parentDiv, productData) {
 
     // Create a dropdown for items using <details> and <summary>
     const details = document.createElement("details");
-    details.setAttribute("open", ""); // Add this line to make the dropdown start open
+    // Open dropdown by default on desktop, closed on mobile
+    if (window.innerWidth >= 768) {
+        details.setAttribute("open", "");
+    }
     const summary = document.createElement("summary");
     summary.textContent = "Itens";
     details.appendChild(summary);
@@ -140,8 +178,8 @@ export function setupProductSection(parentDiv, productData) {
 
     // Append all elements to the container
     mainFrame.appendChild(mainImage);
-    imagesContainer.appendChild(mainFrame);
-    imagesContainer.appendChild(thumbnailContainer);
+    // imagesContainer.appendChild(mainFrame);
+    imagesContainer.appendChild(swiperContainer);
     container.appendChild(imagesContainer);
     descriptionDiv.appendChild(descriptionHeader);
     if (hasDescription) descriptionDiv.appendChild(textDiv);

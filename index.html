@@ -12,12 +12,27 @@
             href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="styles.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
         <script src="js/main.js" type="module" defer></script>
+        <script src="js/topbar.js" type="module" defer></script>
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <link rel="stylesheet" href="base.css" />
+        <link rel="stylesheet" href="theme.css" />
     </head>
     <body>
+        <div id="topbar" class="topbar clear">
+            <img src="img/icons/logo.png" alt="Logo" class="logo" />
+            <nav id="navbar"></nav>
+        </div>
+
         <div>
-            <h1 id="main-title">Catálogo AmoVocê Cestas</h1>
+            <h1 id="main-title">Nosso Catálogo</h1>
         </div>
         <div id="cestas"></div>
         <div id="extras">
@@ -72,9 +87,9 @@
     </div>
 </div>
 
+<hr />
         <div class="section">
             <div id="end" class="section">
-                <hr />
                 <h1 class="title">Instruções</h1>
                 <div>
                     <h3>Faça seu pedido:</h3>
@@ -164,8 +179,8 @@
                     </p>
                 </div>
 
-                <p id="footer">@amovocecestas</p>
             </div>
         </div>
+        <p id="footer">@amovocecestas</p>
     </body>
 </html>
