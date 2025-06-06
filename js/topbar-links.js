@@ -3,6 +3,7 @@ export const links = [
     {
         label: "Dia dos Namorados",
         path: "https://kedoshim.github.io/catalogo-dia-dos-namorados-2025/",
+        // path: "namorados.html",
     },
     { label: "Instruções", path: "index.html#end" },
 ];

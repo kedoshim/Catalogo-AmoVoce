@@ -1,4 +1,4 @@
-import { links } from "./links.js";
+import { links } from "./topbar-links.js";
 
 let lastScroll = 0;
 let scrollThreshold = 30;
@@ -8,7 +8,7 @@ const topbar = document.getElementById("topbar");
 window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
     let scrollAmount = Math.abs(currentScroll - lastScroll);
-    console.log(`Current Scroll: ${currentScroll}, Appear Threshold: ${appearTopBarThreshold}, Scroll Amount: ${scrollAmount}`);
+    // console.log(`Current Scroll: ${currentScroll}, Appear Threshold: ${appearTopBarThreshold}, Scroll Amount: ${scrollAmount}`);
     if (currentScroll < appearTopBarThreshold) {
         topbar.classList.remove("hidden");
         topbar.classList.add("clear");
