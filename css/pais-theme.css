@@ -10,9 +10,9 @@ body {
         linear-gradient(45deg, transparent 75%, #d1f5e3 75%),
         linear-gradient(45deg, #d1f5e3 25%, #fbfbfb 25%);
 
-    background-size: 400px 400px;
+    background-size: 66vw 66vw;
 
-    background-position: 0 0, 0 0, -200px -200px, 200px 200px;
+    background-position: 0 0, 0 0, -33vw -33vw, 33vw 33vw;
 }
 
 #main-title {
@@ -178,3 +178,4 @@ hr {
         font-size: 20px;
         width: 450px;
     }
+}
