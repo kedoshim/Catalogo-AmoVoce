@@ -18,12 +18,13 @@ body {
 #main-title {
     color: #16a145;
     font-family: "Gistesy", serif;
+    font-size: 60px;
 }
 
 .subtitle-container {
   color: #333333;
   margin: 20px auto;
-  width: 300px;
+  width: 80vw;
   margin-top: -20px;
   align-self: center;
 }
@@ -42,12 +43,6 @@ body {
     height: 40px;
     width: 50px;
     object-fit: contain;
-}
-
-#navbar a {
-    font-size: 12px;
-    text-decoration: none;
-    color: #333;
 }
 
 .product-section {
@@ -156,8 +151,14 @@ hr {
     color: #fff;
 }
 
-.swiper-pagination-bullet-active {
-    background-color: #16a145;
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #fd5280;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet {
+    background: #360527;
+    opacity: 0.5;
 }
 
 .white {
@@ -165,6 +166,15 @@ hr {
 }
 
 @media only screen and (min-width: 1009px) {
+    #main-title {
+        font-size: 90px;
+    }
+
     .title {
         font-size: 60px;
+    }
+
+    .subtitle-container {
+        font-size: 20px;
+        width: 450px;
     }

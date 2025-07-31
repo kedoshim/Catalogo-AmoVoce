@@ -240,10 +240,12 @@ img {
 /* Seção final */
 #end {
     margin: 0 auto;
-    display: grid;
-    width: 75vw;
-    min-height: 100vh;
-    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90vw;
+    /* min-height: 100vh; */
+    padding: 40px 6vw;
     font-family: "Newsreader", serif;
     font-size: 12px;
     background: rgba(255, 255, 255, 0.85);
@@ -254,11 +256,11 @@ img {
 /* Ajustes em listas das instruções */
 .instructions ul {
     list-style: none;
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     gap: 14px; /* Mais espaço entre os itens */
-    padding: 0 15px;
+    /* padding: 0 15px; */
 }
 
 .instructions ul li {
@@ -427,7 +429,7 @@ img {
 hr {
     width: 100%;
     border-color: #dd5152;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 /* Garantir que o container Swiper tenha altura */
@@ -499,6 +501,7 @@ color: #c42323;
         text-decoration: none;
         color: #333;
         font-weight: bold;
+        font-size: 16px;
     }
 
     .title {
@@ -543,7 +546,7 @@ color: #c42323;
     }
 
     .extras-container {
-        max-width: 500px;
+        max-width: 300px;
     }
 
     .swiper {
@@ -551,7 +554,7 @@ color: #c42323;
     }
     
     .slide-image {
-        max-height: 500px;
+        max-height: 30vw;
     }
 
     .slide-image {
@@ -562,6 +565,11 @@ color: #c42323;
 
     .swiper-button-next:after, .swiper-button-prev:after{
         font-size: 40px;
+    }
+
+    #end {
+        width: 80vw;
+        padding: 80px 80px;
     }
 
 
