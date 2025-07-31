@@ -8,7 +8,7 @@ body {
     background-image: linear-gradient(45deg, #d1f5e3 25%, transparent 25%),
         linear-gradient(45deg, transparent 75%, #d1f5e3 75%),
         linear-gradient(45deg, transparent 75%, #d1f5e3 75%),
-        linear-gradient(45deg, #d1f5e3 25%, #fff 25%);
+        linear-gradient(45deg, #d1f5e3 25%, #fbfbfb 25%);
 
     background-size: 400px 400px;
 
@@ -18,6 +18,14 @@ body {
 #main-title {
     color: #16a145;
     font-family: "Gistesy", serif;
+}
+
+.subtitle-container {
+  color: #333333;
+  margin: 20px auto;
+  width: 300px;
+  margin-top: -20px;
+  align-self: center;
 }
 
 .topbar {
