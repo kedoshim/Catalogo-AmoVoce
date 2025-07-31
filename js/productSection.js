@@ -127,7 +127,7 @@ export function setupProductSection(parentDiv, productData) {
     descriptionHeader.classList.add("description-header");
 
     const h2 = document.createElement("h2");
-    h2.classList.add("title");
+    h2.classList.add("name");
     h2.textContent = title;
 
     const pPrice = document.createElement("p");

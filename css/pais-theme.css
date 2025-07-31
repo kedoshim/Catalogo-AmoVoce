@@ -1,0 +1,162 @@
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+    /* font-family: "Helvetica"; */
+
+    background-image: linear-gradient(45deg, #d1f5e3 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #d1f5e3 75%),
+        linear-gradient(45deg, transparent 75%, #d1f5e3 75%),
+        linear-gradient(45deg, #d1f5e3 25%, #fff 25%);
+
+    background-size: 400px 400px;
+
+    background-position: 0 0, 0 0, -200px -200px, 200px 200px;
+}
+
+#main-title {
+    color: #16a145;
+    font-family: "Gistesy", serif;
+}
+
+.topbar {
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 30px;
+}
+
+.topbar.hidden {
+    transform: translateY(-100%);
+}
+
+.logo {
+    height: 40px;
+    width: 50px;
+    object-fit: contain;
+}
+
+#navbar a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #333;
+}
+
+.product-section {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+}
+
+img{
+    border-radius: 0px;
+}
+
+.text,
+.items {
+    /* font-family: "Gelasio", serif; */
+    font-weight: 300;
+    color: #333;
+}
+
+.title {
+    color: #16a145;
+    font-weight: lighter;
+    font-style: normal;
+    text-align: left;
+    font-family: "Gistesy", serif;
+}
+
+.price {
+    color: #16a145;
+    /* font-family: "Gelasio", serif; */
+}
+
+.cream-line {
+    background-color: #ffd5ce;
+}
+
+.thumbnail-container .selected {
+    border: 2px solid #ffadbf;
+}
+
+.instructions ul {
+    list-style: none;
+    font-size: 14px;
+    color: #333;
+}
+
+.instructions ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.contact h3 {
+    /* font-family: "Tan Pearl", serif; */
+    font-size: 20px;
+    color: #16a145;
+    text-align: center;
+}
+
+.contact p {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.button {
+    background-color: #4caf50;
+    color: white;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+#footer {
+    font-weight: 400;
+    font-size: 17px;
+    /* color: #333; */
+    color: #333;
+}
+
+.extras-container {
+    background: white;
+    border-radius: 0px;
+    border: 0px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.item-name h3.title {
+    color: #16a145;
+}
+
+hr {
+    border-color: #aaa;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #16a145;
+}
+
+.white {
+    color: #fff;
+}
+
+@media only screen and (min-width: 1009px) {
+    .title {
+        font-size: 60px;
+    }

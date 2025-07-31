@@ -141,13 +141,11 @@ img {
 /* Texto e Itens */
 .text,
 .items {
-    font-family: "Newsreader", serif;
     font-weight: 300;
 }
 
 /* Títulos */
 .title {
-    font-family: "Newsreader";
     font-weight: lighter;
     font-size: 40px;
     text-align: left;
@@ -414,10 +412,11 @@ img {
     color: #fff;
 }
 
-h2.title {
+.name {
+    font-weight: lighter;
+    text-align: left;
     font-size: 26px;
     color: #000000; 
-    /* // Reduzido // */
 }
 
 /* .item-name p.price {
@@ -479,10 +478,15 @@ color: #c42323;
 /* Responsividade */
 @media only screen and (min-width: 1009px) {
     #cestas {
+        width: 80vw;
         display: grid;
         grid-template-columns: 1fr 1fr;
         row-gap: 32px;
         column-gap: 32px;
+    }
+
+    .image-gallery{
+        width: 300px;
     }
 
     #main-title {

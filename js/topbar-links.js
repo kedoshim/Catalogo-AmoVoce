@@ -1,9 +1,7 @@
+// kedoshim.github.io/Catalogo-AmoVoce/
 export const links = [
-    { label: "Catálogo", path: "https://kedoshim.github.io/Catalogo-AmoVoce/" },
-    {
-        label: "Dia dos Namorados",
-        path: "https://kedoshim.github.io/catalogo-dia-dos-namorados-2025/",
-        // path: "namorados.html",
-    },
-    { label: "Instruções", path: "index.html#end" },
+    { label: "Catálogo", path: "../index.html" },
+    // { label: "Dia dos Namorados", path: "../pages/namorados.html"},
+    { label: "Dia dos Pais", path: "../pages/pais-25.html" },
+    { label: "Instruções", path: "#end" },
 ];

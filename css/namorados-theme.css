@@ -43,7 +43,6 @@ body {
     margin-left: 20px;
     text-decoration: none;
     color: #333;
-    font-weight: bold;
 }
 
 .product-section {
@@ -58,11 +57,12 @@ body {
     color: #6b4226;
 }
 
-.title {
+.name {
     color: #dd5152;
     font-family: "Sweetheart Birthday";
     font-weight: lighter;
     text-align: left;
+    font-size: 70px;
 }
 
 .price {
