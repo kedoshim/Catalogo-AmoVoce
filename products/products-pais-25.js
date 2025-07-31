@@ -1,6 +1,6 @@
 export const products = [
     {
-        title: "Carta de amor",
+        title: "Super Pai",
         price: "99,90",
         description: "",
         items: "Cesta decorada em formato de caixa de ferramentas • Suco de frutas 290 ml • Croissant recheado • Bombom • Bolo de pote de coco • Cartão de felicitações",
@@ -10,7 +10,7 @@ export const products = [
         },
     },
     {
-        title: "Cesta Eternizar",
+        title: "Cesta Amor de Pai",
         price: "139,90",
         description: "",
         items: "Cesta mdf 25x15 reutilizável • Suco • Cafe individual - DripCoffee • Croissant recheado • Torradas • Mini baquete com parmesão • Polenguinho • Frios (queijo prato/ peito de peru) • Salada de frutas • Bolo no pote de coco • Cartão de felicitações",
