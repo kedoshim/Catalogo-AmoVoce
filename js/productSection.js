@@ -154,9 +154,10 @@ export function setupProductSection(parentDiv, productData) {
     // Create a dropdown for items using <details> and <summary>
     const details = document.createElement("details");
     // Open dropdown by default on desktop, closed on mobile
-    if (window.innerWidth >= 768) {
-        details.setAttribute("open", "");
-    }
+    // if (window.innerWidth >= 768) {
+    //     details.setAttribute("open", "");
+    // }
+    details.setAttribute("open", "");
     const summary = document.createElement("summary");
     summary.textContent = "Itens";
     details.appendChild(summary);
