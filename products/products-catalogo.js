@@ -9,6 +9,7 @@ export const products = [
             2: "img/catalogo/amoCafezinho/2.jpg",
             3: "img/catalogo/amoCafezinho/3.jpg",
             4: "img/catalogo/amoCafezinho/4.jpg",
+            5: "img/catalogo/amoCafezinho/5.jpg",
         },
     },
     {
@@ -70,6 +71,7 @@ export const products = [
             2: "img/catalogo/amoLeveza/222.jpg",
             3: "img/catalogo/amoLeveza/333.jpg",
             4: "img/catalogo/amoLeveza/444.jpg",
+            5: "img/catalogo/amoLeveza/555.jpg",
         },
     },
     {
@@ -103,8 +105,8 @@ export const products = [
         items: "Cesta MDF reutilizável 30x20 • Cerveja Heineken ou Budweiser • Batata Pringles • Salamitos Snack Sadia  • Azeitonas recheadas • Salgadinho de trigo crocante • Mini Torradinhas Temperadas • Bombons • Amendoins crocantes saborizados • Mix de nuts • Espetinho de presunto e queijo",
         images: {
             1: "img/catalogo/amoPetiscos/111.jpg",
-            2: "img/catalogo/amoPetiscos/333.jpg",
-            3: "img/catalogo/amoPetiscos/222.jpg",
+            2: "img/catalogo/amoPetiscos/222.jpg",
+            3: "img/catalogo/amoPetiscos/333.jpg",
             4: "img/catalogo/amoPetiscos/444.jpg",
         },
     },
