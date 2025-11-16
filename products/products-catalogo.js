@@ -10,6 +10,7 @@ export const products = [
             3: "img/catalogo/amoCafezinho/3.jpg",
             4: "img/catalogo/amoCafezinho/4.jpg",
             5: "img/catalogo/amoCafezinho/5.jpg",
+            6: "img/catalogo/amoCafezinho/6.jpg",
         },
     },
     {
