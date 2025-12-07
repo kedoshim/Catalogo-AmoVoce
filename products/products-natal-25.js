@@ -21,7 +21,7 @@ export const products = [
         title: "Box Natalino",
         price: "99,90",
         description: "Disponível para pronta entrega 🌟",
-        items: "Cesta mdf 25x15 reutilizável • Suco • Cafe individual - DripCoffee • Croissant recheado • Torradas • Mini baquete com parmesão • Polenguinho • Frios (queijo prato/ peito de peru) • Salada de frutas • Bolo no pote de coco • Cartão de felicitações",
+        items: "caixa kraft com visor transparente • suco de fruta 180 ml • bolinho recheado • biscoitos amanteigados • barra de cereal com chocolate • torradinha • manteiga • chocolate cremoso em pó • geleia • rosa de cetim • cartão de felicitações",
         images: {
             1: "../img/natal-25/box.jpg",
         },

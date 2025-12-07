@@ -18,6 +18,30 @@ body {
     background-size: 20px 20px;
 }
 
+.twinkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #fff8c7, #fae08b 40%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 5s infinite ease-in-out;
+}
+
+#twinkle-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0; 
+}
+
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; transform: scale(0.6); }
+  50%      { opacity: 1; transform: scale(1); }
+}
+
+
 
 #main-title {
     color: #a51010;
@@ -55,6 +79,7 @@ body {
     box-shadow: 0 8px 24px rgb(255, 235, 197);
     border-radius: 20px;
     overflow: hidden;
+    z-index: 1;
 }
 
 .description {
