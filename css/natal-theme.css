@@ -1,0 +1,197 @@
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+    /* margin: 0;
+    height: 100vh; */
+
+    /* Cor de fundo bege */
+    background-color: #d4cebe;
+
+    /* Grid overlay usando múltiplos linear-gradients */
+    background-image:
+        linear-gradient(#cec2a9 1px, transparent 1px),
+        linear-gradient(90deg, #cec2a9 1px, transparent 1px);
+
+    /* Tamanho das células do grid */
+    background-size: 20px 20px;
+}
+
+
+#main-title {
+    color: #a51010;
+    font-family: "Amore";
+    /* font-style: italic; */
+    font-size: 60px;
+}
+
+.subtitle-container {
+  color: #333333;
+  margin: 20px auto;
+  width: 80vw;
+  margin-top: -20px;
+  align-self: center;
+}
+
+.topbar {
+    background-color: #d4cebc;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 30px;
+}
+
+.topbar.hidden {
+    transform: translateY(-100%);
+}
+
+.logo {
+    height: 40px;
+    width: 50px;
+    object-fit: contain;
+}
+
+.product-section {
+    background: rgb(240, 234, 227);
+    box-shadow: 0 8px 24px rgb(255, 235, 197);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.description {
+    border-radius: 20px;
+    padding: 16px 20px 20px 20px;
+}
+
+img{
+    border-radius: 0px;
+}
+
+.text,
+.items {
+    /* font-family: "Gelasio", serif; */
+    font-weight: 300;
+    color: #333;
+}
+
+.title {
+    color: #43855a;
+    font-weight: lighter;
+    font-style: normal;
+    text-align: left;
+    font-family: "Amore";
+}
+
+.price {
+    padding-top: 8px;
+    color: #43855a;
+    font-family: "Amore", serif;
+}
+
+.cream-line {
+    background-color: #ffd5ce;
+}
+
+.thumbnail-container .selected {
+    border: 2px solid #ffadbf;
+}
+
+.instructions ul {
+    list-style: none;
+    font-size: 14px;
+    color: #333;
+}
+
+.instructions ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.contact h3 {
+    /* font-family: "Tan Pearl", serif; */
+    font-size: 20px;
+    color: #43855a;
+    text-align: center;
+}
+
+.contact p {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.button {
+    background-color: #4caf50;
+    color: white;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+#footer {
+    font-weight: 400;
+    font-size: 17px;
+    /* color: #333; */
+    color: #333;
+}
+
+.extras-container {
+    background: rgb(240, 234, 227);
+    border-radius: 0px;
+    border: 0px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.item-name h3.title {
+    color: #43855a;
+}
+
+hr {
+    border-color: #aaa;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #43855a;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet {
+    background: #360527;
+    opacity: 0.5;
+}
+
+.white {
+    color: #fff;
+}
+
+#end{
+    background-color: rgb(240, 234, 227);
+}
+
+@media only screen and (min-width: 1009px) {
+    #main-title {
+        font-size: 90px;
+    }
+
+    .title {
+        font-size: 60px;
+    }
+
+    .subtitle-container {
+        font-size: 20px;
+        width: 450px;
+    }
+}
