@@ -1,7 +1,7 @@
 export const products = [
     {
         title: "Báu Natalino",
-        price: "179,90",
+        price: "199,90",
         description: "",
         items: "báu de madeira • garrafa de vinho • mini panettone • chocolate ao leite • esfera recheada com castanhas • peça de queijo parmesão • nozes selecionadas • luzes decorativas • fechamento em celofane transparente com fita de cetim • cartão temático para sua mensagem especial",
         images: {
