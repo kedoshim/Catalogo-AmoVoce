@@ -12,7 +12,7 @@ export const products = [
         title: "Carta Natalina",
         price: "99,90",
         description: "",
-        items: "flor • mini panetone • caixa envelope • caixa Ferreiro Rocher com 3 unidades  • fechamento em celofane transparente com fita de cetim • cartão temático para sua mensagem especial",
+        items: "flor • mini panetone • caixa envelope • Ferrero Rocher com 3 unidades  • fechamento em celofane transparente com fita de cetim • cartão temático para sua mensagem especial",
         images: {
             1: "../img/natal-25/carta.jpg",
         },
