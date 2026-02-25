@@ -46,6 +46,7 @@ export const products = [
             1: "img/catalogo/amoEstar/1.jpg",
             2: "img/catalogo/amoEstar/2.jpg",
             3: "img/catalogo/amoEstar/3.jpg",
+            4: "img/catalogo/amoEstar/4.jpg",
         },
     },
     {
