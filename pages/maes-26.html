@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florescer | Dia das Maes 2026</title>
+  <meta
+    name="description"
+    content="Landing page premium de Dia das Maes para a campanha Florescer da Amo Voce Cestas."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #fdfbf7;
+      --text: #2c362a;
+      --muted: rgba(44, 54, 42, 0.72);
+      --sage: #8fa58a;
+      --peach: #e89a8a;
+      --white-glass: rgba(255, 255, 255, 0.44);
+      --white-border: rgba(255, 255, 255, 0.7);
+      --shadow-soft: 0 18px 50px rgba(44, 54, 42, 0.08);
+      --shadow-hover: 0 24px 70px rgba(44, 54, 42, 0.14);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --container: min(1120px, calc(100vw - 2rem));
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: clip;
+      font-family: "Montserrat", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(232, 154, 138, 0.12), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(143, 165, 138, 0.12), transparent 22%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      border: 0;
+      background: none;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .page-shell {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.95rem 1rem;
+      background: rgba(253, 251, 247, 0.72);
+      border-bottom: 1px solid rgba(44, 54, 42, 0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition:
+        transform 280ms ease,
+        background 280ms ease,
+        border-color 280ms ease,
+        box-shadow 280ms ease;
+    }
+
+    .topbar.clear {
+      background: rgba(253, 251, 247, 0.28);
+      border-bottom-color: transparent;
+      box-shadow: none;
+    }
+
+    .topbar.hidden {
+      transform: translateY(-100%);
+    }
+
+    .topbar__brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 0;
+    }
+
+    .logo {
+      width: 48px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .topbar__title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .navbar a {
+      position: relative;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(44, 54, 42, 0.84);
+      padding-bottom: 0.15rem;
+    }
+
+    .navbar a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0.4);
+      transform-origin: center;
+      opacity: 0;
+      transition: transform 220ms ease, opacity 220ms ease;
+    }
+
+    .navbar a:hover::after,
+    .navbar a:focus-visible::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .leaf-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .leaf {
+      position: absolute;
+      top: -12vh;
+      width: clamp(28px, 2vw, 52px);
+      opacity: 0;
+      filter: drop-shadow(0 10px 18px rgba(44, 54, 42, 0.12));
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translate3d(0, -10vh, 0) rotate(0deg) scale(0.85);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.5;
+      }
+      85% {
+        opacity: 0.38;
+      }
+      100% {
+        transform: translate3d(var(--drift, 80px), 120vh, 0) rotate(var(--rotate, 220deg)) scale(1);
+        opacity: 0;
+      }
+    }
+
+    .flower-side {
+      --flower-rendered-width: calc(100vh * 1080 / 1447);
+      --flower-overflow: max(0px, calc(var(--flower-rendered-width) - 100%));
+      --flower-offset: calc(var(--flower-overflow) * -0.5);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      display: block;
+      width: min(var(--flower-rendered-width), 100vw);
+      height: 100vh;
+      pointer-events: none;
+      opacity: 0.52;
+      overflow: hidden;
+    }
+
+    .flower-side.left {
+      left: clamp(-120px, -30vw, -28px);
+    }
+
+    .flower-side.right {
+      right: clamp(-120px, -30vw, -28px);
+    }
+
+    .flower-stack {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .flower-stack img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--flower-offset);
+      width: auto;
+      height: 100%;
+      min-width: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: left center;
+      transform-origin: left center;
+    }
+
+    .flower-side.right .flower-stack {
+      transform: none;
+    }
+
+    .flower-side.right .flower-stack img {
+      left: var(--flower-offset);
+      right: auto;
+      transform: translateZ(0) scaleX(-1);
+      transform-origin: center center;
+      object-position: left center;
+    }
+
+    .flower-frame {
+      opacity: 0;
+      will-change: opacity, transform;
+    }
+
+    .flower-frame.is-base {
+      opacity: 1;
+    }
+
+    @media (max-width: 767px) {
+      .flower-stack .flower-frame.is-base {
+        opacity: 0;
+      }
+
+      .flower-stack .flower-frame:nth-child(2) {
+        opacity: 1;
+      }
+
+      .navbar a,
+      .eyebrow,
+      .hero p,
+      .products__heading p,
+      .footer__info,
+      .footer__info span,
+      .footer__socials a {
+        text-shadow:
+          0 0 10px rgb(253, 251, 247),
+          0 0 22px rgba(253, 251, 247, 0.88),
+          0 0 36px rgba(253, 251, 247, 0.74);
+      }
+    }
+
+    section {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 5.8rem 1rem 2rem;
+    }
+
+    .hero__content {
+      width: min(760px, 100%);
+      text-align: center;
+      display: grid;
+      gap: 1.25rem;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(44, 54, 42, 0.56);
+    }
+
+    .hero h1,
+    .products__heading h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .hero h1 {
+      text-shadow:
+        0 0 22px rgba(255, 255, 255, 0.9),
+        0 0 46px rgba(232, 154, 138, 0.28),
+        0 0 72px rgba(143, 165, 138, 0.18);
+      font-size: clamp(2.9rem, 8vw, 6.6rem);
+      max-width: 10ch;
+    }
+
+    .hero p {
+      max-width: 42rem;
+      font-size: clamp(1rem, 2.3vw, 1.15rem);
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+      min-height: 56px;
+      padding: 0.95rem 1.6rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--sage), var(--peach));
+      box-shadow: 0 20px 50px rgba(143, 165, 138, 0.22);
+      color: #fff;
+      font-weight: 600;
+      transition:
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        filter 220ms ease;
+    }
+
+    .cta::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.02));
+      z-index: -1;
+    }
+
+    .cta:hover,
+    .cta:focus-visible {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 24px 60px rgba(232, 154, 138, 0.28);
+      filter: saturate(1.05);
+      outline: none;
+    }
+
+    .products {
+      padding: 4.5rem 1rem 5rem;
+    }
+
+    .products__wrap {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      gap: 2.25rem;
+    }
+
+    .products__heading {
+      display: grid;
+      gap: 0.9rem;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .products__heading h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      max-width: 12ch;
+    }
+
+    .products__heading p {
+      max-width: 36rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 1.1rem;
+      padding: 1rem;
+      border: 1px solid var(--white-border);
+      border-radius: var(--radius-lg);
+      background: var(--white-glass);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-soft);
+      transition:
+        transform 280ms ease,
+        box-shadow 280ms ease,
+        border-color 280ms ease;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.04));
+      pointer-events: none;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(143, 165, 138, 0.46);
+    }
+
+    .product-card__image {
+      position: relative;
+      overflow: hidden;
+      border-radius: calc(var(--radius-lg) - 8px);
+      aspect-ratio: 4 / 5;
+      background: rgba(143, 165, 138, 0.08);
+    }
+
+    .product-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 600ms ease;
+    }
+
+    .product-card:hover .product-card__image img {
+      transform: scale(1.04);
+    }
+
+    .product-card__body {
+      display: grid;
+      gap: 0.85rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-card__title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .product-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .product-card__price {
+      flex: 0 0 auto;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--sage);
+    }
+
+    .product-card p {
+      line-height: 1.7;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .product-card__actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .product-card__details {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 46px;
+      border-radius: 999px;
+      border: 1px solid rgba(44, 54, 42, 0.12);
+      background: rgba(255, 255, 255, 0.46);
+      color: var(--text);
+      font-weight: 600;
+      transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        background 220ms ease;
+    }
+
+    .product-card__details:hover,
+    .product-card__details:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(143, 165, 138, 0.46);
+      background: rgba(255, 255, 255, 0.82);
+      outline: none;
+    }
+
+    .product-card__button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 48px;
+      border-radius: 999px;
+      background: rgba(44, 54, 42, 0.92);
+      color: #fff;
+      font-weight: 600;
+      transition:
+        transform 220ms ease,
+        background 220ms ease,
+        box-shadow 220ms ease;
+    }
+
+    .product-card__button:hover,
+    .product-card__button:focus-visible {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, var(--sage), var(--peach));
+      box-shadow: 0 18px 35px rgba(232, 154, 138, 0.2);
+      outline: none;
+    }
+
+    .footer {
+      padding: 2rem 1rem 2.6rem;
+    }
+
+    .footer__wrap {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 1.4rem 1.2rem;
+      border-top: 1px solid rgba(44, 54, 42, 0.12);
+      display: grid;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .footer__brand {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      text-shadow:
+        0 0 18px rgba(255, 255, 255, 0.88),
+        0 0 38px rgba(232, 154, 138, 0.24),
+        0 0 60px rgba(143, 165, 138, 0.16);
+    }
+
+    .footer__info {
+      display: grid;
+      gap: 0.35rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer__socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer__socials a {
+      position: relative;
+      padding-bottom: 0.2rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .footer__socials a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      transform: scaleX(0.4);
+      transform-origin: center;
+      background: currentColor;
+      opacity: 0.5;
+      transition: transform 220ms ease, opacity 220ms ease;
+    }
+
+    .footer__socials a:hover::after,
+    .footer__socials a:focus-visible::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 220ms ease, visibility 220ms ease;
+    }
+
+    .modal.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(44, 54, 42, 0.22);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .modal__dialog {
+      position: relative;
+      width: min(720px, 100%);
+      max-height: min(88vh, 920px);
+      overflow: auto;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: rgba(253, 251, 247, 0.9);
+      box-shadow: 0 30px 80px rgba(44, 54, 42, 0.18);
+      padding: 1.25rem;
+    }
+
+    .modal__close {
+      position: absolute;
+      top: 0.9rem;
+      right: 0.9rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: rgba(44, 54, 42, 0.08);
+      color: var(--text);
+      font-size: 1.2rem;
+      transition: background 220ms ease, transform 220ms ease;
+    }
+
+    .modal__close:hover,
+    .modal__close:focus-visible {
+      background: rgba(232, 154, 138, 0.18);
+      transform: rotate(90deg);
+      outline: none;
+    }
+
+    .modal__content {
+      display: grid;
+      gap: 1.15rem;
+    }
+
+    .modal__image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 20px;
+      background: rgba(143, 165, 138, 0.08);
+    }
+
+    .modal__header {
+      display: grid;
+      gap: 0.5rem;
+      padding-top: 0.25rem;
+    }
+
+    .modal__header h3 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.08;
+    }
+
+    .modal__header p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .modal__price {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--sage);
+    }
+
+    .modal__list {
+      display: grid;
+      gap: 0.7rem;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .modal__list li {
+      position: relative;
+      padding-left: 1.25rem;
+      line-height: 1.65;
+      color: rgba(44, 54, 42, 0.86);
+    }
+
+    .modal__list li::before {
+      content: "";
+      position: absolute;
+      top: 0.72rem;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--sage), var(--peach));
+    }
+
+    .modal__cta {
+      margin-top: 0.35rem;
+    }
+
+    @media (min-width: 768px) {
+      .flower-side {
+        width: min(var(--flower-rendered-width), 100vw);
+        opacity: 0.68;
+      }
+
+      .flower-side.left {
+        left: 0;
+      }
+
+      .flower-side.right {
+        right: 0;
+      }
+
+      .topbar {
+        padding-inline: 1.5rem;
+      }
+
+      .hero {
+        padding-inline: 1.5rem;
+      }
+
+      .products {
+        padding-top: 6rem;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .product-card__actions {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer__wrap {
+        grid-template-columns: 1.1fr 1fr 1fr;
+        align-items: center;
+        text-align: left;
+      }
+
+      .footer__socials {
+        justify-content: flex-end;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .flower-side {
+        width: min(26vw, 360px);
+        opacity: 0.88;
+      }
+
+      .hero__content {
+        width: min(860px, calc(100vw - 22rem));
+      }
+
+      .products__wrap,
+      .footer__wrap {
+        width: min(1120px, calc(100vw - 12rem));
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .modal__dialog {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .leaf {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header id="topbar" class="topbar clear">
+      <a href="../index.html" class="topbar__brand" aria-label="Amo Voce Cestas">
+        <img src="../img/icons/logo.png" alt="Logo Amo Voce Cestas" class="logo" />
+        <!-- <span class="topbar__title">Amo Voce Cestas</span> -->
+      </a>
+      <nav class="navbar" id="navbar" aria-label="Navegacao principal">
+        <a href="../index.html">Catalogo</a>
+        <a href="#cestas">Cestas</a>
+        <a href="#end">Contato</a>
+      </nav>
+    </header>
+
+    <div class="leaf-layer" aria-hidden="true"></div>
+
+    <div class="flower-side left" aria-hidden="true">
+      <div class="flower-stack" data-flower>
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-1.png" alt="" class="flower-frame is-base" />
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-2.png" alt="" class="flower-frame" />
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-3.png" alt="" class="flower-frame" />
+      </div>
+    </div>
+
+    <div class="flower-side right" aria-hidden="true">
+      <div class="flower-stack" data-flower>
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-1.png" alt="" class="flower-frame is-base" />
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-2.png" alt="" class="flower-frame" />
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-3.png" alt="" class="flower-frame" />
+      </div>
+    </div>
+
+    <section class="hero" id="topo">
+      <div class="hero__content">
+        <span class="eyebrow">Dia das Maes 2026</span>
+        <h1>Todo amor dela merece florescer em cada detalhe.</h1>
+        <p>
+          Uma colecao de cestas de cafe da manha pensada para transformar carinho,
+          delicadeza e presenca em um presente memoravel.
+        </p>
+        <a href="#cestas" class="cta">Ver Cestas</a>
+      </div>
+    </section>
+
+    <section class="products" id="cestas">
+      <div class="products__wrap">
+        <div class="products__heading">
+          <span class="eyebrow">Selecao Especial</span>
+          <h2>Cestas que florescem em afeto.</h2>
+          <p>
+            Texturas suaves, composicoes elegantes e sabores que fazem a manha
+            comecar com a mesma delicadeza de um abraco.
+          </p>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+      </div>
+    </section>
+
+    <section class="footer" id="end">
+      <div class="footer__wrap">
+        <div class="footer__brand">Amo Voce Cestas</div>
+        <div class="footer__info">
+          <span>WhatsApp: (32) 99116-2238</span>
+          <span>Instagram: @amovocecestas</span>
+          <span>Atendimento sob encomenda</span>
+        </div>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/amovocecestas" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://api.whatsapp.com/send?phone=5532991162238" target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal" id="product-modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" type="button" aria-label="Fechar detalhes" data-close-modal>&times;</button>
+      <div class="modal__content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script>
+    // Produtos renderizados via JS para manter o HTML enxuto e facilitar ajustes.
+    const products = [
+      {
+        title: "Cesta Essencia que floresce",
+        description: "Uma composicao completa, delicada e premium, pensada para transformar o cafe da manha em um gesto inesquecivel.",
+        price: "R$ 169,90",
+        image: "../img/maes-2026/cesta-1.jpg",
+        message: "Ola! Quero comprar a Cesta Essencia que floresce.",
+        items: [
+          "Caixa Bau reutilizavel",
+          "Porta caneta com flor de cetim",
+          "Bolo artesanal de laranja",
+          "Salada de frutas frescas",
+          "2 Crossaints frances amanteigados",
+          "Suco de uva sem adicao de acucar",
+          "2 Drip Coffee - Cafe individual",
+          "2 Saches de chocolate cremoso em po",
+          "Caixa de biscoitos amanteigados",
+          "Biscoitos crocantes salgados",
+          "Torradas",
+          "Mini geleia",
+          "Mini manteiga",
+          "Chocolate decorativo \"Mae\"",
+          "Cartao de felicitacao",
+          "Fechamento em celofane"
+        ]
+      },
+      {
+        title: "Cesta Acalento de Mae",
+        description: "Uma cesta suave e afetiva, com selecao enxuta e elegante para presentear com presenca e delicadeza.",
+        price: "R$ 139,90",
+        image: "../img/maes-2026/cesta-2.jpg",
+        message: "Ola! Quero comprar a Cesta Acalento de Mae.",
+        items: [
+          "Caixa Bau reutilizavel",
+          "Rosa eterna de cetim",
+          "Bolo artesanal de laranja",
+          "Salada de frutas frescas",
+          "Crossaint frances amanteigado",
+          "Drip Coffee - Cafe individual",
+          "Sache de chocolate cremoso em po",
+          "Torradas",
+          "Mini geleia",
+          "Mini manteiga",
+          "Chocolate decorativo \"Mae\"",
+          "Cartao de felicitacao",
+          "Fechamento em celofane"
+        ]
+      },
+      {
+        title: "Cesta Amor & Carinho de Mae",
+        description: "Uma opcao carinhosa e charmosa, com itens selecionados para um presente doce, leve e memoravel.",
+        price: "R$ 99,90",
+        image: "../img/maes-2026/cesta-3.jpg",
+        message: "Ola! Quero comprar a Cesta Amor e Carinho de Mae.",
+        items: [
+          "Caixa Kraft com visor transparente",
+          "Suco de fruta",
+          "Sache de chocolate cremoso em po",
+          "Bolinho recheado",
+          "Biscoitos amanteigados",
+          "Barra de cereal",
+          "Torradas",
+          "Mini manteiga",
+          "Mini geleia",
+          "Flor de cetim",
+          "Cartao de felicitacao"
+        ]
+      }
+    ];
+
+    const productGrid = document.getElementById("product-grid");
+    const whatsappBase = "https://api.whatsapp.com/send?phone=5532991162238&text=";
+    const modal = document.getElementById("product-modal");
+    const modalContent = document.getElementById("modal-content");
+    const topbar = document.getElementById("topbar");
+    const leafAssets = [
+      "../img/maes-26/folha-particula/folha-particula1.png",
+      "../img/maes-26/folha-particula/folha-particula2.png",
+      // "../img/maes-26/folha-particula/folha-particula3.png",
+      "../img/maes-26/folha-particula/folha-particula4.png",
+      // "../img/maes-26/folha-particula/folha-particula5.png",
+      "../img/maes-26/folha-particula/folha-particula6.png",
+      "../img/maes-26/folha-particula/folha-particula7.png",
+      "../img/maes-26/folha-particula/folha-particula8.png",
+      "../img/maes-26/folha-particula/folha-particula9.png",
+      "../img/maes-26/folha-particula/folha-particula10.png",
+    ];
+
+    let lastScroll = 0;
+    const scrollThreshold = 30;
+    const appearTopBarThreshold = 500;
+
+    productGrid.innerHTML = products
+      .map(
+        (product, index) => `
+          <article class="product-card" data-product-index="${index}">
+            <div class="product-card__image">
+              <img src="${product.image}" alt="${product.title}" loading="lazy" />
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__title-row">
+                <h3>${product.title}</h3>
+                <span class="product-card__price">${product.price}</span>
+              </div>
+              <p>${product.description}</p>
+              <div class="product-card__actions">
+                <button class="product-card__details" type="button" data-open-modal="${index}">
+                  Ver itens
+                </button>
+                <a class="product-card__button" href="${whatsappBase}${encodeURIComponent(product.message)}" target="_blank" rel="noreferrer">
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+        `
+      )
+      .join("");
+
+    function renderModal(product) {
+      modalContent.innerHTML = `
+        <img class="modal__image" src="${product.image}" alt="${product.title}" />
+        <div class="modal__header">
+          <span class="eyebrow">Detalhes da cesta</span>
+          <h3 id="modal-title">${product.title}</h3>
+          <span class="modal__price">${product.price}</span>
+          <p>${product.description}</p>
+        </div>
+        <ul class="modal__list">
+          ${product.items.map((item) => `<li>${item}</li>`).join("")}
+        </ul>
+        <a class="cta modal__cta" href="${whatsappBase}${encodeURIComponent(product.message)}" target="_blank" rel="noreferrer">
+          Comprar pelo WhatsApp
+        </a>
+      `;
+    }
+
+    function openModal(productIndex) {
+      const product = products[productIndex];
+      if (!product) return;
+
+      renderModal(product);
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.querySelectorAll("[data-open-modal]").forEach((button) => {
+      button.addEventListener("click", () => {
+        openModal(Number(button.dataset.openModal));
+      });
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target.hasAttribute("data-close-modal")) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal();
+      }
+    });
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.scrollY;
+      const scrollAmount = Math.abs(currentScroll - lastScroll);
+
+      if (currentScroll < appearTopBarThreshold) {
+        topbar.classList.remove("hidden");
+        topbar.classList.add("clear");
+        lastScroll = currentScroll;
+        return;
+      }
+
+      if (scrollAmount < scrollThreshold) {
+        lastScroll = currentScroll;
+        return;
+      }
+
+      if (currentScroll > lastScroll) {
+        topbar.classList.add("hidden");
+      } else {
+        topbar.classList.remove("hidden");
+        topbar.classList.remove("clear");
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    // Sistema leve de folhas caindo com duracao, atraso e deslocamento aleatorios.
+    const leafLayer = document.querySelector(".leaf-layer");
+    const leafCount = window.innerWidth < 768 ? 14 : 24;
+
+    for (let i = 0; i < leafCount; i += 1) {
+      const leaf = document.createElement("img");
+      leaf.className = "leaf";
+      leaf.src = leafAssets[Math.floor(Math.random() * leafAssets.length)];
+      leaf.alt = "";
+      leaf.setAttribute("aria-hidden", "true");
+      leaf.style.left = `${Math.random() * 100}vw`;
+      leaf.style.animationDuration = `${12 + Math.random() * 9}s`;
+      leaf.style.animationDelay = `${Math.random() * -18}s`;
+      leaf.style.setProperty("--drift", `${-120 + Math.random() * 240}px`);
+      leaf.style.setProperty("--rotate", `${120 + Math.random() * 240}deg`);
+      leaf.style.opacity = `${0.42 + Math.random() * 0.28}`;
+      leafLayer.appendChild(leaf);
+    }
+
+    // Animacoes com GSAP e ScrollTrigger.
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".hero__content > *", {
+        y: 32,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.12,
+        ease: "power3.out"
+      });
+
+      document.querySelectorAll("[data-flower]").forEach((flower) => {
+        const frames = flower.querySelectorAll(".flower-frame");
+        const [frame1, frame2, frame3] = frames;
+        const isMobile = window.innerWidth < 768;
+
+        gsap.set(frame1, { opacity: isMobile ? 0 : 1 });
+        gsap.set(frame2, { opacity: isMobile ? 1 : 0 });
+        gsap.set(frame3, { opacity: 0 });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".page-shell",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1
+          }
+        });
+
+        if (isMobile) {
+          tl.to(frame3, { opacity: 1, ease: "none" }, 0.56);
+        } else {
+          tl.to(frame2, { opacity: 1, ease: "none" }, 0.28);
+          tl.to(frame3, { opacity: 1, ease: "none" }, 0.66);
+        }
+      });
+
+      gsap.utils.toArray(".product-card").forEach((card, index) => {
+        gsap.from(card, {
+          y: 46,
+          opacity: 0,
+          duration: 0.85,
+          delay: index * 0.05,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 88%",
+            once: true
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
