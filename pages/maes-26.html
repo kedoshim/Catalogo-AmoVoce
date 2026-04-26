@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Florescer | Dia das Maes 2026</title>
+  <title>Catálogo Dia das Mães 2026</title>
   <meta
     name="description"
-    content="Landing page premium de Dia das Maes para a campanha Florescer da Amo Voce Cestas."
+    content="Landing page premium de Dia das Mães para a campanha Florescer da Amo Você Cestas."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -453,6 +453,26 @@
       background: rgba(143, 165, 138, 0.08);
     }
 
+    .product-card__badge {
+      position: absolute;
+      top: 0.9rem;
+      right: 0.9rem;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(44, 54, 42, 0.92);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      box-shadow: 0 12px 24px rgba(44, 54, 42, 0.22);
+    }
+
     .product-card__image img {
       width: 100%;
       height: 100%;
@@ -835,9 +855,9 @@
 <body>
   <div class="page-shell">
     <header id="topbar" class="topbar clear">
-      <a href="../index.html" class="topbar__brand" aria-label="Amo Voce Cestas">
-        <img src="../img/icons/logo.png" alt="Logo Amo Voce Cestas" class="logo" />
-        <!-- <span class="topbar__title">Amo Voce Cestas</span> -->
+      <a href="../index.html" class="topbar__brand" aria-label="Amo Você Cestas">
+        <img src="../img/icons/logo.png" alt="Logo Amo Você Cestas" class="logo" />
+        <!-- <span class="topbar__title">Amo Você Cestas</span> -->
       </a>
       <nav class="navbar" id="navbar" aria-label="Navegacao principal">
         <a href="../index.html">Catalogo</a>
@@ -866,13 +886,16 @@
 
     <section class="hero" id="topo">
       <div class="hero__content">
-        <span class="eyebrow">Dia das Maes 2026</span>
+        <span class="eyebrow">Dia das Mães 2026</span>
         <h1>Todo amor dela merece florescer em cada detalhe.</h1>
         <p>
-          Uma colecao de cestas de cafe da manha pensada para transformar carinho,
+          Uma colecao de cestas de café da manhã pensada para transformar carinho,
           delicadeza e presenca em um presente memoravel.
         </p>
-        <a href="#cestas" class="cta">Ver Cestas</a>
+        <p>
+          Capacidade de produção limitada para garantir a qualidade de cada detalhe. Reserve a sua com antecedência.
+        </p>
+        <a href="#cestas" class="cta">Surpreender Minha Mãe</a>
       </div>
     </section>
 
@@ -882,8 +905,8 @@
           <span class="eyebrow">Selecao Especial</span>
           <h2>Cestas que florescem em afeto.</h2>
           <p>
-            Texturas suaves, composicoes elegantes e sabores que fazem a manha
-            comecar com a mesma delicadeza de um abraco.
+            Texturas suaves, composicoes elegantes e sabores que fazem a manhã
+            começar com a mesma delicadeza de um abraço.
           </p>
         </div>
 
@@ -893,11 +916,11 @@
 
     <section class="footer" id="end">
       <div class="footer__wrap">
-        <div class="footer__brand">Amo Voce Cestas</div>
+        <div class="footer__brand">Amo Você Cestas</div>
         <div class="footer__info">
           <span>WhatsApp: (32) 99116-2238</span>
           <span>Instagram: @amovocecestas</span>
-          <span>Atendimento sob encomenda</span>
+          <span>Agenda aberta: Vagas limitadas para o Dia das Mães</span>
         </div>
         <div class="footer__socials">
           <a href="https://www.instagram.com/amovocecestas" target="_blank" rel="noreferrer">Instagram</a>
@@ -921,62 +944,63 @@
     // Produtos renderizados via JS para manter o HTML enxuto e facilitar ajustes.
     const products = [
       {
-        title: "Cesta Essencia que floresce",
-        description: "Uma composicao completa, delicada e premium, pensada para transformar o cafe da manha em um gesto inesquecivel.",
+        title: "Cesta Essência que floresce",
+        description: "Nossa experiência mais exuberante. Uma mesa farta e requintada, com itens premium cuidadosamente selecionados para ela se sentir a rainha da casa logo nas primeiras horas do dia.",
         price: "R$ 169,90",
-        image: "../img/maes-2026/cesta-1.jpg",
-        message: "Ola! Quero comprar a Cesta Essencia que floresce.",
+        image: "../img/maes-26/cestas/grande.jpeg",
+        message: "Olá! Gostaria de reservar a Cesta Essência que floresce para o Dia das Mães. Como funciona a entrega?",
         items: [
           "Caixa Bau reutilizavel",
           "Porta caneta com flor de cetim",
           "Bolo artesanal de laranja",
           "Salada de frutas frescas",
           "2 Crossaints frances amanteigados",
-          "Suco de uva sem adicao de acucar",
-          "2 Drip Coffee - Cafe individual",
-          "2 Saches de chocolate cremoso em po",
+          "Suco de uva sem adicao de açucar",
+          "2 Drip Coffee - Café individual",
+          "2 Saches de chocolate cremoso em pó",
           "Caixa de biscoitos amanteigados",
           "Biscoitos crocantes salgados",
           "Torradas",
           "Mini geleia",
           "Mini manteiga",
-          "Chocolate decorativo \"Mae\"",
-          "Cartao de felicitacao",
+          "Chocolate decorativo \"Mãe\"",
+          "Cartão de felicitação",
           "Fechamento em celofane"
         ]
       },
       {
-        title: "Cesta Acalento de Mae",
-        description: "Uma cesta suave e afetiva, com selecao enxuta e elegante para presentear com presenca e delicadeza.",
+        title: "Cesta Acalento de Mãe",
+        description: "O equilíbrio perfeito entre sofisticação e conforto. Sabores artesanais e clássicos que trazem o aconchego de um abraço apertado de domingo de manhã.",
         price: "R$ 139,90",
-        image: "../img/maes-2026/cesta-2.jpg",
-        message: "Ola! Quero comprar a Cesta Acalento de Mae.",
+        image: "../img/maes-26/cestas/media.jpeg",
+        message: "Olá! Gostaria de reservar a Cesta Acalento de Mãe para o Dia das Mães. Como funciona a entrega?",
         items: [
           "Caixa Bau reutilizavel",
           "Rosa eterna de cetim",
           "Bolo artesanal de laranja",
           "Salada de frutas frescas",
           "Crossaint frances amanteigado",
-          "Drip Coffee - Cafe individual",
-          "Sache de chocolate cremoso em po",
+          "Drip Coffee - Café individual",
+          "Sache de chocolate cremoso em pó",
           "Torradas",
           "Mini geleia",
           "Mini manteiga",
-          "Chocolate decorativo \"Mae\"",
-          "Cartao de felicitacao",
+          "Chocolate decorativo \"Mãe\"",
+          "Cartão de felicitação",
           "Fechamento em celofane"
         ]
       },
       {
-        title: "Cesta Amor & Carinho de Mae",
-        description: "Uma opcao carinhosa e charmosa, com itens selecionados para um presente doce, leve e memoravel.",
+        title: "Cesta Amor & Carinho de Mãe",
+        description: "O presente perfeito, pronto para surpreender. Uma seleção carinhosa em uma embalagem charmosa e segura, ideal para entregas rápidas por toda Juiz de Fora. Porque o amor não tem hora exata para chegar.",
         price: "R$ 99,90",
-        image: "../img/maes-2026/cesta-3.jpg",
-        message: "Ola! Quero comprar a Cesta Amor e Carinho de Mae.",
+        image: "../img/maes-26/cestas/pequena.jpeg",
+        badge: "Pronta Entrega",
+        message: "Olá! Gostaria de reservar a Cesta Amor e Carinho de Mãe para o Dia das Mães (Pronta Entrega). Como funciona a entrega?",
         items: [
           "Caixa Kraft com visor transparente",
           "Suco de fruta",
-          "Sache de chocolate cremoso em po",
+          "Sache de chocolate cremoso em pó",
           "Bolinho recheado",
           "Biscoitos amanteigados",
           "Barra de cereal",
@@ -984,7 +1008,7 @@
           "Mini manteiga",
           "Mini geleia",
           "Flor de cetim",
-          "Cartao de felicitacao"
+          "Cartão de felicitação"
         ]
       }
     ];
@@ -1016,6 +1040,7 @@
         (product, index) => `
           <article class="product-card" data-product-index="${index}">
             <div class="product-card__image">
+              ${product.badge ? `<span class="product-card__badge">${product.badge}</span>` : ""}
               <img src="${product.image}" alt="${product.title}" loading="lazy" />
             </div>
             <div class="product-card__body">
