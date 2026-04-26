@@ -425,6 +425,7 @@
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       box-shadow: var(--shadow-soft);
+      cursor: pointer;
       transition:
         transform 280ms ease,
         box-shadow 280ms ease,
@@ -573,6 +574,95 @@
       outline: none;
     }
 
+    .faq {
+      padding: 0 1rem 2rem;
+    }
+
+    .faq__wrap {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .faq__heading {
+      display: grid;
+      gap: 0.75rem;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .faq__heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.06;
+    }
+
+    .faq__heading p {
+      max-width: 40rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .faq__list {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .faq__item {
+      border: 1px solid rgba(44, 54, 42, 0.1);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .faq__item summary {
+      position: relative;
+      list-style: none;
+      padding: 1.15rem 3.6rem 1.15rem 1.2rem;
+      font-weight: 600;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    .faq__item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq__item summary::after {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 1.2rem;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(143, 165, 138, 0.14);
+      color: var(--sage);
+      font-size: 1.1rem;
+      font-weight: 700;
+      transition: transform 220ms ease, background 220ms ease, color 220ms ease;
+    }
+
+    .faq__item[open] summary::after {
+      transform: translateY(-50%) rotate(45deg);
+      background: rgba(232, 154, 138, 0.16);
+      color: var(--peach);
+    }
+
+    .faq__answer {
+      padding: 0 1.2rem 1.2rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
     .footer {
       padding: 2rem 1rem 2.6rem;
     }
@@ -679,14 +769,16 @@
 
     .modal__close {
       position: absolute;
-      top: 0.9rem;
-      right: 0.9rem;
+      top: 1rem;
+      right: 1rem;
+      z-index: 50;
       width: 42px;
       height: 42px;
       border-radius: 999px;
-      background: rgba(44, 54, 42, 0.08);
+      background: rgba(253, 251, 247, 0.95);
       color: var(--text);
       font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: background 220ms ease, transform 220ms ease;
     }
 
@@ -702,12 +794,88 @@
       gap: 1.15rem;
     }
 
-    .modal__image {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
+    .modal__body {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .modal__carousel {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .modal__media {
+      position: relative;
+      overflow: hidden;
       border-radius: 20px;
+      aspect-ratio: 4 / 5;
       background: rgba(143, 165, 138, 0.08);
+    }
+
+    .modal__image,
+    .modal__video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: rgba(143, 165, 138, 0.08);
+    }
+
+    .modal__carousel-nav {
+      position: absolute;
+      top: 50%;
+      left: 0.9rem;
+      right: 0.9rem;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      pointer-events: none;
+    }
+
+    .modal__carousel-btn {
+      pointer-events: auto;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(253, 251, 247, 0.82);
+      color: var(--text);
+      box-shadow: 0 14px 28px rgba(44, 54, 42, 0.14);
+      transition: transform 220ms ease, background 220ms ease, opacity 220ms ease;
+    }
+
+    .modal__carousel-btn:hover,
+    .modal__carousel-btn:focus-visible {
+      transform: scale(1.04);
+      background: rgba(255, 255, 255, 0.96);
+      outline: none;
+    }
+
+    .modal__carousel-btn:disabled {
+      opacity: 0.45;
+      cursor: default;
+    }
+
+    .modal__carousel-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .modal__carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(44, 54, 42, 0.18);
+      transition: transform 220ms ease, background 220ms ease;
+    }
+
+    .modal__carousel-dot.is-active {
+      transform: scale(1.15);
+      background: linear-gradient(135deg, var(--sage), var(--peach));
     }
 
     .modal__header {
@@ -734,11 +902,72 @@
       color: var(--sage);
     }
 
+    .modal__highlights {
+      display: grid;
+      gap: 0.8rem;
+      padding: 1rem 1.05rem;
+      border: 1px dashed rgba(143, 165, 138, 0.5);
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(143, 165, 138, 0.12), rgba(255, 255, 255, 0.72));
+    }
+
+    .modal__highlights h4,
+    .modal__section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .modal__highlights-list,
     .modal__list {
       display: grid;
       gap: 0.7rem;
       padding-left: 0;
       list-style: none;
+    }
+
+    .modal__highlights-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      line-height: 1.65;
+      color: rgba(44, 54, 42, 0.9);
+    }
+
+    .modal__highlights-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.68rem;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--sage);
+      box-shadow: 0 0 0 4px rgba(143, 165, 138, 0.14);
+    }
+
+    .modal__items {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .modal__body::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .modal__body::-webkit-scrollbar-track {
+      background: rgba(44, 54, 42, 0.06);
+      border-radius: 999px;
+    }
+
+    .modal__body::-webkit-scrollbar-thumb {
+      background: rgba(143, 165, 138, 0.5);
+      border-radius: 999px;
+      border: 2px solid rgba(253, 251, 247, 0.92);
+    }
+
+    .modal__body::-webkit-scrollbar-thumb:hover {
+      background: rgba(143, 165, 138, 0.7);
     }
 
     .modal__list li {
@@ -829,7 +1058,26 @@
       }
 
       .modal__dialog {
+        width: min(1000px, 90vw);
         padding: 1.5rem;
+      }
+
+      .modal__content {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+        align-items: start;
+        gap: 1.5rem;
+        padding-top: 0;
+      }
+
+      .modal__carousel {
+        position: sticky;
+        top: 0;
+      }
+
+      .modal__body {
+        max-height: min(calc(88vh - 3rem), 760px);
+        padding-right: 0.35rem;
+        overflow-y: auto;
       }
     }
 
@@ -914,6 +1162,47 @@
       </div>
     </section>
 
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="faq__wrap">
+        <div class="faq__heading">
+          <span class="eyebrow">Instruções</span>
+          <h2 id="faq-title">Tudo o que você precisa saber antes de pedir.</h2>
+        </div>
+
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary>Como faço para encomendar?</summary>
+            <div class="faq__answer">Para garantir um atendimento personalizado, recebemos os pedidos diretamente pelo nosso WhatsApp (32) 99116-2238 ou via direct no Instagram @amovocecestas. Nossa equipe está pronta para te ajudar a escolher o presente perfeito!</div>
+          </details>
+          
+          <details class="faq__item">
+            <summary>Qual é o valor da entrega?</summary>
+            <div class="faq__answer">O valor do frete é calculado de forma justa e transparente com base no endereço de entrega. Ao nos chamar, basta enviar o bairro da mamãe e verificamos a taxa exata para você.</div>
+          </details>
+          
+          <details class="faq__item">
+            <summary>Até quando posso agendar meu pedido?</summary>
+            <div class="faq__answer">Aceitamos reservas até o dia 08/05, <strong>ou enquanto durarem os nossos estoques</strong> (nossa produção é limitada para mantermos a qualidade premium). Esqueceu e deixou para a última hora? Consulte a disponibilidade da nossa cesta de <strong>Pronta Entrega</strong> para envios imediatos!</div>
+          </details>
+          
+          <details class="faq__item">
+            <summary>Quais são os horários de entrega?</summary>
+            <div class="faq__answer">Para o fim de semana do Dia das Mães, nossas entregas ocorrem no sábado (durante todo o dia) e na manhã de domingo, no período das 06h30 às 10h30.</div>
+          </details>
+          
+          <details class="faq__item">
+            <summary>Posso marcar um horário exato no domingo?</summary>
+            <div class="faq__answer">Como a manhã de domingo é o momento de maior emoção e volume logístico, as entregas seguem uma rota otimizada (das 06h30 às 10h30), não sendo possível fixar um horário exato. Caso você precise do presente em uma hora muito específica, sugerimos a facilidade de retirada diretamente em nosso ateliê.</div>
+          </details>
+          
+          <details class="faq__item">
+            <summary>O que acontece se não tiver ninguém em casa?</summary>
+            <div class="faq__answer">Nós preparamos a surpresa com todo carinho, mas é fundamental que haja alguém no local para receber a cesta no momento da entrega. Caso nosso entregador não seja atendido, a cesta retornará ao nosso ateliê em segurança, irá para o final da fila de rotas e <strong>será necessária a cobrança de uma nova taxa de frete</strong> para o reenvio.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="footer" id="end">
       <div class="footer__wrap">
         <div class="footer__brand">Amo Você Cestas</div>
@@ -947,7 +1236,13 @@
         title: "Cesta Essência que floresce",
         description: "Nossa experiência mais exuberante. Uma mesa farta e requintada, com itens premium cuidadosamente selecionados para ela se sentir a rainha da casa logo nas primeiras horas do dia.",
         price: "R$ 189,90",
-        image: "../img/maes-26/cestas/grande.jpeg",
+        images: [
+          "../img/maes-26/cestas/grande.jpeg",
+        ],
+        highlights: [
+          "\uD83C\uDF81 Baú de Madeira Reutilizável: Entregue aberto, possui tampa e fecho para virar objeto decorativo depois.",
+          "\uD83C\uDF39 Flor que Escreve: O adere\u00E7o de rosa no vaso \u00E9, na verdade, uma caneta esferográfica premium."
+        ],
         message: "Olá! Gostaria de reservar a Cesta Essência que floresce para o Dia das Mães. Como funciona a entrega?",
         items: [
           "Caixa Baú reutilizável",
@@ -956,7 +1251,7 @@
           "Salada de frutas frescas",
           "2 Croissants francês amanteigados",
           "Suco de uva sem adição de açúcar",
-          "2 Drip Coffee - Café individual",
+          "2 Drip Coffee Gourmet - Café individual para coar",
           "2 Sachês de chocolate cremoso em pó",
           "Caixa de biscoitos amanteigados",
           "Biscoitos crocantes salgados",
@@ -964,7 +1259,7 @@
           "Mini geleia",
           "Mini manteiga",
           "Chocolate decorativo \"Mãe\"",
-          "Cartão de felicitação",
+          "Cartão para felicitações ",
           "Fechamento em celofane"
         ]
       },
@@ -972,21 +1267,26 @@
         title: "Cesta Acalento de Mãe",
         description: "O equilíbrio perfeito entre sofisticação e conforto. Sabores artesanais e clássicos que trazem o aconchego de um abraço apertado de domingo de manhã.",
         price: "R$ 139,90",
-        image: "../img/maes-26/cestas/media.jpeg",
+        images: [
+          "../img/maes-26/cestas/media.jpeg",
+        ],
+        highlights: [
+          "\uD83C\uDF81 Baú de Madeira Reutilizável: Entregue aberto, possui tampa e fecho para virar objeto decorativo depois."
+        ],
         message: "Olá! Gostaria de reservar a Cesta Acalento de Mãe para o Dia das Mães. Como funciona a entrega?",
         items: [
           "Caixa Baú reutilizável",
           "Rosa eterna de cetim",
           "Bolo artesanal de laranja",
           "Salada de frutas frescas",
-          "Croissants francês amanteigados",
-          "Drip Coffee - Café individual",
+          "Croissant francês amanteigado",
+          "Drip Coffee Gourmet - Café individual para coar",
           "Sachê de chocolate cremoso em pó",
           "Torradas",
           "Mini geleia",
           "Mini manteiga",
           "Chocolate decorativo \"Mãe\"",
-          "Cartão de felicitação",
+          "Cartão para felicitações ",
           "Fechamento em celofane"
         ]
       },
@@ -994,7 +1294,12 @@
         title: "Cesta Amor & Carinho de Mãe",
         description: "O presente perfeito, pronto para surpreender. Uma seleção carinhosa em uma embalagem charmosa e segura, ideal para entregas rápidas por toda Juiz de Fora. Porque o amor não tem hora exata para chegar.",
         price: "R$ 99,90",
-        image: "../img/maes-26/cestas/pequena.jpeg",
+        images: [
+          "../img/maes-26/cestas/pequena.jpeg"
+        ],
+        highlights: [
+          "Entrega pensada para quem busca praticidade sem abrir m\u00E3o de acabamento delicado."
+        ],
         badge: "Pronta Entrega",
         message: "Olá! Gostaria de reservar a Cesta Amor e Carinho de Mãe para o Dia das Mães (Pronta Entrega). Como funciona a entrega?",
         items: [
@@ -1008,7 +1313,7 @@
           "Mini manteiga",
           "Mini geleia",
           "Flor de cetim",
-          "Cartão de felicitação"
+          "Cartão para felicitações "
         ]
       }
     ];
@@ -1034,6 +1339,8 @@
     let lastScroll = 0;
     const scrollThreshold = 30;
     const appearTopBarThreshold = 500;
+    let currentModalProductIndex = null;
+    let currentSlideIndex = 0;
 
     productGrid.innerHTML = products
       .map(
@@ -1041,7 +1348,7 @@
           <article class="product-card" data-product-index="${index}">
             <div class="product-card__image">
               ${product.badge ? `<span class="product-card__badge">${product.badge}</span>` : ""}
-              <img src="${product.image}" alt="${product.title}" loading="lazy" />
+              <img src="${product.images[0]}" alt="${product.title}" loading="lazy" />
             </div>
             <div class="product-card__body">
               <div class="product-card__title-row">
@@ -1063,28 +1370,115 @@
       )
       .join("");
 
+    function isVideoAsset(asset) {
+      return /\.(mp4|webm|ogg)$/i.test(asset);
+    }
+
+    function renderCarouselMedia(asset, title) {
+      if (isVideoAsset(asset)) {
+        return `
+          <video class="modal__video" controls playsinline preload="metadata">
+            <source src="${asset}" />
+            Seu navegador nao suporta reproducao de video.
+          </video>
+        `;
+      }
+
+      return `<img class="modal__image" src="${asset}" alt="${title}" />`;
+    }
+
     function renderModal(product) {
+      const hasMultipleSlides = product.images.length > 1;
       modalContent.innerHTML = `
-        <img class="modal__image" src="${product.image}" alt="${product.title}" />
-        <div class="modal__header">
-          <span class="eyebrow">Detalhes da cesta</span>
-          <h3 id="modal-title">${product.title}</h3>
-          <span class="modal__price">${product.price}</span>
-          <p>${product.description}</p>
+        <div class="modal__carousel">
+          <div class="modal__media" id="modal-media">
+            ${renderCarouselMedia(product.images[currentSlideIndex], product.title)}
+            ${hasMultipleSlides ? `
+              <div class="modal__carousel-nav">
+                <button class="modal__carousel-btn" type="button" data-carousel-prev aria-label="Imagem anterior">
+                  &#8249;
+                </button>
+                <button class="modal__carousel-btn" type="button" data-carousel-next aria-label="Proxima imagem">
+                  &#8250;
+                </button>
+              </div>
+            ` : ""}
+          </div>
+          ${hasMultipleSlides ? `
+            <div class="modal__carousel-dots" aria-label="Galeria da cesta">
+              ${product.images
+                .map(
+                  (_, index) => `
+                    <button
+                      class="modal__carousel-dot ${index === currentSlideIndex ? "is-active" : ""}"
+                      type="button"
+                      aria-label="Ir para midia ${index + 1}"
+                      data-carousel-dot="${index}"
+                    ></button>
+                  `
+                )
+                .join("")}
+            </div>
+          ` : ""}
         </div>
-        <ul class="modal__list">
-          ${product.items.map((item) => `<li>${item}</li>`).join("")}
-        </ul>
-        <a class="cta modal__cta" href="${whatsappBase}${encodeURIComponent(product.message)}" target="_blank" rel="noreferrer">
-          Comprar pelo WhatsApp
-        </a>
+        <div class="modal__body">
+          <div class="modal__header">
+            <span class="eyebrow">Detalhes da cesta</span>
+            <h3 id="modal-title">${product.title}</h3>
+            <span class="modal__price">${product.price}</span>
+            <p>${product.description}</p>
+          </div>
+          <div class="modal__highlights">
+            <h4>Destaques Premium</h4>
+            <ul class="modal__highlights-list">
+              ${product.highlights.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
+          <div class="modal__items">
+            <h4 class="modal__section-title">Itens inclusos</h4>
+            <ul class="modal__list">
+              ${product.items.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
+          <a class="cta modal__cta" href="${whatsappBase}${encodeURIComponent(product.message)}" target="_blank" rel="noreferrer">
+            Comprar pelo WhatsApp
+          </a>
+        </div>
       `;
+    }
+
+    function updateCarousel() {
+      const product = products[currentModalProductIndex];
+      if (!product) return;
+
+      const media = modalContent.querySelector("#modal-media");
+      if (!media) return;
+
+      media.innerHTML = `
+        ${renderCarouselMedia(product.images[currentSlideIndex], product.title)}
+        ${product.images.length > 1 ? `
+          <div class="modal__carousel-nav">
+            <button class="modal__carousel-btn" type="button" data-carousel-prev aria-label="Imagem anterior">
+              &#8249;
+            </button>
+            <button class="modal__carousel-btn" type="button" data-carousel-next aria-label="Proxima imagem">
+              &#8250;
+            </button>
+          </div>
+        ` : ""}
+      `;
+
+      modalContent.querySelectorAll("[data-carousel-dot]").forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === currentSlideIndex);
+      });
     }
 
     function openModal(productIndex) {
       const product = products[productIndex];
       if (!product) return;
 
+      currentModalProductIndex = productIndex;
+      currentSlideIndex = 0;
       renderModal(product);
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
@@ -1095,23 +1489,78 @@
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
       document.body.classList.remove("modal-open");
+      currentModalProductIndex = null;
+      currentSlideIndex = 0;
     }
 
     document.querySelectorAll("[data-open-modal]").forEach((button) => {
-      button.addEventListener("click", () => {
+      button.addEventListener("click", (event) => {
+        event.stopPropagation();
         openModal(Number(button.dataset.openModal));
+      });
+    });
+
+    document.querySelectorAll(".product-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        openModal(Number(card.dataset.productIndex));
+      });
+    });
+
+    document.querySelectorAll(".product-card__button").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.stopPropagation();
       });
     });
 
     modal.addEventListener("click", (event) => {
       if (event.target.hasAttribute("data-close-modal")) {
         closeModal();
+        return;
+      }
+
+      if (event.target.hasAttribute("data-carousel-prev")) {
+        const product = products[currentModalProductIndex];
+        if (!product || product.images.length <= 1) return;
+        currentSlideIndex = (currentSlideIndex - 1 + product.images.length) % product.images.length;
+        updateCarousel();
+        return;
+      }
+
+      if (event.target.hasAttribute("data-carousel-next")) {
+        const product = products[currentModalProductIndex];
+        if (!product || product.images.length <= 1) return;
+        currentSlideIndex = (currentSlideIndex + 1) % product.images.length;
+        updateCarousel();
+        return;
+      }
+
+      if (event.target.hasAttribute("data-carousel-dot")) {
+        currentSlideIndex = Number(event.target.dataset.carouselDot);
+        updateCarousel();
       }
     });
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && modal.classList.contains("is-open")) {
         closeModal();
+        return;
+      }
+
+      if (!modal.classList.contains("is-open") || currentModalProductIndex === null) {
+        return;
+      }
+
+      const product = products[currentModalProductIndex];
+      if (!product || product.images.length <= 1) return;
+
+      if (event.key === "ArrowLeft") {
+        currentSlideIndex = (currentSlideIndex - 1 + product.images.length) % product.images.length;
+        updateCarousel();
+      }
+
+      if (event.key === "ArrowRight") {
+        currentSlideIndex = (currentSlideIndex + 1) % product.images.length;
+        updateCarousel();
       }
     });
 

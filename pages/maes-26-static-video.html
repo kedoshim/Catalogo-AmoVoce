@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coleção Florescer | Teaser Dia das Mães 2026</title>
+  <meta
+    name="description"
+    content="Teaser cinematográfico em reprodução automática da campanha Florescer da Amo Você Cestas."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #fdfbf7;
+      --text: #2c362a;
+      --muted: rgba(44, 54, 42, 0.74);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: "Montserrat", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(232, 154, 138, 0.12), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(143, 165, 138, 0.12), transparent 22%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .topbar,
+    .hero,
+    .products,
+    .faq,
+    .footer,
+    .modal {
+      display: none !important;
+    }
+
+    .page-shell {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .leaf-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .leaf {
+      position: absolute;
+      top: -12vh;
+      width: clamp(28px, 2vw, 52px);
+      opacity: 0;
+      filter: drop-shadow(0 10px 18px rgba(44, 54, 42, 0.12));
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translate3d(0, -10vh, 0) rotate(0deg) scale(0.85);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.5;
+      }
+
+      85% {
+        opacity: 0.38;
+      }
+
+      100% {
+        transform: translate3d(var(--drift, 80px), 120vh, 0) rotate(var(--rotate, 220deg)) scale(1);
+        opacity: 0;
+      }
+    }
+
+    .flower-side {
+      --flower-rendered-width: calc(100vh * 1080 / 1447);
+      --flower-overflow: max(0px, calc(var(--flower-rendered-width) - 100%));
+      --flower-offset: calc(var(--flower-overflow) * -0.5);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      width: min(var(--flower-rendered-width), 100vw);
+      height: 100vh;
+      opacity: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .flower-side.left {
+      left: clamp(-120px, -30vw, -28px);
+    }
+
+    .flower-side.right {
+      right: clamp(-120px, -30vw, -28px);
+    }
+
+    .flower-stack {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .flower-stack img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--flower-offset);
+      width: auto;
+      height: 100%;
+      min-width: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: left center;
+      transform-origin: left center;
+      will-change: opacity, transform;
+    }
+
+    .flower-side.right .flower-stack img {
+      transform: translateZ(0) scaleX(-1);
+      transform-origin: center center;
+    }
+
+    .flower-frame {
+      opacity: 0;
+    }
+
+    .flower-frame.is-base {
+      opacity: 1;
+    }
+
+    .video-teaser {
+      position: relative;
+      z-index: 2;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .teaser-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.9rem;
+      opacity: 0;
+      text-align: center;
+      padding: 2rem;
+      pointer-events: none;
+    }
+
+    .teaser-text h1,
+    .teaser-text h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 6vw, 4.5rem);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-wrap: balance;
+      max-width: 13ch;
+      text-shadow:
+        0 0 18px rgba(255, 255, 255, 0.92),
+        0 0 40px rgba(232, 154, 138, 0.18),
+        0 0 60px rgba(143, 165, 138, 0.12);
+    }
+
+    .text-2 h1 {
+      max-width: 14ch;
+    }
+
+    .text-3 h2 {
+      max-width: none;
+    }
+
+    .teaser-text p {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1rem, 2.2vw, 1.45rem);
+      line-height: 1.5;
+      color: var(--muted);
+      text-shadow: 0 0 18px rgba(255, 255, 255, 0.8);
+    }
+
+    .teaser-text .small {
+      font-size: clamp(0.9rem, 1.9vw, 1.15rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 767px) {
+      .flower-side {
+        width: min(62vw, 340px);
+        opacity: 0.7;
+      }
+
+      .flower-side.left {
+        left: -84px;
+      }
+
+      .flower-side.right {
+        right: -84px;
+      }
+
+      .video-teaser {
+        padding: 1.5rem;
+      }
+
+      .teaser-text {
+        padding: 1.5rem;
+      }
+
+      .teaser-text h1,
+      .teaser-text h2 {
+        max-width: 11ch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <div class="leaf-layer" aria-hidden="true"></div>
+
+    <div class="flower-side left" aria-hidden="true">
+      <div class="flower-stack" data-flower>
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-1.png" alt="" class="flower-frame is-base" />
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-2.png" alt="" class="flower-frame" />
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-3.png" alt="" class="flower-frame" />
+      </div>
+    </div>
+
+    <div class="flower-side right" aria-hidden="true">
+      <div class="flower-stack" data-flower>
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-1.png" alt="" class="flower-frame is-base" />
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-2.png" alt="" class="flower-frame" />
+        <img src="../img/maes-26/side-flowers/side-flowers-frame-3.png" alt="" class="flower-frame" />
+      </div>
+    </div>
+
+    <section class="video-teaser" aria-label="Teaser cinematográfico da coleção Florescer">
+      <div class="teaser-text text-1">
+        <h1>Sua mãe dedicou uma vida inteira para ver você crescer...</h1>
+      </div>
+
+      <div class="teaser-text text-2">
+        <h1>...agora é a sua vez de fazê-la florescer.</h1>
+      </div>
+
+      <div class="teaser-text text-3">
+        <h2>Coleção Florescer</h2>
+        <p>Amo Você Cestas | Dia das Mães</p>
+        <p class="small">Vagas limitadas.</p>
+        <p class="small">Garanta a surpresa<br /> no link da bio</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script>
+    const leafAssets = [
+      "../img/maes-26/folha-particula/folha-particula1.png",
+      "../img/maes-26/folha-particula/folha-particula2.png",
+      "../img/maes-26/folha-particula/folha-particula4.png",
+      "../img/maes-26/folha-particula/folha-particula6.png",
+      "../img/maes-26/folha-particula/folha-particula7.png",
+      "../img/maes-26/folha-particula/folha-particula8.png",
+      "../img/maes-26/folha-particula/folha-particula9.png",
+      "../img/maes-26/folha-particula/folha-particula10.png"
+    ];
+
+    const leafLayer = document.querySelector(".leaf-layer");
+    const leafCount = window.innerWidth < 768 ? 14 : 24;
+
+    for (let i = 0; i < leafCount; i += 1) {
+      const leaf = document.createElement("img");
+      leaf.className = "leaf";
+      leaf.src = leafAssets[Math.floor(Math.random() * leafAssets.length)];
+      leaf.alt = "";
+      leaf.setAttribute("aria-hidden", "true");
+      leaf.style.left = `${Math.random() * 100}vw`;
+      leaf.style.animationDuration = `${12 + Math.random() * 9}s`;
+      leaf.style.animationDelay = `${Math.random() * -18}s`;
+      leaf.style.setProperty("--drift", `${-120 + Math.random() * 240}px`);
+      leaf.style.setProperty("--rotate", `${120 + Math.random() * 240}deg`);
+      leaf.style.opacity = `${0.42 + Math.random() * 0.28}`;
+      leafLayer.appendChild(leaf);
+    }
+
+    if (window.gsap) {
+      const text1 = document.querySelector(".text-1");
+      const text2 = document.querySelector(".text-2");
+      const text3 = document.querySelector(".text-3");
+
+      document.querySelectorAll("[data-flower]").forEach((flower) => {
+        const [frame1, frame2, frame3] = flower.querySelectorAll(".flower-frame");
+
+        gsap.set(frame1, { opacity: 1, scale: 1 });
+        gsap.set(frame2, { opacity: 0, scale: 1.02 });
+        gsap.set(frame3, { opacity: 0, scale: 1.035 });
+      });
+
+      gsap.set([text1, text2, text3], {
+        opacity: 0,
+        y: 18,
+        filter: "blur(8px)"
+      });
+
+      const timeline = gsap.timeline({
+        delay: 2,
+        defaults: {
+          ease: "power2.inOut"
+        }
+      });
+
+      timeline
+        .to(text1, {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1.8
+        })
+        .to({}, { duration: 2.5 })
+        .to(text1, {
+          opacity: 0,
+          y: -18,
+          filter: "blur(8px)",
+          duration: 1.5
+        })
+        .to(".text-2", {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1.8
+        }, "scene-2")
+        .to(".flower-side .flower-frame:nth-child(2)", {
+          opacity: 1,
+          scale: 1,
+          duration: 2
+        }, "scene-2")
+        .to({}, { duration: 2.5 })
+        .to(text2, {
+          opacity: 0,
+          y: -18,
+          filter: "blur(8px)",
+          duration: 1.5
+        })
+        .to(".text-3", {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1.8
+        }, "scene-3")
+        .to(".flower-side .flower-frame:nth-child(3)", {
+          opacity: 1,
+          scale: 1,
+          duration: 2
+        }, "scene-3");
+    }
+  </script>
+</body>
+</html>
