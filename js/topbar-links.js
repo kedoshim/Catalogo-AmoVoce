@@ -4,6 +4,6 @@ export const links = [
     // { label: "Dia dos Namorados", path: "../pages/namorados.html"},
     // { label: "Dia dos Pais", path: "./pages/pais-25.html" },
     // { label: "Natal", path: "./pages/natal-25.html" },
-    { label: "Dia das Mães", path: "./pages/maes-26.html" },
+    { label: "Dia dos Namorados", path: "./pages/namorados-26.html" },
     { label: "Instruções", path: "#end" },
 ];

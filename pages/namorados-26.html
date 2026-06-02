@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo Dia dos Namorados 2026</title>
+  <meta
+    name="description"
+    content="Landing page premium de Dia dos Namorados para a campanha romântica da Amo Você Cestas."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #fffbfb;
+      --text: #3c2f2f;
+      --muted: rgba(60, 47, 47, 0.72);
+      --amor: #c62828;
+      --pink-light: #fff0f1;
+      --pink-soft: #fbc4c6;
+      --gold: #dfba6b;
+      --white-glass: rgba(255, 255, 255, 0.52);
+      --white-border: rgba(255, 255, 255, 0.8);
+      --shadow-soft: 0 18px 50px rgba(198, 40, 40, 0.04);
+      --shadow-hover: 0 24px 70px rgba(198, 40, 40, 0.08);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --container: min(1120px, calc(100vw - 2rem));
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: clip;
+      font-family: "Montserrat", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(198, 40, 40, 0.06), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(251, 196, 198, 0.15), transparent 25%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      border: 0;
+      background: none;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .page-shell {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.95rem 1rem;
+      background: rgba(255, 251, 251, 0.72);
+      border-bottom: 1px solid rgba(60, 47, 47, 0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition:
+        transform 280ms ease,
+        background 280ms ease,
+        border-color 280ms ease,
+        box-shadow 280ms ease;
+    }
+
+    .topbar.clear {
+      background: rgba(255, 251, 251, 0.28);
+      border-bottom-color: transparent;
+      box-shadow: none;
+    }
+
+    .topbar.hidden {
+      transform: translateY(-100%);
+    }
+
+    .topbar__brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 0;
+    }
+
+    .logo {
+      width: 48px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .topbar__title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .navbar a {
+      position: relative;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(60, 47, 47, 0.84);
+      padding-bottom: 0.15rem;
+    }
+
+    .navbar a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0.4);
+      transform-origin: center;
+      opacity: 0;
+      transition: transform 220ms ease, opacity 220ms ease;
+    }
+
+    .navbar a:hover::after,
+    .navbar a:focus-visible::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .heart-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      top: -12vh;
+      width: clamp(20px, 1.5vw, 36px);
+      opacity: 0;
+      filter: drop-shadow(0 6px 12px rgba(198, 40, 40, 0.08));
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translate3d(0, -10vh, 0) rotate(0deg) scale(0.85);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.5;
+      }
+      85% {
+        opacity: 0.38;
+      }
+      100% {
+        transform: translate3d(var(--drift, 80px), 120vh, 0) rotate(var(--rotate, 220deg)) scale(1);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .navbar a,
+      .eyebrow,
+      .hero p,
+      .products__heading p,
+      .footer__info,
+      .footer__info span,
+      .footer__socials a {
+        text-shadow:
+          0 0 10px rgb(255, 251, 251),
+          0 0 22px rgba(255, 251, 251, 0.88),
+          0 0 36px rgba(255, 251, 251, 0.74);
+      }
+    }
+
+    section {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 5.8rem 1rem 2rem;
+    }
+
+    .hero__content {
+      width: min(760px, 100%);
+      text-align: center;
+      display: grid;
+      gap: 1.25rem;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(44, 54, 42, 0.56);
+    }
+
+    .hero h1,
+    .products__heading h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .hero h1 {
+      text-shadow:
+        0 0 22px rgba(255, 255, 255, 0.9),
+        0 0 46px rgba(232, 154, 138, 0.28),
+        0 0 72px rgba(143, 165, 138, 0.18);
+      font-size: clamp(2.9rem, 8vw, 6.6rem);
+      max-width: 10ch;
+    }
+
+    .hero p {
+      max-width: 42rem;
+      font-size: clamp(1rem, 2.3vw, 1.15rem);
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+      min-height: 56px;
+      padding: 0.95rem 1.6rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--amor), var(--pink-soft));
+      box-shadow: 0 20px 50px rgba(198, 40, 40, 0.15);
+      color: #fff;
+      font-weight: 600;
+      transition:
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        filter 220ms ease;
+    }
+
+    .cta::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.02));
+      z-index: -1;
+    }
+
+    .cta:hover,
+    .cta:focus-visible {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 24px 60px rgba(198, 40, 40, 0.22);
+      filter: saturate(1.05);
+      outline: none;
+    }
+
+    .products {
+      padding: 4.5rem 1rem 5rem;
+    }
+
+    .products__wrap {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      gap: 2.25rem;
+    }
+
+    .products__heading {
+      display: grid;
+      gap: 0.9rem;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .products__heading h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      max-width: 12ch;
+    }
+
+    .products__heading p {
+      max-width: 36rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 1.1rem;
+      padding: 1rem;
+      border: 1px solid var(--white-border);
+      border-radius: var(--radius-lg);
+      background: var(--white-glass);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      transition:
+        transform 280ms ease,
+        box-shadow 280ms ease,
+        border-color 280ms ease;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.04));
+      pointer-events: none;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(198, 40, 40, 0.3);
+    }
+
+    .product-card__image {
+      position: relative;
+      overflow: hidden;
+      border-radius: calc(var(--radius-lg) - 8px);
+      aspect-ratio: 4 / 5;
+      background: rgba(198, 40, 40, 0.04);
+    }
+
+    .product-card__badge {
+      position: absolute;
+      top: 0.9rem;
+      right: 0.9rem;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(60, 47, 47, 0.92);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      box-shadow: 0 12px 24px rgba(60, 47, 47, 0.22);
+    }
+
+    .product-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 600ms ease;
+    }
+
+    .product-card:hover .product-card__image img {
+      transform: scale(1.04);
+    }
+
+    .product-card__body {
+      display: grid;
+      gap: 0.85rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-card__title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .product-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .product-card__price {
+      flex: 0 0 auto;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--amor);
+    }
+
+    .product-card p {
+      line-height: 1.7;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .product-card__actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .product-card__details {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 46px;
+      border-radius: 999px;
+      border: 1px solid rgba(60, 47, 47, 0.12);
+      background: rgba(255, 255, 255, 0.46);
+      color: var(--text);
+      font-weight: 600;
+      transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        background 220ms ease;
+    }
+
+    .product-card__details:hover,
+    .product-card__details:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(198, 40, 40, 0.3);
+      background: rgba(255, 255, 255, 0.82);
+      outline: none;
+    }
+
+    .product-card__button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 48px;
+      border-radius: 999px;
+      background: rgba(60, 47, 47, 0.92);
+      color: #fff;
+      font-weight: 600;
+      transition:
+        transform 220ms ease,
+        background 220ms ease,
+        box-shadow 220ms ease;
+    }
+
+    .product-card__button:hover,
+    .product-card__button:focus-visible {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, var(--amor), var(--pink-soft));
+      box-shadow: 0 18px 35px rgba(198, 40, 40, 0.15);
+      outline: none;
+    }
+
+    .faq {
+      padding: 0 1rem 2rem;
+    }
+
+    .faq__wrap {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .faq__heading {
+      display: grid;
+      gap: 0.75rem;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .faq__heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.06;
+    }
+
+    .faq__heading p {
+      max-width: 40rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .faq__list {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .faq__item {
+      border: 1px solid rgba(60, 47, 47, 0.1);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .faq__item summary {
+      position: relative;
+      list-style: none;
+      padding: 1.15rem 3.6rem 1.15rem 1.2rem;
+      font-weight: 600;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    .faq__item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq__item summary::after {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 1.2rem;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(198, 40, 40, 0.08);
+      color: var(--amor);
+      font-size: 1.1rem;
+      font-weight: 700;
+      transition: transform 220ms ease, background 220ms ease, color 220ms ease;
+    }
+
+    .faq__item[open] summary::after {
+      transform: translateY(-50%) rotate(45deg);
+      background: rgba(251, 196, 198, 0.24);
+      color: var(--amor);
+    }
+
+    .faq__answer {
+      padding: 0 1.2rem 1.2rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .footer {
+      padding: 2rem 1rem 2.6rem;
+    }
+
+    .footer__wrap {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 1.4rem 1.2rem;
+      border-top: 1px solid rgba(60, 47, 47, 0.12);
+      display: grid;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .footer__brand {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      text-shadow:
+        0 0 18px rgba(255, 255, 255, 0.88),
+        0 0 38px rgba(251, 196, 198, 0.24),
+        0 0 60px rgba(198, 40, 40, 0.1);
+    }
+
+    .footer__info {
+      display: grid;
+      gap: 0.35rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer__socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer__socials a {
+      position: relative;
+      padding-bottom: 0.2rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .footer__socials a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      transform: scaleX(0.4);
+      transform-origin: center;
+      background: currentColor;
+      opacity: 0.5;
+      transition: transform 220ms ease, opacity 220ms ease;
+    }
+
+    .footer__socials a:hover::after,
+    .footer__socials a:focus-visible::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 220ms ease, visibility 220ms ease;
+    }
+
+    .modal.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(60, 47, 47, 0.22);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .modal__dialog {
+      position: relative;
+      width: min(720px, 100%);
+      max-height: min(88vh, 920px);
+      overflow: auto;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 30px 80px rgba(60, 47, 47, 0.18);
+      padding: 1.25rem;
+    }
+
+    .modal__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 50;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--text);
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: background 220ms ease, transform 220ms ease;
+    }
+
+    .modal__close:hover,
+    .modal__close:focus-visible {
+      background: rgba(198, 40, 40, 0.12);
+      transform: rotate(90deg);
+      outline: none;
+    }
+
+    .modal__content {
+      display: grid;
+      gap: 1.15rem;
+    }
+
+    .modal__body {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .modal__carousel {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .modal__media {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      aspect-ratio: 4 / 5;
+      background: rgba(198, 40, 40, 0.04);
+    }
+
+    .modal__image,
+    .modal__video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: rgba(198, 40, 40, 0.04);
+    }
+
+    .modal__carousel-nav {
+      position: absolute;
+      top: 50%;
+      left: 0.9rem;
+      right: 0.9rem;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      pointer-events: none;
+    }
+
+    .modal__carousel-btn {
+      pointer-events: auto;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--text);
+      box-shadow: 0 14px 28px rgba(60, 47, 47, 0.14);
+      transition: transform 220ms ease, background 220ms ease, opacity 220ms ease;
+    }
+
+    .modal__carousel-btn:hover,
+    .modal__carousel-btn:focus-visible {
+      transform: scale(1.04);
+      background: rgba(255, 255, 255, 0.96);
+      outline: none;
+    }
+
+    .modal__carousel-btn:disabled {
+      opacity: 0.45;
+      cursor: default;
+    }
+
+    .modal__carousel-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .modal__carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(60, 47, 47, 0.18);
+      transition: transform 220ms ease, background 220ms ease;
+    }
+
+    .modal__carousel-dot.is-active {
+      transform: scale(1.15);
+      background: linear-gradient(135deg, var(--amor), var(--pink-soft));
+    }
+
+    .modal__header {
+      display: grid;
+      gap: 0.5rem;
+      padding-top: 0.25rem;
+    }
+
+    .modal__header h3 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.08;
+    }
+
+    .modal__header p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .modal__price {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--amor);
+    }
+
+    .modal__highlights {
+      display: grid;
+      gap: 0.8rem;
+      padding: 1rem 1.05rem;
+      border: 1px dashed var(--gold);
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(198, 40, 40, 0.06), rgba(255, 255, 255, 0.72));
+    }
+
+    .modal__highlights h4,
+    .modal__section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .modal__highlights-list,
+    .modal__list {
+      display: grid;
+      gap: 0.7rem;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .modal__highlights-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      line-height: 1.65;
+      color: rgba(60, 47, 47, 0.9);
+    }
+
+    .modal__highlights-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.68rem;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--amor);
+      box-shadow: 0 0 0 4px rgba(198, 40, 40, 0.12);
+    }
+
+    .modal__items {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .modal__body::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .modal__body::-webkit-scrollbar-track {
+      background: rgba(60, 47, 47, 0.06);
+      border-radius: 999px;
+    }
+
+    .modal__body::-webkit-scrollbar-thumb {
+      background: rgba(198, 40, 40, 0.5);
+      border-radius: 999px;
+      border: 2px solid rgba(255, 251, 251, 0.92);
+    }
+
+    .modal__body::-webkit-scrollbar-thumb:hover {
+      background: rgba(198, 40, 40, 0.7);
+    }
+
+    .modal__list li {
+      position: relative;
+      padding-left: 1.25rem;
+      line-height: 1.65;
+      color: rgba(60, 47, 47, 0.86);
+    }
+
+    .modal__list li::before {
+      content: "";
+      position: absolute;
+      top: 0.72rem;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--amor), var(--pink-soft));
+    }
+
+    .modal__cta {
+      margin-top: 0.35rem;
+    }
+
+    @media (min-width: 768px) {
+      .topbar {
+        padding-inline: 1.5rem;
+      }
+
+      .hero {
+        padding-inline: 1.5rem;
+      }
+
+      .products {
+        padding-top: 6rem;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .product-card__actions {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer__wrap {
+        grid-template-columns: 1.1fr 1fr 1fr;
+        align-items: center;
+        text-align: left;
+      }
+
+      .footer__socials {
+        justify-content: flex-end;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero__content {
+        width: min(860px, calc(100vw - 22rem));
+      }
+
+      .products__wrap,
+      .footer__wrap {
+        width: min(1120px, calc(100vw - 12rem));
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .modal__dialog {
+        width: min(1000px, 90vw);
+        padding: 1.5rem;
+      }
+
+      .modal__content {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+        align-items: start;
+        gap: 1.5rem;
+        padding-top: 0;
+      }
+
+      .modal__carousel {
+        position: sticky;
+        top: 0;
+      }
+
+      .modal__body {
+        max-height: min(calc(88vh - 3rem), 760px);
+        padding-right: 0.35rem;
+        overflow-y: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .heart {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header id="topbar" class="topbar clear">
+      <a href="../index.html" class="topbar__brand" aria-label="Amo Você Cestas">
+        <img src="../img/icons/logo.png" alt="Logo Amo Você Cestas" class="logo" />
+        <!-- <span class="topbar__title">Amo Você Cestas</span> -->
+      </a>
+      <nav class="navbar" id="navbar" aria-label="Navegação principal">
+        <a href="../index.html">Catalogo</a>
+        <a href="#cestas">Cestas</a>
+        <a href="#end">Contato</a>
+      </nav>
+    </header>
+
+    <div class="heart-layer" aria-hidden="true"></div>
+
+    <section class="hero" id="topo">
+      <div class="hero__content">
+        <span class="eyebrow">Dia dos Namorados 2026</span>
+        <h1>O amor mora nos pequenos gestos.</h1>
+        <p>
+          Surpreenda quem você ama com um café da manhã inesquecível na cama e presentes preparados à mão com todo o carinho que a sua história merece.
+        </p>
+        <a href="#cestas" class="cta">Surpreender o Meu Amor</a>
+      </div>
+    </section>
+
+    <section class="products" id="cestas">
+      <div class="products__wrap">
+        <div class="products__heading">
+          <span class="eyebrow">Coleção Romântica</span>
+          <h2>Presentes feitos para emocionar.</h2>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="faq__wrap">
+        <div class="faq__heading">
+          <h2 id="faq-title">Tudo o que você precisa saber antes de pedir.</h2>
+        </div>
+
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary>Como faço para encomendar?</summary>
+            <div class="faq__answer">Para garantir um atendimento personalizado, recebemos os pedidos diretamente pelo nosso WhatsApp (32) 99116-2238 ou via direct no Instagram @amovocecestas. Nossa equipe está pronta para te ajudar a escolher o presente perfeito!</div>
+          </details>
+          
+          <details class="faq__item">
+            <summary>Qual é o valor da entrega?</summary>
+            <div class="faq__answer">O valor do frete é calculado de forma justa e transparente com base no endereço de entrega. Ao nos chamar, basta enviar o bairro da pessoa presenteada e verificamos a taxa exata para você.</div>
+          </details>
+          
+          <details class="faq__item">
+            <summary>Até quando posso agendar meu pedido?</summary>
+            <div class="faq__answer">Aceitamos reservas até o dia 10/06, <strong>ou enquanto durarem os nossos estoques</strong> (nossa produção é limitada para mantermos a qualidade premium). Esqueceu e deixou para a última hora? Consulte a disponibilidade da nossa cesta de <strong>Pronta Entrega</strong> para envios imediatos!</div>
+          </details>
+          
+          <details class="faq__item">
+            <summary>Quais são os horários de entrega?</summary>
+            <div class="faq__answer">Para o Dia dos Namorados, nossas entregas ocorrem na manhã de sexta-feira (12/06), no período das 06h00 às 10h30. Também realizamos entregas sob agendamento na véspera (11/06).</div>
+          </details>
+          
+          <details class="faq__item">
+            <summary>Posso marcar um horário exato na sexta-feira (12/06)?</summary>
+            <div class="faq__answer">Como a manhã do Dia dos Namorados é o momento de maior emoção e volume logístico, as entregas seguem uma rota otimizada (das 06h00 às 10h30), não sendo possível fixar um horário exato. Caso você precise do presente em uma hora muito específica, sugerimos a retirada diretamente em nosso ateliê na véspera.</div>
+          </details>
+          
+          <details class="faq__item">
+            <summary>O que acontece se não tiver ninguém em casa?</summary>
+            <div class="faq__answer">Nós preparamos a surpresa com todo carinho, mas é fundamental que haja alguém no local para receber a cesta no momento da entrega. Caso nosso entregador não seja atendido, a cesta retornará ao nosso ateliê em segurança, irá para o final da fila de rotas e <strong>será necessária a cobrança de uma nova taxa de frete</strong> para o reenvio.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer" id="end">
+      <div class="footer__wrap">
+        <div class="footer__brand">Amo Você Cestas</div>
+        <div class="footer__info">
+          <span>WhatsApp: (32) 99116-2238</span>
+          <span>Instagram: @amovocecestas</span>
+          <span>Agenda aberta: Vagas limitadas para o Dia dos Namorados</span>
+        </div>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/amovocecestas" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://api.whatsapp.com/send?phone=5532991162238" target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal" id="product-modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" type="button" aria-label="Fechar detalhes" data-close-modal>&times;</button>
+      <div class="modal__content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script>
+    // Produtos renderizados via JS para manter o HTML enxuto e facilitar ajustes.
+    const products = [
+      {
+        title: "Caneca do Amor",
+        description: "Uma caneca decorada com todo o carinho, acompanhada de mimos especiais para aquecer o coração de quem você ama desde o primeiro café da manhã.",
+        price: "R$ 99,90",
+        images: [
+          "../img/namorados-26/cestas/caneca_do_amor.jpeg"
+        ],
+        highlights: [
+          "\uD83D\uDCAF Presente Rom\u00E2ntico: Ideal para expressar afeto logo nas primeiras horas do dia.",
+          "\uD83D\uDCF8 Foto Polaroid: Acompanha foto polaroid personalizada do casal e cart\u00E3o de dedicat\u00F3ria."
+        ],
+        badge: "",
+        message: "Olá! Gostaria de reservar a Caneca do Amor para o Dia dos Namorados. Como funciona a entrega?",
+        items: [
+          "Caneca decorada",
+          "Urso chaveiro com coração",
+          "02 cápsulas de chococcino",
+          "Decoração em flores",
+          "Balão metalizado",
+          "Foto polaroid",
+          "Cartão de dedicatória"
+        ]
+      },
+      {
+        title: "Caixinha do Amor",
+        description: "Uma charmosa caixinha em MDF reutilizável com tampa, recheada de delícias artesanais selecionadas para adoçar o dia de quem é especial para você.",
+        price: "R$ 99,90",
+        images: [
+          "../img/namorados-26/cestas/caixinha_do_amor.jpeg"
+        ],
+        highlights: [
+          "\uD83C\uDF81 Caixa em MDF: Embalagem premium reutiliz\u00E1vel com tampa para guardar recorda\u00E7\u00F5es.",
+          "\uD83D\uDCBB Feita com Carinho: Detalhes artesanais de flores e ursinho que emocionam."
+        ],
+        badge: "",
+        message: "Olá! Gostaria de reservar a Caixinha do Amor para o Dia dos Namorados. Como funciona a entrega?",
+        items: [
+          "Caixa em MDF reutilizável com tampa",
+          "Urso chaveiro com coração",
+          "Sachê de chocolate em pó",
+          "Biscoito amanteigado",
+          "Flor de bombom Raffaello",
+          "Creme de avelã Nutella",
+          "Foto polaroid",
+          "Cartão de dedicatória"
+        ]
+      },
+      {
+        title: "Cesta do Amor",
+        description: "Nossa experiência romântica mais completa e abundante. Um verdadeiro banquete preparado à mão, perfeito para compartilhar a dois e celebrar momentos únicos.",
+        price: "R$ 169,90",
+        images: [
+          "../img/namorados-26/cestas/cesta_do_amor.jpeg"
+        ],
+        highlights: [
+          "\uD83D\uDC9D Cesta Decorada com Corações: Em MDF premium reutiliz\u00E1vel, ideal para enfeitar.",
+          "\uD83C\uDF39 Flor Eterna e Balão: Uma linda rosa eterna e bal\u00E3o metalizado para encantar."
+        ],
+        badge: "",
+        message: "Olá! Gostaria de reservar a Cesta do Amor para o Dia dos Namorados. Como funciona a entrega?",
+        items: [
+          "Cesta em MDF reutilizável com corações",
+          "Suco de uva",
+          "Sachê de café com leite",
+          "Drip Coffee (café individual)",
+          "02 cápsulas de chococcino",
+          "Pão de mel",
+          "Biscoito amanteigado",
+          "Pão de queijo",
+          "Croissant recheado",
+          "Torradas",
+          "Geleia/Manteiga",
+          "Bolo de chocolate com cobertura",
+          "Salada de frutas",
+          "Rosa eterna",
+          "Balão metalizado",
+          "Foto polaroid",
+          "Cartão de dedicatória"
+        ]
+      }
+    ];
+
+    const productGrid = document.getElementById("product-grid");
+    const whatsappBase = "https://api.whatsapp.com/send?phone=5532991162238&text=";
+    const modal = document.getElementById("product-modal");
+    const modalContent = document.getElementById("modal-content");
+    const topbar = document.getElementById("topbar");
+    const heartAssets = [
+      "../img/namorados-26/falling_hearts/1.png",
+      "../img/namorados-26/falling_hearts/2.png",
+      "../img/namorados-26/falling_hearts/3.png"
+    ];
+
+    let lastScroll = 0;
+    const scrollThreshold = 30;
+    const appearTopBarThreshold = 500;
+    let currentModalProductIndex = null;
+    let currentSlideIndex = 0;
+
+    productGrid.innerHTML = products
+      .map(
+        (product, index) => `
+          <article class="product-card" data-product-index="${index}">
+            <div class="product-card__image">
+              ${product.badge ? `<span class="product-card__badge">${product.badge}</span>` : ""}
+              <img src="${product.images[0]}" alt="${product.title}" loading="lazy" />
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__title-row">
+                <h3>${product.title}</h3>
+                <span class="product-card__price">${product.price}</span>
+              </div>
+              <p>${product.description}</p>
+              <div class="product-card__actions">
+                <button class="product-card__details" type="button" data-open-modal="${index}">
+                  Ver itens
+                </button>
+                <a class="product-card__button" href="${whatsappBase}${encodeURIComponent(product.message)}" target="_blank" rel="noreferrer">
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+        `
+      )
+      .join("");
+
+    function isVideoAsset(asset) {
+      return /\.(mp4|webm|ogg)$/i.test(asset);
+    }
+
+    function renderCarouselMedia(asset, title) {
+      if (isVideoAsset(asset)) {
+        return `
+          <video class="modal__video" controls playsinline preload="metadata">
+            <source src="${asset}" />
+            Seu navegador nao suporta reproducao de video.
+          </video>
+        `;
+      }
+
+      return `<img class="modal__image" src="${asset}" alt="${title}" />`;
+    }
+
+    function renderModal(product) {
+      const hasMultipleSlides = product.images.length > 1;
+      modalContent.innerHTML = `
+        <div class="modal__carousel">
+          <div class="modal__media" id="modal-media">
+            ${renderCarouselMedia(product.images[currentSlideIndex], product.title)}
+            ${hasMultipleSlides ? `
+              <div class="modal__carousel-nav">
+                <button class="modal__carousel-btn" type="button" data-carousel-prev aria-label="Imagem anterior">
+                  &#8249;
+                </button>
+                <button class="modal__carousel-btn" type="button" data-carousel-next aria-label="Proxima imagem">
+                  &#8250;
+                </button>
+              </div>
+            ` : ""}
+          </div>
+          ${hasMultipleSlides ? `
+            <div class="modal__carousel-dots" aria-label="Galeria da cesta">
+              ${product.images
+                .map(
+                  (_, index) => `
+                    <button
+                      class="modal__carousel-dot ${index === currentSlideIndex ? "is-active" : ""}"
+                      type="button"
+                      aria-label="Ir para midia ${index + 1}"
+                      data-carousel-dot="${index}"
+                    ></button>
+                  `
+                )
+                .join("")}
+            </div>
+          ` : ""}
+        </div>
+        <div class="modal__body">
+          <div class="modal__header">
+            <span class="eyebrow">Detalhes da cesta</span>
+            <h3 id="modal-title">${product.title}</h3>
+            <span class="modal__price">${product.price}</span>
+            <p>${product.description}</p>
+          </div>
+          <div class="modal__highlights">
+            <h4>Destaques Premium</h4>
+            <ul class="modal__highlights-list">
+              ${product.highlights.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
+          <div class="modal__items">
+            <h4 class="modal__section-title">Itens inclusos</h4>
+            <ul class="modal__list">
+              ${product.items.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
+          <a class="cta modal__cta" href="${whatsappBase}${encodeURIComponent(product.message)}" target="_blank" rel="noreferrer">
+            Comprar pelo WhatsApp
+          </a>
+        </div>
+      `;
+    }
+
+    function updateCarousel() {
+      const product = products[currentModalProductIndex];
+      if (!product) return;
+
+      const media = modalContent.querySelector("#modal-media");
+      if (!media) return;
+
+      media.innerHTML = `
+        ${renderCarouselMedia(product.images[currentSlideIndex], product.title)}
+        ${product.images.length > 1 ? `
+          <div class="modal__carousel-nav">
+            <button class="modal__carousel-btn" type="button" data-carousel-prev aria-label="Imagem anterior">
+              &#8249;
+            </button>
+            <button class="modal__carousel-btn" type="button" data-carousel-next aria-label="Proxima imagem">
+              &#8250;
+            </button>
+          </div>
+        ` : ""}
+      `;
+
+      modalContent.querySelectorAll("[data-carousel-dot]").forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === currentSlideIndex);
+      });
+    }
+
+    function openModal(productIndex) {
+      const product = products[productIndex];
+      if (!product) return;
+
+      currentModalProductIndex = productIndex;
+      currentSlideIndex = 0;
+      renderModal(product);
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      currentModalProductIndex = null;
+      currentSlideIndex = 0;
+    }
+
+    document.querySelectorAll("[data-open-modal]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.stopPropagation();
+        openModal(Number(button.dataset.openModal));
+      });
+    });
+
+    document.querySelectorAll(".product-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        openModal(Number(card.dataset.productIndex));
+      });
+    });
+
+    document.querySelectorAll(".product-card__button").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target.hasAttribute("data-close-modal")) {
+        closeModal();
+        return;
+      }
+
+      if (event.target.hasAttribute("data-carousel-prev")) {
+        const product = products[currentModalProductIndex];
+        if (!product || product.images.length <= 1) return;
+        currentSlideIndex = (currentSlideIndex - 1 + product.images.length) % product.images.length;
+        updateCarousel();
+        return;
+      }
+
+      if (event.target.hasAttribute("data-carousel-next")) {
+        const product = products[currentModalProductIndex];
+        if (!product || product.images.length <= 1) return;
+        currentSlideIndex = (currentSlideIndex + 1) % product.images.length;
+        updateCarousel();
+        return;
+      }
+
+      if (event.target.hasAttribute("data-carousel-dot")) {
+        currentSlideIndex = Number(event.target.dataset.carouselDot);
+        updateCarousel();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal();
+        return;
+      }
+
+      if (!modal.classList.contains("is-open") || currentModalProductIndex === null) {
+        return;
+      }
+
+      const product = products[currentModalProductIndex];
+      if (!product || product.images.length <= 1) return;
+
+      if (event.key === "ArrowLeft") {
+        currentSlideIndex = (currentSlideIndex - 1 + product.images.length) % product.images.length;
+        updateCarousel();
+      }
+
+      if (event.key === "ArrowRight") {
+        currentSlideIndex = (currentSlideIndex + 1) % product.images.length;
+        updateCarousel();
+      }
+    });
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.scrollY;
+      const scrollAmount = Math.abs(currentScroll - lastScroll);
+
+      if (currentScroll < appearTopBarThreshold) {
+        topbar.classList.remove("hidden");
+        topbar.classList.add("clear");
+        lastScroll = currentScroll;
+        return;
+      }
+
+      if (scrollAmount < scrollThreshold) {
+        lastScroll = currentScroll;
+        return;
+      }
+
+      if (currentScroll > lastScroll) {
+        topbar.classList.add("hidden");
+      } else {
+        topbar.classList.remove("hidden");
+        topbar.classList.remove("clear");
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    // Sistema leve de corações caindo com duração, atraso e deslocamento aleatórios.
+    const heartLayer = document.querySelector(".heart-layer");
+    const heartCount = window.innerWidth < 768 ? 10 : 16;
+
+    for (let i = 0; i < heartCount; i += 1) {
+      const heart = document.createElement("img");
+      heart.className = "heart";
+      heart.src = heartAssets[Math.floor(Math.random() * heartAssets.length)];
+      heart.alt = "";
+      heart.setAttribute("aria-hidden", "true");
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.animationDuration = `${14 + Math.random() * 10}s`;
+      heart.style.animationDelay = `${Math.random() * -20}s`;
+      heart.style.setProperty("--drift", `${-120 + Math.random() * 240}px`);
+      heart.style.setProperty("--rotate", `${120 + Math.random() * 240}deg`);
+      heart.style.opacity = `${0.35 + Math.random() * 0.25}`;
+      heartLayer.appendChild(heart);
+    }
+
+    // Animacoes com GSAP e ScrollTrigger.
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".hero__content > *", {
+        y: 32,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.12,
+        ease: "power3.out"
+      });
+
+      gsap.utils.toArray(".product-card").forEach((card, index) => {
+        gsap.from(card, {
+          y: 46,
+          opacity: 0,
+          duration: 0.85,
+          delay: index * 0.05,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 88%",
+            once: true
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
