@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dia dos Pais 2026 - Instagram | Amo Você Cestas</title>
+
+        <!-- SEO & Meta -->
+        <meta
+            name="description"
+            content="Card de apresentação do Dia dos Pais 2026 da Amo Você Cestas para redes sociais."
+        />
+        <link rel="icon" href="../img/icons/heart.svg" type="image/x-icon" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Style Sheets -->
+        <link rel="stylesheet" href="../css/base.css" />
+        <link rel="stylesheet" href="../css/pais-26-theme.css" />
+
+        <style>
+            /* Custom adjustments for Instagram screenshot page */
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                background-color: var(--bg-dark);
+            }
+
+            .page-wrapper {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .insta-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 40px 30px;
+                box-sizing: border-box;
+                width: 100%;
+                max-width: 640px;
+                position: relative;
+            }
+
+            .insta-card header {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .insta-card #main-title {
+                margin-top: 0;
+                margin-bottom: 8px;
+                font-size: clamp(38px, 6vw, 56px);
+                line-height: 1.15;
+            }
+
+            .insta-card .subtitle-container {
+                margin: 24px auto 0 auto;
+                width: 100%;
+                font-size: clamp(15px, 2.2vw, 18px);
+                line-height: 1.7;
+                text-align: center;
+            }
+
+            .insta-card .subtitle-container p {
+                margin-bottom: 12px;
+            }
+
+            .insta-card .subtitle-container p:last-child {
+                margin-bottom: 0;
+            }
+
+            .brand-footer {
+                margin-top: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                opacity: 0.9;
+            }
+
+            .brand-footer img {
+                height: 26px;
+                width: auto;
+                filter: brightness(0) invert(1) drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+            }
+
+            .brand-footer span {
+                font-family: "Montserrat", sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 0.8px;
+                color: var(--text-secondary);
+            }
+
+            /* Preset Container Frame options */
+            .frame-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 300ms ease;
+                box-sizing: border-box;
+            }
+
+            .frame-box.preset-full {
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .frame-box.preset-feed {
+                width: min(100vw, 500px);
+                height: min(100vh, 625px); /* Aspecto 4:5 */
+                border: 1px dashed rgba(255, 255, 255, 0.25);
+                border-radius: 20px;
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            }
+
+            .frame-box.preset-square {
+                width: min(90vw, 500px);
+                height: min(90vw, 500px); /* Aspecto 1:1 */
+                border: 1px dashed rgba(255, 255, 255, 0.25);
+                border-radius: 20px;
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            }
+
+            .frame-box.preset-story {
+                width: min(100vw, 380px);
+                height: min(100vh, 675px); /* Aspecto 9:16 */
+                border: 1px dashed rgba(255, 255, 255, 0.25);
+                border-radius: 20px;
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            }
+
+            /* Controls Overlay */
+            .controls-bar {
+                position: fixed;
+                bottom: 24px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(14, 14, 17, 0.92);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                padding: 10px 18px;
+                border-radius: 40px;
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                z-index: 9999;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+                transition: opacity 250ms ease, transform 250ms ease;
+            }
+
+            .controls-bar.hidden {
+                opacity: 0;
+                transform: translate(-50%, 20px);
+                pointer-events: none;
+            }
+
+            .controls-bar button {
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                color: #ffffff;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: 500;
+                cursor: pointer;
+                font-family: "Montserrat", sans-serif;
+                transition: all 200ms ease;
+            }
+
+            .controls-bar button:hover {
+                background: rgba(255, 255, 255, 0.15);
+                border-color: rgba(255, 255, 255, 0.3);
+            }
+
+            .controls-bar button.active {
+                background: var(--red-accent);
+                border-color: var(--red-accent);
+                box-shadow: 0 0 12px var(--red-glow);
+            }
+
+            .controls-bar .hide-btn {
+                background: var(--red-accent);
+                border-color: var(--red-accent);
+                margin-left: 6px;
+            }
+
+            .controls-bar .hide-btn:hover {
+                background: var(--red-hover);
+            }
+
+            .screen-hint {
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.4);
+                letter-spacing: 0.5px;
+                pointer-events: none;
+                transition: opacity 300ms ease;
+            }
+
+            .screen-hint.hidden {
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="screen-hint" id="hint">Dica: clique em "Ocultar p/ Print" antes de tirar a foto. Clique na tela para voltar os botões.</div>
+
+        <div class="page-wrapper">
+            <div id="frame" class="frame-box preset-full">
+                <div class="insta-card">
+                    <header>
+                        <h1 id="main-title">Dia dos Pais 2026</h1>
+
+                        <div class="subtitle-container">
+                            <p>Ser pai é ser porto seguro, força e sabedoria.</p>
+                            <p>É presenciar o crescimento com olhar atento e afeto silencioso.</p>
+                            <p>Para homenagear quem sempre esteve ao seu lado, preparamos uma seleção exclusiva de experiências e sabores inesquecíveis.</p>
+                            <p class="highlight-red">Surpreenda com requinte e gratidão.</p>
+                        </div>
+                    </header>
+
+                    <div class="brand-footer">
+                        <img src="../img/icons/logo.png" alt="Logo Amo Você Cestas" />
+                        <span>@amovocecestas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Modos de Formato para Instagram -->
+        <div id="controls" class="controls-bar">
+            <button onclick="setPreset('full', this)" class="active">Tela Cheia</button>
+            <button onclick="setPreset('feed', this)">Feed 4:5</button>
+            <button onclick="setPreset('square', this)">Feed 1:1</button>
+            <button onclick="setPreset('story', this)">Story 9:16</button>
+            <button onclick="hideControls()" class="hide-btn">📷 Ocultar p/ Print</button>
+        </div>
+
+        <script>
+            function setPreset(preset, btn) {
+                const frame = document.getElementById('frame');
+                frame.className = 'frame-box preset-' + preset;
+                document.querySelectorAll('.controls-bar button').forEach(b => {
+                    if (b !== document.querySelector('.hide-btn')) {
+                        b.classList.remove('active');
+                    }
+                });
+                if (btn) btn.classList.add('active');
+            }
+
+            function hideControls() {
+                document.getElementById('controls').classList.add('hidden');
+                document.getElementById('hint').classList.add('hidden');
+                
+                // Re-exibir os controles se o usuário clicar na tela
+                setTimeout(() => {
+                    window.addEventListener('click', showControls, { once: true });
+                }, 150);
+            }
+
+            function showControls() {
+                document.getElementById('controls').classList.remove('hidden');
+                document.getElementById('hint').classList.remove('hidden');
+            }
+        </script>
+    </body>
+</html>
