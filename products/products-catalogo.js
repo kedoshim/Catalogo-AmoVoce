@@ -88,18 +88,18 @@ export const products = [
             4: "img/catalogo/amoCelebrar/444.jpg",
         },
     },
-    {
-        title: "Amo Queijos",
-        price: "189,90 c/Cerveja | 249,90 c/Vinho",
-        description: "",
-        items: "Caixa de MDF reutilizável 30x20 • Uvas e Morangos • Waffle • Mini folhados recheados • Mussarela com damasco • Mix de nuts • Amendoins • Salaminho • Queijo Gouda • Creme de Ricota • Provolone Desidratado • Bombom Raffaello • Heineken ou vinho",
-        images: {
-            1: "img/catalogo/amoQueijos/1.jpg",
-            2: "img/catalogo/amoQueijos/222.jpg",
-            3: "img/catalogo/amoQueijos/333.jpg",
-            4: "img/catalogo/amoQueijos/444.jpg",
-        },
-    },
+    // {
+    //     title: "Amo Queijos",
+    //     price: "189,90 c/Cerveja | 249,90 c/Vinho",
+    //     description: "",
+    //     items: "Caixa de MDF reutilizável 30x20 • Uvas e Morangos • Waffle • Mini folhados recheados • Mussarela com damasco • Mix de nuts • Amendoins • Salaminho • Queijo Gouda • Creme de Ricota • Provolone Desidratado • Bombom Raffaello • Heineken ou vinho",
+    //     images: {
+    //         1: "img/catalogo/amoQueijos/1.jpg",
+    //         2: "img/catalogo/amoQueijos/222.jpg",
+    //         3: "img/catalogo/amoQueijos/333.jpg",
+    //         4: "img/catalogo/amoQueijos/444.jpg",
+    //     },
+    // },
     {
         title: "Amo Petiscos",
         price: "179,90",
@@ -148,18 +148,18 @@ export const products = [
     //         3: "img/catalogo/val/3.jpg",
     //     },
     // },
-    {
-        title: "Amo Coca",
-        price: "199,90",
-        description: "",
-        items: "Caixa MDF reutilizável 30x20 • Pão de queijo • Croissants recheados • Queijo processado Polenguinho • Frios - queijo e peito de Peru • Pão mini baguete • Coca-cola • Toddynho • Frutas da estação no coco • Mini naked cake",
-        images: {
-            1: "img/catalogo/amoCoca/1.jpg",
-            2: "img/catalogo/amoCoca/2.jpg",
-            3: "img/catalogo/amoCoca/3.jpg",
-            4: "img/catalogo/amoCoca/4.jpg",
-        },
-    },
+    // {
+    //     title: "Amo Coca",
+    //     price: "199,90",
+    //     description: "",
+    //     items: "Caixa MDF reutilizável 30x20 • Pão de queijo • Croissants recheados • Queijo processado Polenguinho • Frios - queijo e peito de Peru • Pão mini baguete • Coca-cola • Toddynho • Frutas da estação no coco • Mini naked cake",
+    //     images: {
+    //         1: "img/catalogo/amoCoca/1.jpg",
+    //         2: "img/catalogo/amoCoca/2.jpg",
+    //         3: "img/catalogo/amoCoca/3.jpg",
+    //         4: "img/catalogo/amoCoca/4.jpg",
+    //     },
+    // },
     {
         title: "Amo Momentos",
         price: "189,90",
