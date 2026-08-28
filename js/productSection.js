@@ -22,9 +22,21 @@ export function setupProductSection(parentDiv, productData) {
     const mainFrame = document.createElement("div");
     mainFrame.classList.add("main-frame");
 
+    function setImageWithFallback(img, src) {
+        img.src = src;
+        img.onerror = function () {
+            img.onerror = null;
+            if (this.src.endsWith(".jpg")) {
+                this.src = this.src.replace(/\.jpg$/, ".jpeg");
+            } else if (this.src.endsWith(".jpeg")) {
+                this.src = this.src.replace(/\.jpeg$/, ".jpg");
+            }
+        };
+    }
+
     // Create main image element
     const mainImage = document.createElement("img");
-    mainImage.src = images[1]; // Default to first image
+    setImageWithFallback(mainImage, images[1]); // Default to first image
     mainImage.classList.add("main-image");
 
     // Create modal for full-size image and overlay
@@ -59,7 +71,7 @@ export function setupProductSection(parentDiv, productData) {
         slide.classList.add("swiper-slide");
 
         const img = document.createElement("img");
-        img.src = images[key];
+        setImageWithFallback(img, images[key]);
         img.classList.add("slide-image");
 
         // img.addEventListener("click", () => {
