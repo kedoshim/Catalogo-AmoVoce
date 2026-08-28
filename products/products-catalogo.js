@@ -102,6 +102,8 @@ export const products = [
             2: "img/catalogo/amoPetiscos/2.jpg",
             3: "img/catalogo/amoPetiscos/3.jpg",
             4: "img/catalogo/amoPetiscos/4.jpg",
+            5: "img/catalogo/amoPetiscos/5.jpg",
+            6: "img/catalogo/amoPetiscos/6.jpg",
         },
     },
     {
