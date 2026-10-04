@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Detalhes da Cesta | Amo Você Cestas e Presentes</title>
+        <meta name="description" content="Conheça todos os detalhes, itens inclusos e encantos desta cesta artesanal exclusiva da Amo Você Cestas." />
+        <link rel="icon" href="img/icons/heart.svg" type="image/x-icon" />
+
+        <!-- Google Fonts: Playfair Display + Montserrat -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/cesta-detalhes.css" />
+
+        <script src="js/cesta-detalhes.js" type="module" defer></script>
+    </head>
+    <body>
+        <!-- Topbar de Navegação -->
+        <header class="detail-topbar">
+            <div class="detail-topbar-inner">
+                <a href="index.html" class="back-link" id="btn-back">
+                    <span class="back-arrow">←</span>
+                    <span>Voltar ao Catálogo</span>
+                </a>
+                <a href="index.html" class="brand-link">
+                    <img src="img/icons/logo.png" alt="Amo Você Cestas" class="logo" />
+                    <span class="brand-name">Amo Você Cestas</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Container Principal onde os detalhes serão renderizados -->
+        <main id="product-detail-root" class="product-detail-container"></main>
+
+        <!-- Botão Flutuante Fixo do WhatsApp ("Quero Presentear") -->
+        <a
+            id="floating-cta-whatsapp"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-float-whatsapp"
+            aria-label="Quero Presentear no WhatsApp"
+        >
+            <img src="img/icons/whatsapp.svg" alt="WhatsApp" />
+            <span>Quero Presentear</span>
+        </a>
+
+        <!-- Modal Lightbox para visualização de imagem em tela cheia -->
+        <div id="image-lightbox" class="lightbox-modal" aria-hidden="true" role="dialog">
+            <div class="lightbox-overlay" id="lightbox-overlay"></div>
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightbox-close" aria-label="Fechar imagem">✕</button>
+                <img id="lightbox-image" src="" alt="Foto expandida da cesta" />
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="site-footer">
+            <p>© Amo Você Cestas e Presentes • Juiz de Fora - MG • @amovocecestas</p>
+        </footer>
+    </body>
+</html>

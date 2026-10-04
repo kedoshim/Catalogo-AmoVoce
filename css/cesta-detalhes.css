@@ -1,0 +1,1068 @@
+/* ============================================================
+   Amo Você Cestas — Estilos da Página de Detalhes da Cesta
+   Layout 2 Colunas, Galeria Interativa e Design Emocional
+   ============================================================ */
+
+:root {
+  --color-bg: #FAF6F2;
+  --color-primary: #C66B8A;
+  --color-primary-hover: #B25577;
+  --color-rose-light: #E9C8D1;
+  --color-green-light: #DCE7D5;
+  --color-text-main: #4A3B37;
+  --color-text-muted: #75655F;
+  --color-white: #FFFFFF;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 4px 14px rgba(74, 59, 55, 0.05);
+  --shadow-card: 0 14px 35px rgba(74, 59, 55, 0.08);
+  --shadow-hover: 0 20px 48px rgba(74, 59, 55, 0.14);
+  --shadow-cta: 0 12px 30px rgba(198, 107, 138, 0.32);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  /* Override base.css flex centering that causes horizontal overflow */
+  display: block !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  overflow-x: hidden;
+}
+
+/* Prevent base.css global img rule from causing overflow */
+body img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   Topbar do Detalhe
+   ============================================================ */
+.detail-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(250, 246, 242, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(74, 59, 55, 0.08);
+  padding: 12px 24px;
+}
+
+.detail-topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(74, 59, 55, 0.1);
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateX(-3px);
+}
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--color-text-main);
+}
+
+.brand-link .logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+/* ============================================================
+   Container Principal de Detalhes
+   ============================================================ */
+.product-detail-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 24px 80px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   Seção Superior (2 Colunas Desktop)
+   ============================================================ */
+.detail-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 54px;
+  align-items: start;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Coluna Esquerda: Galeria */
+.detail-gallery-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.main-photo-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(74, 59, 55, 0.08);
+  cursor: pointer;
+}
+
+.main-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.25s ease, transform 0.35s ease;
+}
+
+.main-photo-wrapper:hover .main-photo {
+  transform: scale(1.02);
+}
+
+.zoom-hint {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.thumbnails-grid {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  scrollbar-width: thin;
+}
+
+.thumbnail-btn {
+  flex: 0 0 76px;
+  height: 76px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2.5px solid transparent;
+  padding: 0;
+  background: var(--color-white);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.thumbnail-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbnail-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-rose-light);
+}
+
+.thumbnail-btn.active {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(198, 107, 138, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Coluna Direita: Informações Comerciais */
+.detail-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.detail-category-chip {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(74, 59, 55, 0.06);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.detail-strategic-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(198, 107, 138, 0.12);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid rgba(198, 107, 138, 0.3);
+}
+
+.detail-strategic-tag-secondary {
+  background: rgba(220, 231, 213, 0.45);
+  color: #4A6B46;
+  border: 1px solid rgba(180, 205, 170, 0.8);
+}
+
+.detail-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-text-main);
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+
+.detail-tagline {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--color-primary);
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.detail-description {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin: 0 0 28px;
+}
+
+.detail-price-box {
+  background: var(--color-white);
+  border: 1px solid rgba(74, 59, 55, 0.08);
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-price-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.detail-price-value {
+  font-family: var(--font-sans);
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.detail-payment-terms {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-payment-disclaimer {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.btn-whatsapp-order {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--shadow-cta);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-whatsapp-order:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(198, 107, 138, 0.42);
+}
+
+.btn-whatsapp-order img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* ============================================================
+   Itens Inclusos — Inline na Coluna de Info
+   ============================================================ */
+.detail-items-inline {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(74, 59, 55, 0.1);
+}
+
+.detail-items-inline-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin: 0 0 16px;
+}
+
+.detail-items-inline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-items-inline-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(74, 59, 55, 0.06);
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  line-height: 1.4;
+  transition: border-color 0.2s ease;
+}
+
+.detail-items-inline-item:hover {
+  border-color: var(--color-rose-light);
+}
+
+.detail-items-inline-item .item-dot {
+  flex: 0 0 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(198, 107, 138, 0.15);
+}
+
+/* ============================================================
+   Seções de Conteúdo Aprofundado
+   ============================================================ */
+.detail-section {
+  margin-top: 56px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 44px 38px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(74, 59, 55, 0.06);
+}
+
+.detail-section-header {
+  margin-bottom: 28px;
+}
+
+.detail-section-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-section-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Itens Inclusos */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.item-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(74, 59, 55, 0.06);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.item-card:hover {
+  transform: translateX(3px);
+  border-color: var(--color-rose-light);
+}
+
+.item-dot {
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(198, 107, 138, 0.2);
+}
+
+.item-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  line-height: 1.45;
+}
+
+/* Destaques da Cesta */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.highlight-card {
+  background: var(--color-bg);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 18px 20px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  line-height: 1.5;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Ocasiões Indicadas */
+.occasions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.occasion-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 16px 14px;
+  text-align: center;
+  border: 1px solid rgba(74, 59, 55, 0.06);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  min-width: 0; /* IMPEDE overflow horizontal no CSS Grid */
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.occasion-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-rose-light);
+}
+
+.occasion-label {
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  line-height: 1.35;
+  display: block;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ============================================================
+   Adicionais na Página de Detalhes
+   ============================================================ */
+.detail-extras-section {
+  background: var(--color-white);
+}
+
+.detail-extras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.detail-extra-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  border: 1px solid rgba(74, 59, 55, 0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.detail-extra-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.detail-extra-media {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.detail-extra-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.detail-extra-card:hover .detail-extra-media img {
+  transform: scale(1.03);
+}
+
+.detail-extra-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+.detail-extra-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.detail-extra-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.detail-extra-price {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.detail-extra-price small {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.detail-extra-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.detail-extras-footer {
+  margin-top: 24px;
+  padding: 14px 20px;
+  background: rgba(198, 107, 138, 0.08);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-primary);
+  text-align: center;
+}
+
+.detail-extras-footer p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--color-text-main);
+}
+
+/* Quem costuma escolher */
+.audience-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.audience-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1rem;
+  color: var(--color-text-main);
+  padding: 14px 18px;
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+}
+
+.audience-check {
+  color: #4CAF50;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+/* Assinatura Artesanal Amo Você */
+.signature-box {
+  margin-top: 56px;
+  background: linear-gradient(135deg, rgba(233, 200, 209, 0.35), rgba(220, 231, 213, 0.3));
+  border: 1.5px dashed var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  text-align: center;
+  position: relative;
+}
+
+.signature-logo-wrap {
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.signature-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.signature-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin: 0 0 10px;
+}
+
+.signature-phrase {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--color-text-main);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   Botão Flutuante Fixo do WhatsApp
+   ============================================================ */
+.cta-float-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(198, 107, 138, 0.42);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-float-whatsapp:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 36px rgba(198, 107, 138, 0.55);
+}
+
+.cta-float-whatsapp img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+}
+
+/* ============================================================
+   Lightbox Modal
+   ============================================================ */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+  place-items: center;
+  padding: 20px;
+}
+
+.lightbox-modal.active {
+  display: grid;
+}
+
+.lightbox-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: var(--radius-md);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -46px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-main);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: rotate(90deg);
+}
+
+/* ============================================================
+   Estado de Produto Não Encontrado
+   ============================================================ */
+.product-not-found {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 64px 32px;
+  text-align: center;
+  max-width: 600px;
+  margin: 60px auto;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(74, 59, 55, 0.08);
+}
+
+.product-not-found .not-found-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+}
+
+.product-not-found h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-text-main);
+  margin: 0 0 12px;
+}
+
+.product-not-found p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  text-align: center;
+  padding: 32px 20px;
+  background: rgba(74, 59, 55, 0.04);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-payment-note {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  color: #6E5F5A;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Responsividade Mobile (< 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  .detail-topbar {
+    padding: 8px 16px;
+  }
+
+  .brand-link .logo {
+    height: 28px;
+  }
+
+  .brand-name {
+    display: none;
+  }
+
+  .back-link {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .product-detail-container {
+    padding: 75px 16px 70px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .detail-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    max-width: 100%;
+  }
+
+  .detail-gallery-col {
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .main-photo-wrapper {
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    box-sizing: border-box;
+  }
+
+  .main-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .detail-info-col {
+    max-width: 100%;
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .detail-title {
+    font-size: 1.75rem;
+  }
+
+  .detail-tagline {
+    font-size: 1rem;
+  }
+
+  .detail-description {
+    font-size: 0.93rem;
+  }
+
+  .detail-price-box {
+    padding: 18px 20px;
+  }
+
+  .detail-price-value {
+    font-size: 2rem;
+  }
+
+  .detail-items-inline {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .detail-items-inline-title {
+    font-size: 1.15rem;
+  }
+
+  .detail-items-inline-item {
+    padding: 8px 12px;
+    font-size: 0.88rem;
+  }
+
+  .detail-section {
+    padding: 28px 18px;
+    margin-top: 36px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .detail-section-title {
+    font-size: 1.4rem;
+  }
+
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .occasions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .occasion-card {
+    padding: 12px 8px;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .occasion-label {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .detail-extras-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .detail-extra-media {
+    height: 140px;
+  }
+
+  .signature-box {
+    margin-top: 36px;
+    padding: 28px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .signature-title {
+    font-size: 1.2rem;
+  }
+
+  .signature-phrase {
+    font-size: 1rem;
+  }
+
+  .cta-float-whatsapp {
+    bottom: 16px;
+    right: 16px;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .occasions-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -271,10 +271,11 @@ img {
 }
 
 .instructions ul li::before {
-    content: "🌸";
+    content: "•";
+    color: #C66B8A;
     position: absolute;
     left: 0;
-    top: 2px;
+    top: 0;
 }
 
 /* Contato */

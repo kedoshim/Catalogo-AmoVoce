@@ -1,88 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Catálogo Amo Você Cestas</title>
+        <title>Catálogo Amo Você Cestas e Presentes</title>
+        <meta name="description" content="Mais do que cestas, entregamos experiências. Presentes que transformam momentos em lembranças com flores naturais e delícias artesanais em Juiz de Fora." />
         <link rel="icon" href="img/icons/heart.svg" type="image/x-icon" />
         <meta property="og:image" content="img/cover.png" />
+        <meta property="og:title" content="Catálogo Amo Você Cestas e Presentes" />
+        <meta property="og:description" content="Presentes artesanais exclusivos para surpreender em todas as ocasiões." />
+
+        <!-- Google Fonts Oficiais: Playfair Display + Montserrat -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
             rel="stylesheet"
         />
-        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
-        <script src="js/main-catalogo.js" type="module" defer></script>
-        <script src="js/topbar.js" type="module" defer></script>
-
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/catalogo-theme.css" />
+
+        <script src="js/main-catalogo.js" type="module" defer></script>
+        <script src="js/topbar.js" type="module" defer></script>
     </head>
     <body>
-        <div id="topbar" class="topbar clear">
-            <img src="img/icons/logo.png" alt="Logo" class="logo" />
+        <!-- Topbar -->
+        <header id="topbar" class="topbar clear">
+            <a href="index.html" class="topbar-brand">
+                <img src="img/icons/logo.png" alt="Amo Você Cestas" class="logo" />
+            </a>
             <nav id="navbar"></nav>
-        </div>
+        </header>
 
-        <div>
-            <h1 id="main-title">Nosso Catálogo</h1>
-        </div>
-        <div id="cestas"></div>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-brand">
+                    <img src="img/icons/logo.png" alt="Amo Você Cestas" class="hero-logo" />
+                </div>
+                <h1 class="hero-title">Mais do que cestas, entregamos experiências.</h1>
+                <p class="hero-subtitle">Presentes que transformam momentos em lembranças inesquecíveis.</p>
+                <div class="hero-actions">
+                    <a href="#vitrine" class="btn-primary">Ver Catálogo</a>
+                    <a
+                        href="https://api.whatsapp.com/send?phone=5532991162238&text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20cat%C3%A1logo%20de%20cestas."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-secondary"
+                    >
+                        <img src="img/icons/whatsapp.svg" alt="WhatsApp" />
+                        <span>Falar no WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Quick Jump Bar -->
+        <nav class="category-nav-wrapper" aria-label="Navegação por categorias">
+            <div class="category-nav">
+                <a href="#cat-cafe" class="category-nav-chip">Café da Manhã</a>
+                <a href="#cat-bem-estar" class="category-nav-chip">Bem-Estar</a>
+                <a href="#cat-doces" class="category-nav-chip">Doces & Carinho</a>
+                <a href="#cat-celebrar" class="category-nav-chip">Celebração</a>
+                <a href="#cat-infantil" class="category-nav-chip">Infantil</a>
+                <a href="#cat-petiscos" class="category-nav-chip">Happy Hour</a>
+                <a href="#extras" class="category-nav-chip">Adicionais</a>
+                <a href="#instrucoes" class="category-nav-chip">Como Pedir</a>
+            </div>
+        </nav>
+
+        <!-- Vitrine Principal (Renderizada dinamicamente por js/main-catalogo.js) -->
+        <main id="vitrine"></main>
+
+        <!-- Seção de Adicionais -->
         <section id="extras">
-            <hr />
-            <h2 class="title">Adicionais:</h2>
+            <div class="title-header">
+                <h2 class="title">✨ Adicionais Especiais</h2>
+                <p class="subtitle">Pequenos detalhes preparados com carinho para tornar a entrega ainda mais emocionante.</p>
+            </div>
             <div class="extras-wrapper">
                 <div class="extras-container">
-                    <img src="img/extras/polaroid.png" alt="Foto Polaroid" />
+                    <img src="img/extras/polaroid.png" alt="Foto Polaroid" loading="lazy" />
                     <div class="item-name">
-                        <h3 class="title">📸 Foto Polaroid</h3>
-                        <p class="extra-desc">Tem coisa mais gostosa que revirar uma caixa de memórias anos depois? A gente coloca ali, junto com a cesta, um clique pra guardar esse momento pra sempre. Pequeno detalhe, grande lembrança. 🤍</p>
-                        <p class="price">R$ 10,00</p>
+                        <h3 class="title">Foto Polaroid</h3>
+                        <p class="extra-desc">Tem coisa mais gostosa que revirar uma caixa de memórias anos depois? A gente coloca ali, junto com a cesta, um clique pra guardar esse momento pra sempre. Pequeno detalhe, grande lembrança.</p>
+                        <p class="price">R$ 10,00 <span class="price-unit">/ un.</span></p>
                     </div>
                 </div>
                 <div class="extras-container">
-                    <img src="img/extras/balao.jpg" alt="Balões decorativos" />
+                    <img src="img/extras/balao.jpg" alt="Balões decorativos" loading="lazy" />
                     <div class="item-name">
-                        <h3 class="title">🎈 Balões decorativos</h3>
+                        <h3 class="title">Balões decorativos</h3>
                         <p class="extra-desc">Porque presente bom se vê de longe. Os balões chegam junto pra deixar a entrega ainda mais festiva — aquele "uau" antes mesmo de abrir a cesta.</p>
                         <p class="price">R$ 20,00</p>
                     </div>
                 </div>
                 <div class="extras-container">
-                    <img src="img/extras/suco.jpg" alt="Suco de laranja natural" />
+                    <img src="img/extras/suco.jpg" alt="Suco de laranja natural" loading="lazy" />
                     <div class="item-name">
-                        <h3 class="title">🍊 Suco de laranja natural</h3>
+                        <h3 class="title">Suco de laranja natural</h3>
                         <p class="extra-desc">Um brinde de verdade: suco natural, fresquinho, pra completar o café da manhã ou o brinde do dia especial. Simples, leve e cheio de carinho.</p>
                         <p class="price">R$ 10,00</p>
                     </div>
                 </div>
                 <div class="extras-container">
-                    <img src="img/extras/bolinho/1.jpg" alt="Naked cake" />
+                    <img src="img/extras/bolinho/1.jpg" alt="Naked cake" loading="lazy" />
                     <div class="item-name">
-                        <h3 class="title">🍰 Naked cake</h3>
+                        <h3 class="title">Naked cake</h3>
                         <p class="extra-desc">Aquele bolinho despretensioso, fofo, sem excesso — só o essencial e delicioso. Encaixa perfeito em qualquer cesta e transforma o presente numa experiência completa.</p>
                         <p class="price">R$ 30,00</p>
                     </div>
                 </div>
                 <div class="extras-container">
-                    <img src="img/extras/metal.jpg" alt="Balão metalizado" />
+                    <img src="img/extras/metal.jpg" alt="Balão metalizado" loading="lazy" />
                     <div class="item-name">
-                        <h3 class="title">🎈✨ Balão metalizado</h3>
+                        <h3 class="title">Balão metalizado</h3>
                         <p class="extra-desc">Um toque brilhante a mais. Ideal pra personalizar com uma letra, um número (idade, aniversário de namoro) ou aquele coração que resume o recado.</p>
-                        <p class="price">R$ 12,00</p>
+                        <p class="price">R$ 12,00 <span class="price-unit">/ un.</span></p>
                     </div>
                 </div>
                 <div class="extras-container">
-                    <img src="img/extras/nome.png" alt="Nome escrito" />
+                    <img src="img/extras/nome.png" alt="Nome escrito" loading="lazy" />
                     <div class="item-name">
-                        <h3 class="title">✍️ Nome escrito</h3>
+                        <h3 class="title">Nome escrito</h3>
                         <p class="extra-desc">Nada mais pessoal do que ver o próprio nome ali, feito especialmente pra quem recebe. É o detalhe que transforma "uma cesta" em "a cesta dela/dele".</p>
                         <p class="price">R$ 10,00</p>
                     </div>
@@ -90,100 +131,82 @@
             </div>
         </section>
 
-<hr />
-        <div class="section">
-            <div id="end" class="section">
-                <h1 class="title">Instruções</h1>
-                <div>
-                    <h3>Faça seu pedido:</h3>
-                    <p>
-                        Entre em contato pelo Instagram @amovocecestas ou pelo
-                        WhatsApp (32991162238)
-                    </p>
-                    <a
-                        class="button"
-                        href="https://api.whatsapp.com/send?phone=5532991162238"
-                        ><span>Entre em contato!</span
-                        ><img src="img/icons/whatsapp.svg"
-                    /></a>
-                </div>
-
-                <div>
-                    <h3>Frete</h3>
-                    <p>
-                        O valor do frete será informado após consulta, com base
-                        no local de entrega.
-                    </p>
-                </div>
-
-                <div>
-                    <h3>Formas de Pagamento</h3>
-                    <p>• PIX</p>
-                    <p>• Cartão de crédito (com acréscimo de 6% de juros)</p>
-                </div>
-
-                <div>
-                    <h3>Agendamento de Pedidos</h3>
-                    <p>
-                        Para garantir sua entrega, faça seu pedido com pelo
-                        menos 24 horas de antecedência. Em casos de
-                        disponibilidade, conseguimos atender pedidos em prazos
-                        menores.
-                    </p>
-                </div>
-                <div>
-                    <h3>Horários de entrega</h3>
-                    <p>
-                        Nossas entregas são realizadas de carro, em horários
-                        combinados com cada cliente.
-                    </p>
-                </div>
-
-                <div>
-                    <h3>Entregas aos domingo</h3>
-                    <p>Não realizamos entregas aos domingos.</p>
-                </div>
-
-                <div>
-                    <h3>Confirmação de recebimento</h3>
-                    <p>
-                        Certifique-se de que haverá alguém para receber a cesta
-                        no horário agendado.
-                    </p>
-                    <p>
-                        Caso contrário, sua entrega será reprogramada para o
-                        final da fila, e
-                        <strong>um novo valor de frete será cobrado.</strong>
-                    </p>
-                </div>
-
-                <div>
-                    <h3>Variedade de Produtos</h3>
-                    <p>
-                        As marcas dos produtos podem variar conforme a
-                        disponibilidade. Em caso de substituição, garantimos
-                        produtos de qualidade equivalente.
-                    </p>
-                </div>
-
-                <div>
-                    <h3>Imagens ilustrativas</h3>
-                    <p>
-                        As fotos do catálogo são ilustrativas. As cestas podem
-                        variar em cores, modelagem, produtos e arranjo em
-                        relação ao que é mostrado nas imagens.
-                    </p>
-                </div>
-
-                <div>
-                    <h3>Confirmação do Pedido</h3>
-                    <p>
-                        O pedido só será confirmado após a identificação do pagamento.
-                    </p>
-                </div>
-
+        <!-- Seção de Instruções e Pedidos -->
+        <section id="instrucoes" class="instructions-section">
+            <div class="instructions-header">
+                <h2>📋 Como Fazer seu Pedido</h2>
+                <p>Em apenas 3 passos simples, organizamos a entrega do seu presente com todo carinho.</p>
             </div>
-        </div>
-        <p id="footer">@amovocecestas</p>
+
+            <div class="instructions-steps">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Escolha a Cesta</h3>
+                    <p>Navegue pelo nosso catálogo e selecione a cesta ideal para a pessoa especial e a data comemorada.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Personalize os Detalhes</h3>
+                    <p>Chame nossa equipe no WhatsApp para definir adicionais, frase do cartão personalizado e tirar dúvidas.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Agende e Confirme</h3>
+                    <p>Informe o endereço e o melhor horário de entrega. Finalize com pagamento via PIX ou Cartão.</p>
+                </div>
+            </div>
+
+            <div class="instructions-logistics">
+                <h3 class="logistics-title">Informações Importantes para Sua Entrega</h3>
+                <div class="logistics-grid">
+                    <div class="logistics-item">
+                        <span class="logistics-label">Antecedência</span>
+                        <span class="logistics-desc">Recomendamos pelo menos 24 horas de antecedência para garantir vaga na data desejada.</span>
+                    </div>
+                    <div class="logistics-item">
+                        <span class="logistics-label">Entregas</span>
+                        <span class="logistics-desc">Realizadas em horário agendado de carro, de segunda a sábado. Não realizamos entregas aos domingos.</span>
+                    </div>
+                    <div class="logistics-item">
+                        <span class="logistics-label">Frete</span>
+                        <span class="logistics-desc">Calculado sob consulta com base no bairro de entrega em Juiz de Fora e proximidades.</span>
+                    </div>
+                    <div class="logistics-item">
+                        <span class="logistics-label">Pix ou cartão de crédito*</span>
+                        <span class="logistics-desc">Valores válidos para pagamento via Pix. Para pagamento com cartão de crédito, será aplicado acréscimo de 6%. O pedido é confirmado após a identificação do pagamento.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instructions-action-wrap">
+                <a
+                    href="https://api.whatsapp.com/send?phone=5532991162238&text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20de%20cesta."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                >
+                    Pedir pelo WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- Botão Flutuante do WhatsApp -->
+        <a
+            href="https://api.whatsapp.com/send?phone=5532991162238&text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20cat%C3%A1logo%20de%20cestas."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-float"
+            aria-label="Falar no WhatsApp"
+        >
+            <img src="img/icons/whatsapp.svg" alt="WhatsApp" />
+            <span>Falar no WhatsApp</span>
+        </a>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p>© Amo Você Cestas e Presentes • Juiz de Fora - MG • @amovocecestas</p>
+        </footer>
     </body>
 </html>
