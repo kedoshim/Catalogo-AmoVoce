@@ -1,4 +1,5 @@
 import { products } from "../products/products-catalogo.js";
+import { activeCampaign } from "./campaign.config.js";
 
 const categories = [
   {
@@ -57,6 +58,109 @@ function setImageWithFallback(img, src) {
   };
 }
 
+function scrollToCard(cardId) {
+  if (!cardId) return;
+  const card = document.getElementById(cardId);
+  if (card) {
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+    card.classList.add("card-highlight-active");
+    setTimeout(() => {
+      card.classList.remove("card-highlight-active");
+    }, 3000);
+  }
+}
+
+function initCampaign(campaign) {
+  if (!campaign || !campaign.enabled) return;
+
+  // 1. Hero Pill Badge
+  const heroContent = document.querySelector(".hero-content");
+  const heroTitle = document.querySelector(".hero-title");
+  if (heroContent && heroTitle) {
+    const heroPill = document.createElement("a");
+    heroPill.className = "hero-campaign-pill";
+    const targetId = campaign.topBanner?.targetCardId || "card-amo-descobrir";
+    heroPill.href = `#${targetId}`;
+    heroPill.innerHTML = `<span>🎒</span> <strong>Especial ${campaign.name}</strong> • Edição Limitada <span>→</span>`;
+    heroPill.addEventListener("click", (e) => {
+      e.preventDefault();
+      scrollToCard(targetId);
+    });
+    heroContent.insertBefore(heroPill, heroTitle);
+  }
+
+  // 2. Category Nav Highlight
+  if (campaign.categoryNavHighlight) {
+    const chip = document.querySelector(`.category-nav-chip[href="#cat-${campaign.categoryNavHighlight.categorySlug}"]`);
+    if (chip) {
+      chip.classList.add("chip-campaign-active");
+      if (campaign.categoryNavHighlight.chipText) {
+        chip.textContent = campaign.categoryNavHighlight.chipText;
+      }
+    }
+  }
+
+  // 3. Top Announcement Banner
+  const storageKey = `amo_campaign_dismissed_${campaign.id}`;
+  const isDismissed = sessionStorage.getItem(storageKey);
+
+  if (campaign.topBanner?.enabled && !isDismissed) {
+    const banner = document.createElement("aside");
+    banner.className = "campaign-banner";
+    banner.setAttribute("role", "complementary");
+    banner.setAttribute("aria-label", campaign.name);
+
+    const inner = document.createElement("div");
+    inner.className = "campaign-banner-inner";
+
+    const badge = document.createElement("span");
+    badge.className = "campaign-banner-badge";
+    badge.textContent = campaign.topBanner.badge || "Especial";
+
+    const text = document.createElement("span");
+    text.className = "campaign-banner-text";
+    text.textContent = campaign.topBanner.text;
+
+    const cta = document.createElement("button");
+    cta.type = "button";
+    cta.className = "campaign-banner-cta";
+    cta.innerHTML = `${campaign.topBanner.ctaText || "Ver Cesta"} <span>→</span>`;
+    cta.addEventListener("click", () => {
+      scrollToCard(campaign.topBanner.targetCardId);
+    });
+
+    const closeBtn = document.createElement("button");
+    closeBtn.type = "button";
+    closeBtn.className = "campaign-banner-close";
+    closeBtn.setAttribute("aria-label", "Fechar anúncio");
+    closeBtn.innerHTML = "&times;";
+    closeBtn.addEventListener("click", () => {
+      banner.classList.add("campaign-banner-hidden");
+      document.documentElement.style.setProperty("--campaign-banner-height", "0px");
+      sessionStorage.setItem(storageKey, "true");
+      setTimeout(() => banner.remove(), 350);
+    });
+
+    inner.appendChild(badge);
+    inner.appendChild(text);
+    inner.appendChild(cta);
+    banner.appendChild(inner);
+    banner.appendChild(closeBtn);
+
+    document.body.prepend(banner);
+
+    const updateBannerHeight = () => {
+      if (!banner.classList.contains("campaign-banner-hidden")) {
+        const height = banner.offsetHeight || 42;
+        document.documentElement.style.setProperty("--campaign-banner-height", `${height}px`);
+      }
+    };
+
+    requestAnimationFrame(updateBannerHeight);
+    window.addEventListener("resize", updateBannerHeight);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const vitrineRoot = document.getElementById("vitrine");
   if (!vitrineRoot) {
@@ -67,7 +171,9 @@ document.addEventListener("DOMContentLoaded", function () {
   vitrineRoot.innerHTML = "";
 
   categories.forEach((cat) => {
-    const categoryProducts = products.filter((p) => p.category === cat.slug);
+    const categoryProducts = products.filter(
+      (p) => p.category === cat.slug && (activeCampaign?.enabled || !activeCampaign?.seasonalProductIds?.includes(p.id))
+    );
     if (categoryProducts.length === 0) return;
 
     const section = document.createElement("section");
@@ -182,4 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
   disclaimer.className = "catalog-payment-disclaimer";
   disclaimer.textContent = "*Pagamento no cartão sujeito a acréscimo de 6%.";
   vitrineRoot.appendChild(disclaimer);
+
+  // Inicializa o motor de campanhas sazonais
+  initCampaign(activeCampaign);
 });

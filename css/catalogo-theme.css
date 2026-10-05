@@ -14,6 +14,9 @@
   --color-text-muted: #75655F;
   --color-white: #FFFFFF;
 
+  /* Altura dinâmica do banner sazonal */
+  --campaign-banner-height: 0px;
+
   /* Cores Oficiais das Seções de Categoria */
   --bg-cat-cafe: #F7E8E4;
   --bg-cat-bem-estar: #EEF3E8;
@@ -69,7 +72,7 @@ body {
    ============================================================ */
 .topbar {
   position: fixed;
-  top: 0;
+  top: var(--campaign-banner-height, 0px);
   left: 0;
   right: 0;
   z-index: 999;
@@ -160,7 +163,7 @@ body {
    ============================================================ */
 .hero-section {
   position: relative;
-  padding: 120px 24px 70px;
+  padding: calc(120px + var(--campaign-banner-height, 0px)) 24px 70px;
   text-align: center;
   background:
     radial-gradient(circle at 50% 10%, rgba(198, 107, 138, 0.12), transparent 45%),
@@ -279,7 +282,7 @@ body {
    ============================================================ */
 .category-nav-wrapper {
   position: sticky;
-  top: 62px;
+  top: calc(62px + var(--campaign-banner-height, 0px));
   z-index: 900;
   background: rgba(250, 246, 242, 0.94);
   backdrop-filter: blur(12px);
@@ -865,7 +868,7 @@ body {
   }
 
   .category-nav-wrapper {
-    top: 48px;
+    top: calc(48px + var(--campaign-banner-height, 0px));
     padding: 6px 0;
   }
 
@@ -948,4 +951,192 @@ body {
     padding: 12px 18px;
     font-size: 0.9rem;
   }
+
+  .campaign-banner {
+    padding: 6px 36px 6px 12px;
+    font-size: 0.78rem;
+  }
+
+  .campaign-banner-inner {
+    gap: 4px 8px;
+  }
+
+  .campaign-banner-badge {
+    font-size: 0.65rem;
+    padding: 1px 6px;
+  }
+
+  .campaign-banner-cta {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+  }
+
+  .hero-campaign-pill {
+    font-size: 0.78rem;
+    padding: 4px 12px;
+  }
+}
+
+/* ============================================================
+   Campanhas e Eventos Sazonais (Arquitetura Dinâmica)
+   ============================================================ */
+.campaign-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  background: linear-gradient(135deg, #5b2875 0%, #7b327f 55%, #e26e55 100%);
+  color: var(--color-white);
+  padding: 8px 44px 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  box-shadow: 0 4px 16px rgba(91, 40, 117, 0.25);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.campaign-banner.campaign-banner-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.campaign-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  text-align: center;
+}
+
+.campaign-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.campaign-banner-text {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.campaign-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: #5b2875;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 4px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.campaign-banner-cta:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: #fbf5ff;
+}
+
+.campaign-banner-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.75;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.campaign-banner-close:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Hero Pill Badge */
+.hero-campaign-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--space-16);
+  padding: 6px 16px;
+  background: rgba(91, 40, 117, 0.08);
+  border: 1px solid rgba(91, 40, 117, 0.2);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #5b2875;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.hero-campaign-pill:hover {
+  background: #5b2875;
+  color: var(--color-white);
+  border-color: #5b2875;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(91, 40, 117, 0.25);
+}
+
+/* Category Nav Chip Sazonal Pulsante */
+.category-nav-chip.chip-campaign-active {
+  background: linear-gradient(135deg, #fff7ed 0%, #f5e8ff 100%) !important;
+  border: 1.5px solid #a855f7 !important;
+  color: #5b2875 !important;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+  font-weight: 700;
+  animation: pulse-campaign 3s infinite ease-in-out;
+}
+
+.category-nav-chip.chip-campaign-active:hover {
+  background: linear-gradient(135deg, #a855f7 0%, #7b327f 100%) !important;
+  color: #ffffff !important;
+  border-color: #7b327f !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(168, 85, 247, 0.4);
+}
+
+@keyframes pulse-campaign {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(168, 85, 247, 0.55), 0 0 0 2px rgba(168, 85, 247, 0.2);
+  }
+}
+
+/* Halo no Card ao Navegar pelo Banner */
+.basket-card.card-highlight-active {
+  outline: 3px solid #a855f7;
+  outline-offset: 4px;
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.45), 0 20px 35px rgba(74, 59, 55, 0.15) !important;
+  transform: translateY(-6px) scale(1.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }

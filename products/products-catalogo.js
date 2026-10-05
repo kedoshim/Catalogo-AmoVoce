@@ -524,6 +524,47 @@ export const products = [
     ]
   },
   {
+    id: "amo-descobrir",
+    title: "Amo Descobrir",
+    category: "infantil",
+    categoryName: "Infantil",
+    price: "74,90",
+    tag: "Edição Limitada",
+    secondaryTag: "Dia das Crianças 🎒",
+    tagline: "Pequenos presentes para grandes aventuras.",
+    description: "Amo Descobrir é um kit pensado para estimular a imaginação e criar momentos divertidos. Com atividades criativas, doces e uma linda mochila temática, é o presente perfeito para encantar os pequenos aventureiros neste Dia das Crianças.",
+    signaturePhrase: "💜 Uma lembrança cheia de brincadeiras, criatividade e gostosuras para tornar o Dia das Crianças ainda mais especial!",
+    items: [
+      { text: "1 mochila temática personalizada" },
+      { text: "1 pacote de massinha de modelar (6 cores)" },
+      { text: "1 caixinha de giz de cera" },
+      { text: "1 Kinder Joy" },
+      { text: "Balas fini" },
+      { text: "Cookies com gotas de chocolate" },
+      { text: "Suco de uva" },
+      { text: "1 jogo da velha em MDF" },
+      { text: "1 cartão temático personalizado" },
+      { text: "Balões decorativos" }
+    ],
+    highlights: [
+      "Mochila temática personalizada 2D exclusiva",
+      "Atividades criativas: massinha de modelar, giz de cera e jogo da velha em MDF",
+      "Doces e delícias: Kinder Joy, balas Fini, cookies e suco de uva"
+    ],
+    occasions: [
+      { label: "Dia das Crianças" },
+      { label: "Presente Criativo e Lúdico" },
+      { label: "Aniversários Infantis" }
+    ],
+    targetAudience: [
+      "Pais, tios, avós e padrinhos que desejam encantar e surpreender os pequenos",
+      "Crianças que adoram atividades manuais, brincadeiras e momentos doces"
+    ],
+    images: [
+      "img/catalogo/amoDescobrir/1.jpg"
+    ]
+  },
+  {
     id: "amo-petiscos",
     title: "Amo Petiscos",
     category: "happy-hour",

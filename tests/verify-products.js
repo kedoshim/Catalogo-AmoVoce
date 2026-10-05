@@ -13,13 +13,14 @@ const expectedSlugs = [
   "amo-momentos",
   "amo-celebrar",
   "bela-infancia",
+  "amo-descobrir",
   "amo-petiscos"
 ];
 
 console.log("Iniciando validação de produtos...");
 
-if (products.length !== 11) {
-  throw new Error(`Esperado 11 produtos, encontrado ${products.length}`);
+if (products.length !== 12) {
+  throw new Error(`Esperado 12 produtos, encontrado ${products.length}`);
 }
 
 const seenSlugs = new Set();
@@ -61,4 +62,4 @@ for (const slug of expectedSlugs) {
   }
 }
 
-console.log("✓ Todos os 11 produtos foram validados com sucesso!");
+console.log("✓ Todos os 12 produtos foram validados com sucesso!");

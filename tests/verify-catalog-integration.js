@@ -8,8 +8,8 @@ let errors = [];
 let warnings = [];
 
 // 1. Validar Total de Produtos
-if (products.length !== 11) {
-  errors.push(`Esperava 11 produtos, mas encontrou ${products.length}`);
+if (products.length !== 12) {
+  errors.push(`Esperava 12 produtos, mas encontrou ${products.length}`);
 }
 
 // 2. Categorias Válidas
@@ -93,6 +93,7 @@ const checkFile = (filePath) => {
 
 const indexHtml = checkFile("index.html");
 const cestaHtml = checkFile("cesta.html");
+const campaignConfig = checkFile("js/campaign.config.js");
 
 if (indexHtml) {
   if (!indexHtml.includes("css/catalogo-theme.css")) errors.push("index.html não referencia css/catalogo-theme.css");
