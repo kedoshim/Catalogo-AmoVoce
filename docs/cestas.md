@@ -94,7 +94,7 @@ Um carinho em forma de chocolate, flores e sabores especiais.
 • Cesta MDF reutilizável 30x20
 • Delicado vaso de flores naturais
 • Tradicional bolo de cenoura Amo Você com gotas e cobertura de chocolate
-• Suco integral de uva ou laranja
+• Suco integral de uva e de laranja
 • Bombons selecionados
 • Biscoitos amanteigados artesanais (duas variedades)
 • Mini folhados recheados
